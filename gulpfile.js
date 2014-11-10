@@ -80,6 +80,24 @@ gulp.task('img', function () {
         .pipe(notify({ message: 'img task complete' }));;
 });
 
+// Deploy to server
+var rsync = require('rsyncwrapper').rsync;
+var gutil = require('gulp-util');
+
+gulp.task('deploy', function() {
+  rsync({
+    ssh: true,
+    src: './dist/',
+    dest: 'bstandards@morinehtar.dreamhost.com:~/updogtoys.com/',
+    recursive: true,
+    syncDest: true,
+    args: ['--verbose']
+  }, function(error, stdout, stderr, cmd) {
+      gutil.log(stdout);
+  });
+  notify({ message: 'deploy complete'});
+});
+
 // Watch files for changes
 // Compile Sass, Upload and Reload
 gulp.task('serve', function() {
@@ -92,9 +110,12 @@ gulp.task('serve', function() {
   gulp.watch('src/js/*.js', ['js', reload]);
   gulp.watch('src/img/**/*', ['img', reload]);
   gulp.watch('src/index.html', ['html', reload]);
+  // gulp.watch('src/**/*', ['deploy']);
 });
 
 gulp.task('build', ['html', 'js', 'css', 'img']);
+
+gulp.task('freshdep', ['critical', 'deploy']);
 
 gulp.task('default', ['build', 'serve']);
 
