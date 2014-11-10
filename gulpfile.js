@@ -1,0 +1,122 @@
+var gulp = require('gulp');
+var browserSync = require('browser-sync');
+var reload = browserSync.reload;
+var notify = require('gulp-notify');
+var rename = require( 'gulp-rename' );
+var changed = require('gulp-changed');
+
+// Minify HTML
+var minifyHTML = require('gulp-minify-html');
+gulp.task('html', function() {
+  var htmlSrc = './src/*.html',
+      htmlDst = './dist';
+
+  gulp.src(htmlSrc)
+    .pipe(minifyHTML())
+    .pipe(gulp.dest(htmlDst))
+    .pipe(notify({ message: 'html task complete' }));;;
+});
+
+// Compile sass, remove unused CSS and prep for use
+var sass = require('gulp-ruby-sass');
+var uncss = require('gulp-uncss');
+var prefix = require( 'gulp-autoprefixer' );
+var lint = require('gulp-csslint');
+var minifycss = require( 'gulp-minify-css' );
+
+gulp.task('css', function() {
+  var scssSrc = './src/css/app.scss',
+        cssDst = './dist/css',
+        htmlSrc = './src/index.html';
+  return gulp.src('./src/scss/app.scss')
+    .pipe(sass())
+    .on('error', function (err) { console.log(err.message); })
+    .pipe(prefix('last 3 versions'))
+    .pipe(lint())
+    .pipe(gulp.dest(cssDst))
+    .pipe(uncss({
+      html: [htmlSrc],
+      ignore: [/.overlay.*/, /\.effects.*/, /\.og.*/]
+    }
+    ))
+    .pipe(gulp.dest(cssDst))
+    .pipe(rename({suffix: '.min'}))
+    .pipe(minifycss())
+    .pipe(gulp.dest(cssDst))
+    .pipe(reload({ stream:true }))
+    .pipe(notify({ message: 'css task complete' }));
+});
+
+// Uglify, concat scripts together and sourcemap
+var uglify = require('gulp-uglify');
+var concat = require('gulp-concat');
+var sourcemaps = require('gulp-sourcemaps');
+
+gulp.task('js', function() {
+  var jsDst = './dist/js';
+  gulp.src(['./src/js/waypoints.min.js', './src/js/bootstrap.js', './src/js/modernizr.js', './src/js/grid.js', './src/js/triangle.js', './src/js/app.js'])
+    .pipe(sourcemaps.init())
+      .pipe(concat('app.js'))
+      .pipe(uglify())
+    .pipe(sourcemaps.write())
+    .pipe(gulp.dest(jsDst))
+    .pipe(rename({suffix: '.min'}))
+    .pipe(gulp.dest(jsDst))
+    .pipe(notify({ message: 'js task complete' }));;
+});
+
+// Optimize images
+var imagemin = require('gulp-imagemin');
+var pngcrush = require('imagemin-pngcrush');
+gulp.task('img', function () {
+    return gulp.src('src/img/**/*')
+        .pipe(changed('dist/img/**/*'))
+        .pipe(imagemin({
+            progressive: true,
+            svgoPlugins: [{removeViewBox: false}],
+            use: [pngcrush()]
+        }))
+        .pipe(gulp.dest('dist/img'))
+        .pipe(notify({ message: 'img task complete' }));;
+});
+
+// Watch files for changes
+// Compile Sass, Upload and Reload
+gulp.task('serve', function() {
+  browserSync({
+    server: {
+      baseDir: './dist/'
+    }
+  });
+  gulp.watch('src/scss/*.scss', ['css']);
+  gulp.watch('src/js/*.js', ['js', reload]);
+  gulp.watch('src/img/**/*', ['img', reload]);
+  gulp.watch('src/index.html', ['html', reload]);
+});
+
+gulp.task('build', ['html', 'js', 'css', 'img']);
+
+gulp.task('default', ['build', 'serve']);
+
+// Critical CSS
+var critical = require('critical');
+gulp.task('copystyles', function () {
+    return gulp.src(['dist/css/app.min.css'])
+        .pipe(rename({
+            basename: "site" // site.css
+        }))
+        .pipe(gulp.dest('dist/css'));
+});
+
+gulp.task('critical', ['build', 'copystyles'], function (cb) {
+    critical.generateInline({
+        base: 'dist/',
+        src: 'index.html',
+        styleTarget: 'css/app.min.css',
+        htmlTarget: 'index.html',
+        minify: true,
+        width: 320,
+        height: 480,
+        minify: true
+    },cb);
+});

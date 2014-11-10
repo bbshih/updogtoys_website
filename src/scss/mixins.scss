@@ -1,0 +1,5 @@
+@mixin transparent($opacity) {
+  zoom: 1;
+  filter: alpha(opacity=$opacity*100);
+  opacity: $opacity;
+}

@@ -1,0 +1,4 @@
+<IfModule pagespeed_module>
+    ModPagespeed on
+    AddOutputFilterByType DEFLATE text/html text/plain application/javascript text/css
+</IfModule>
