@@ -621,7 +621,7 @@ h1.arrow {
 Features
 ========================================================================== */
 
-.features-wrapper, .team-wrapper {
+.features-wrapper, .team-wrapper, .faq-wrapper {
     margin: 70px 0 20px 0;
 }
 .icon {
@@ -926,6 +926,22 @@ CTA
 .kickstarter-cta .kickstarter-btn {
     border: solid 1px #fff;
 }
+/* ==========================================================================
+FAQ
+========================================================================== */
+
+.faq {
+background-color: #f3f5f8;
+    .question h2 {
+        margin-top: 0;
+    }
+    .answer {
+        text-align: left;
+        p {
+            margin-top: 0;
+        }
+    }
+}
 
 /* ==========================================================================
 Team
@@ -994,7 +1010,7 @@ Contact
 Footer
 ========================================================================== */
 
-footer a {
+footer a, footer a:visited {
     color: #a1a9b0;
 }
 footer {

@@ -128,6 +128,10 @@ a:hover {
   outline: 0;
 }
 
+strong {
+  font-weight: bold;
+}
+
 h1 {
   margin: .67em 0;
   font-size: 2em;
@@ -573,6 +577,10 @@ h2 {
 
 /* * Addresses style set to `bolder` in Firefox 3+, Safari 4/5, and Chrome. */
 
+strong {
+  font-weight: bold;
+}
+
 /* * Addresses styling not present in Safari 5 and Chrome. */
 
 /* * Addresses styling not present in IE 6/7/8/9. */
@@ -973,7 +981,8 @@ Features
 ========================================================================== */
 
 .features-wrapper,
-.team-wrapper {
+.team-wrapper,
+.faq-wrapper {
   margin: 70px 0 20px 0;
 }
 
@@ -1292,6 +1301,26 @@ CTA
 }
 
 /* ==========================================================================
+FAQ
+========================================================================== */
+
+.faq {
+  background-color: #f3f5f8;
+}
+
+.faq .question h2 {
+  margin-top: 0;
+}
+
+.faq .answer {
+  text-align: left;
+}
+
+.faq .answer p {
+  margin-top: 0;
+}
+
+/* ==========================================================================
 Team
 ========================================================================== */
 
@@ -1366,6 +1395,11 @@ Contact
 /* ==========================================================================
 Footer
 ========================================================================== */
+
+footer a,
+footer a:visited {
+  color: #a1a9b0;
+}
 
 footer {
   background-color: #353535;
