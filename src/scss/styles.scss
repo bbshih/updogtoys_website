@@ -52,15 +52,16 @@ html, html a {
 }
 /* * Addresses `font-family` inconsistency between `textarea` and other form
 * elements. */
-
+ @font-face { font-family: Apercu; src: url('../Apercu Regular.otf'); }
 html, button, input, select, textarea {
-    font-family: 'Helvetica', sans-serif;
+    font-family: 'Apercu', 'Helvetica', sans-serif;
 }
 /* * Addresses margins handled incorrectly in IE 6/7. */
 
 body {
+    font-size: 16px;
     margin: 0;
-    font-family: 'Helvetica', sans-serif;
+    font-family: 'Apercu', 'Helvetica', sans-serif;
     color: $grayLight;
 }
 /* ==========================================================================
@@ -387,42 +388,41 @@ a {
     transition: all 0.5s;
 }
 a:hover, a:focus {
-    color: $coral;
+    color: $primaryColor;
     text-decoration: none;
 }
 p {
     color: $grayLight;
     word-spacing: 1px;
     line-height: 25px;
-    font-size: 14px;
+    font-size: 1em;
 }
-h2 {
-    font-size: 15px;
+h1, h2 {
     color: $gray;
     text-transform: uppercase;
-    font-weight: bold;
+    margin: 0;
 }
-h2::after {
+h1::after, h2::after {
     content: " ";
-    border: solid 2px $coral;
+    border: solid 2px $primaryColor;
     display: block;
-    width: 35px;
-    margin: 25px auto;
+    width: 2em;
+    margin: 1em auto;
 }
 h3 {
   color: $gray;
 }
 .section-padding {
-    padding: 90px 0;
+    padding: 2em 0;
 }
 .dark-bg {
-    background: #f3f5f8;
+    background: $grayLightBg;
 }
 .light-bg {
     background-color: #fff;
 }
 .dark-box {
-    background: #f3f5f8;
+    background: $grayLightBg;
     -webkit-box-shadow: 0px 3px 0px 0px #f0f2f4;
     -moz-box-shadow: 0px 3px 0px 0px #f0f2f4;
     box-shadow: 0px 3px 0px 0px #f0f2f4;
@@ -435,9 +435,9 @@ h3 {
     padding: 20px 0;
 }
 .light-box:hover, .light-box:focus {
-    -webkit-box-shadow: 0px 3px 0px 0px $coral;
-    -moz-box-shadow: 0px 3px 0px 0px $coral;
-    box-shadow: 0px 3px 0px 0px $coral;
+    -webkit-box-shadow: 0px 3px 0px 0px $primaryColor;
+    -moz-box-shadow: 0px 3px 0px 0px $primaryColor;
+    box-shadow: 0px 3px 0px 0px $primaryColor;
 }
 .box-hover {
     transition: all 500ms ease-in-out;
@@ -495,7 +495,7 @@ nav ul li a {
     position: relative;
 }
 nav ul li a:hover, nav ul li a:focus {
-  background-color: $coral-dark;
+  background-color: $primaryColorDark;
     text-decoration: none;
     color: rgba(255, 255, 255, 1);
 }
@@ -550,6 +550,14 @@ nav ul li a:hover, nav ul li a:focus {
     -ms-transform: translateY(-10px) rotate(-45deg);
     top: 10px;
 }
+.nav-logo {
+    height: 50px;
+    margin-top: -10px;
+    @media screen and (min-width: 500px) {
+        height: 80px;
+        margin-top: -30px;
+    }
+}
 .navicon {
     position: relative;
     height: 26px;
@@ -565,12 +573,12 @@ Hero
 ========================================================================== */
 
 .hero {
-    background: url('../img/odin.jpg') no-repeat center center;
+    background: url('../img/Dogs With Toy-2960.jpg') no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    padding: 65px 0;
+    padding: 1em 0;
     height: 800px;
     text-align: center;
 
@@ -578,35 +586,41 @@ Hero
         color: #ffffff;
     }
     h1 {
-        letter-spacing: 1px;
-        font-size: 2em;
-        margin-bottom: 0.3em;
+        font-size: 4em;
+        line-height: 1em;
+        margin: 0;
+        &::after {
+            display: none;
+        }
     }
     p {
-        font-size: 1.4em;
+        font-size: 1.2em;
         margin: 0;
-
+    }
+    .hero-text {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
     }
 }
 input[type=email] {
     width: 20em;
 }
 .order-btn {
-    background: $coral;
+    background: $primaryColor;
     padding: 20px 40px;
     border: 0;
     color: #fff;
     text-transform: uppercase;
     letter-spacing: 1px;
     display: inline-block;
-    -webkit-box-shadow: 0px 3px 0px 0px darken($coral, 30%);
-    -moz-box-shadow: 0px 3px 0px 0px darken($coral, 30%);
-    box-shadow: 0px 3px 0px 0px darken($coral, 30%);
-    margin: 20px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
     font-weight: bold;
+    margin-top: 1em;
 }
 .order-btn:hover, .order-btn:focus {
-    background: $coral-dark;
+    background: $primaryColorDark;
     color: #fff;
 }
 .secondary-btn {
@@ -628,7 +642,7 @@ Intro
 ========================================================================== */
 
 .intro {
-    background: #f3f5f8;
+    background: $grayLightBg;
 }
 .intro p {
     margin: 50px 0 0;
@@ -638,7 +652,6 @@ h1.arrow {
     text-transform: uppercase;
     color: $gray;
     letter-spacing: 1px;
-    background: url('../img/h1-bg.png') no-repeat center bottom;
     padding-bottom: 30px;
     font-weight: bold;
 }
@@ -647,6 +660,10 @@ Testimonials
 ========================================================================== */
 .testimonials {
     background-color: #f5f5f5;
+    h1 {
+        margin-top: 0;
+        text-transform: uppercase;
+    }
 }
 .logos {
     max-width: 100%;
@@ -655,15 +672,12 @@ Testimonials
 Features
 ========================================================================== */
 
-.features-wrapper, .team-wrapper, .faq-wrapper {
-    margin: 70px 0 20px 0;
-}
 .icon {
     height: 175px;
     width: 175px;
     line-height: 175px;
     max-width: 100%;
-    background: $coral;
+    background: $primaryColor;
     border-radius: 50%;
     -o-border-radius: 50%;
     -moz-border-radius: 50%;
@@ -700,7 +714,7 @@ Design details Section
 
 .toy-clear {
     width: 50%;
-    background: #f3f5f8;
+    background: $grayLightBg;
     float: left;
     height: 100%;
     box-shadow: inset -15px -11px 40px -6px rgba(0, 0, 0, 0.1);
@@ -723,7 +737,7 @@ Swag
 ========================================================================== */
 
 .swag {
-    background: url('../img/odin-back-us.jpg') no-repeat center center;
+    background: url('../img/Dogs With Toy-2167.jpg') no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -736,37 +750,24 @@ Swag
     font-size: 40px;
     text-transform: uppercase;
     letter-spacing: 5px;
+    &::after {
+        display: none;
+    }
 }
 .swag h1 span {
     display: block;
     font-size: 25px;
     margin-top: 20px;
 }
-.corgi-btn {
-    background: url('../img/coral-corgi.png') no-repeat center center;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    -moz-border-radius: 50%;
-    -webkit-border-radius: 50%;
-    -o-border-radius: 50%;
-    display: inline-block;
-    margin: 10px auto 20px;
-    color: #fff;
-    font-size: 16px;
-    line-height: 40px;
-    text-align: center;
-    @include transparent(.8);
-}
-.corgi-btn:hover, .corgi-btn:focus {
-    @include transparent(.6);
-}
 
 /* ==========================================================================
 Videos
 ========================================================================== */
 .videos {
-    padding: 90px 0 0;
+    padding: 0 1em;
+    @media screen and (min-width:500px) {
+        padding: 0;
+    }
 }
 
 /* ==========================================================================
@@ -778,10 +779,9 @@ Portfolio
 }
 .effects .img {
     position: relative;
-    margin-bottom: 50px;
-    position: relative;
     z-index: 1;
     overflow: hidden;
+    margin-bottom: 2em;
 }
 .effects .img:nth-child(n) {
     margin-right: 5px;
@@ -803,7 +803,7 @@ Portfolio
     display: block;
     position: absolute;
     z-index: 20;
-    background: rgba($coral, .7);
+    background: rgba($primaryColor, .7);
     overflow: hidden;
     transition: all 0.5s;
     -webkit-transition: all 0.5s;
@@ -883,8 +883,8 @@ a.expand {
     right: 0;
     margin-left: auto;
     margin-right: auto;
-    top: 50px;
-    margin-top: 30px;
+    top: 0;
+    margin-top: 2em;
 
 }
 /* ==========================================================================
@@ -940,8 +940,7 @@ Subscribe
     text-align: center;
 }
 .subscribe input[type=email] {
-    background-color: rgba(255, 255, 255, 0.8);
-    border: solid 1px #fff;
+    background-color: #fff;
     padding: 20px;
     width: 30%;
     min-width: 220px;
@@ -949,9 +948,7 @@ Subscribe
     margin-right: 5px;
 }
 .subscribe input[type=submit] {
-    @include transparent(0.8);
-    background: $coral;
-    border: solid 1px #fff;
+    background: $primaryColor;
     padding: 20px;
     color: #fff;
     text-transform: uppercase;
@@ -962,8 +959,7 @@ Subscribe
     -o-transition: all 0.5s ease;
 }
 .subscribe input[type=submit]:hover {
-    background: $coral-dark;
-    border: solid 1px #fff;
+    background: $primaryColorDark;
     color: #fff;
 }
 /* ==========================================================================
@@ -981,7 +977,6 @@ FAQ
 ========================================================================== */
 
 .faq {
-background-color: #f3f5f8;
     .question h2 {
         margin-top: 4px;
     }
@@ -1021,7 +1016,7 @@ Contact
     -moz-border-radius: 50%;
     -webkit-border-radius: 50%;
     -o-border-radius: 50%;
-    background: rgba($coral, 0.5);
+    background: rgba($primaryColor, 0.5);
     display: block;
     margin: 0 auto;
     color: #fff;
@@ -1037,7 +1032,7 @@ Contact
 }
 .up-btn:hover, up-btn:focus {
     color: #fff;
-    background: $coral;
+    background: $primaryColor;
 }
 .contact-details {
     margin: 70px 0;
@@ -1047,7 +1042,7 @@ Contact
 }
 .contact-details h2 span {
     display: block;
-    color: $coral;
+    color: $primaryColor;
     text-transform: uppercase;
     letter-spacing: 1px;
     font-size: 14px;
@@ -1113,7 +1108,7 @@ ul.social-buttons li {
     -moz-border-radius: 50%;
     -webkit-border-radius: 50%;
     -o-border-radius: 50%;
-    background: $coral;
+    background: $primaryColor;
     display: inline-block;
     color: #fff;
     font-size: 17px;
@@ -1121,7 +1116,7 @@ ul.social-buttons li {
     text-align: center;
     &:hover {
         color: #fff;
-        background-color: $coral-dark;
+        background-color: $primaryColorDark;
     }
 }
 /* ==========================================================================
@@ -1147,8 +1142,7 @@ Waypoints
     -webkit-animation-delay: 1s;
 }
 .wp3 {
-    background: url('../img/toy_clear.gif') no-repeat center center;
-    background-position: 75% 100px;
+    background: url('../img/Toy--4crop.jpg') no-repeat center center/cover;
     height: 100%;
 }
 

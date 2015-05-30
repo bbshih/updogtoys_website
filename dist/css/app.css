@@ -297,10 +297,6 @@ small {
   font-size: 85%;
 }
 
-.text-right {
-  text-align: right;
-}
-
 .text-center {
   text-align: center;
 }
@@ -417,10 +413,6 @@ ul {
 
   .col-md-offset-7 {
     margin-left: 58.33333333%;
-  }
-
-  .col-md-offset-3 {
-    margin-left: 25%;
   }
 
   .col-md-offset-2 {
@@ -543,16 +535,22 @@ html a {
 /* * Addresses `font-family` inconsistency between `textarea` and other form
 * elements. */
 
+@font-face {
+  font-family: Apercu;
+  src: url("../Apercu Regular.otf");
+}
+
 html,
 input {
-  font-family: 'Helvetica', sans-serif;
+  font-family: 'Apercu', 'Helvetica', sans-serif;
 }
 
 /* * Addresses margins handled incorrectly in IE 6/7. */
 
 body {
+  font-size: 16px;
   margin: 0;
-  font-family: 'Helvetica', sans-serif;
+  font-family: 'Apercu', 'Helvetica', sans-serif;
   color: #6B6F73;
 }
 
@@ -583,7 +581,7 @@ Typography
 h1 {
   font-size: 2em;
   margin: 0.67em 0;
-  color: #353535;
+  color: #696D76;
 }
 
 h2 {
@@ -749,7 +747,7 @@ input::-moz-focus-inner {
 * 2. Improves readability and alignment in all browsers. */
 
 input[type=email] {
-  background-color: #353535;
+  background-color: #696D76;
   border: solid 1px #fff;
   padding: 20px;
   width: 30%;
@@ -767,14 +765,14 @@ Global Styles
 ========================================================================== */
 
 a {
-  color: #353535;
+  color: #696D76;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
 }
 
 a:hover,
 a:focus {
-  color: #FF4633;
+  color: #00A6AF;
   text-decoration: none;
 }
 
@@ -782,26 +780,27 @@ p {
   color: #6B6F73;
   word-spacing: 1px;
   line-height: 25px;
-  font-size: 14px;
+  font-size: 1em;
 }
 
+h1,
 h2 {
-  font-size: 15px;
-  color: #353535;
+  color: #696D76;
   text-transform: uppercase;
-  font-weight: bold;
+  margin: 0;
 }
 
+h1::after,
 h2::after {
   content: " ";
-  border: solid 2px #FF4633;
+  border: solid 2px #00A6AF;
   display: block;
-  width: 35px;
-  margin: 25px auto;
+  width: 2em;
+  margin: 1em auto;
 }
 
 .section-padding {
-  padding: 90px 0;
+  padding: 2em 0;
 }
 
 .dark-bg {
@@ -816,7 +815,7 @@ h2::after {
 
 .light-box:hover,
 .light-box:focus {
-  box-shadow: 0px 3px 0px 0px #FF4633;
+  box-shadow: 0px 3px 0px 0px #00A6AF;
 }
 
 .box-hover {
@@ -837,16 +836,12 @@ h2::after {
   padding: 0 !important;
 }
 
-.inner {
-  padding-top: 60px;
-}
-
 /* ==========================================================================
 Navigation
 ========================================================================== */
 
 nav {
-  background-color: #353535;
+  background-color: #696D76;
   margin-top: -1px;
 }
 
@@ -883,7 +878,7 @@ nav ul li a {
 
 nav ul li a:hover,
 nav ul li a:focus {
-  background-color: #cc1300;
+  background-color: #004549;
   text-decoration: none;
   color: white;
 }
@@ -909,7 +904,7 @@ nav ul li a:focus {
   -o-border-radius: 1px;
   height: 5px;
   width: 35px;
-  background: #353535;
+  background: #696D76;
   position: absolute;
   display: block;
   content: '';
@@ -932,6 +927,18 @@ nav ul li a:focus {
   -o-transition: all 500ms ease-in-out;
 }
 
+.nav-logo {
+  height: 50px;
+  margin-top: -10px;
+}
+
+@media screen and (min-width: 500px) {
+  .nav-logo {
+    height: 80px;
+    margin-top: -30px;
+  }
+}
+
 .navicon {
   position: relative;
   height: 26px;
@@ -950,9 +957,9 @@ Hero
 ========================================================================== */
 
 .hero {
-  background: url("../img/odin.jpg") no-repeat center center;
+  background: url("../img/Dogs With Toy-2960.jpg") no-repeat center center;
   background-size: cover;
-  padding: 65px 0;
+  padding: 1em 0;
   height: 800px;
   text-align: center;
 }
@@ -963,14 +970,25 @@ Hero
 }
 
 .hero h1 {
-  letter-spacing: 1px;
-  font-size: 2em;
-  margin-bottom: 0.3em;
+  font-size: 4em;
+  line-height: 1em;
+  margin: 0;
+}
+
+.hero h1::after {
+  display: none;
 }
 
 .hero p {
-  font-size: 1.4em;
+  font-size: 1.2em;
   margin: 0;
+}
+
+.hero .hero-text {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
 }
 
 input[type=email] {
@@ -978,21 +996,21 @@ input[type=email] {
 }
 
 .order-btn {
-  background: #FF4633;
+  background: #00A6AF;
   padding: 20px 40px;
   border: 0;
   color: #fff;
   text-transform: uppercase;
   letter-spacing: 1px;
   display: inline-block;
-  box-shadow: 0px 3px 0px 0px #990e00;
-  margin: 20px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   font-weight: bold;
+  margin-top: 1em;
 }
 
 .order-btn:hover,
 .order-btn:focus {
-  background: #cc1300;
+  background: #004549;
   color: #fff;
 }
 
@@ -1008,6 +1026,11 @@ Testimonials
   background-color: #f5f5f5;
 }
 
+.testimonials h1 {
+  margin-top: 0;
+  text-transform: uppercase;
+}
+
 .logos {
   max-width: 100%;
 }
@@ -1015,12 +1038,6 @@ Testimonials
 /* ==========================================================================
 Features
 ========================================================================== */
-
-.features-wrapper,
-.team-wrapper,
-.faq-wrapper {
-  margin: 70px 0 20px 0;
-}
 
 /* ==========================================================================
 Kickstarter Section
@@ -1070,7 +1087,7 @@ Swag
 ========================================================================== */
 
 .swag {
-  background: url("../img/odin-back-us.jpg") no-repeat center center;
+  background: url("../img/Dogs With Toy-2167.jpg") no-repeat center center;
   background-size: cover;
   background-attachment: fixed;
   padding: 50px 0;
@@ -1083,36 +1100,14 @@ Swag
   letter-spacing: 5px;
 }
 
+.swag h1::after {
+  display: none;
+}
+
 .swag h1 span {
   display: block;
   font-size: 25px;
   margin-top: 20px;
-}
-
-.corgi-btn {
-  background: url("../img/coral-corgi.png") no-repeat center center;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  -moz-border-radius: 50%;
-  -webkit-border-radius: 50%;
-  -o-border-radius: 50%;
-  display: inline-block;
-  margin: 10px auto 20px;
-  color: #fff;
-  font-size: 16px;
-  line-height: 40px;
-  text-align: center;
-  zoom: 1;
-  filter: alpha(opacity=80);
-  opacity: 0.8;
-}
-
-.corgi-btn:hover,
-.corgi-btn:focus {
-  zoom: 1;
-  filter: alpha(opacity=60);
-  opacity: 0.6;
 }
 
 /* ==========================================================================
@@ -1120,7 +1115,13 @@ Videos
 ========================================================================== */
 
 .videos {
-  padding: 90px 0 0;
+  padding: 0 1em;
+}
+
+@media screen and (min-width: 500px) {
+  .videos {
+    padding: 0;
+  }
 }
 
 /* ==========================================================================
@@ -1133,10 +1134,9 @@ Portfolio
 
 .effects .img {
   position: relative;
-  margin-bottom: 50px;
-  position: relative;
   z-index: 1;
   overflow: hidden;
+  margin-bottom: 2em;
 }
 
 .effects .img:nth-child(n) {
@@ -1156,14 +1156,14 @@ Portfolio
   margin: 0;
   padding: 0;
   height: auto;
-  background-color: #353535;
+  background-color: #696D76;
 }
 
 .overlay {
   display: block;
   position: absolute;
   z-index: 20;
-  background: rgba(255, 70, 51, 0.7);
+  background: rgba(0, 166, 175, 0.7);
   overflow: hidden;
   transition: all 0.5s;
   -webkit-transition: all 0.5s;
@@ -1254,17 +1254,13 @@ a.expand {
   right: 0;
   margin-left: auto;
   margin-right: auto;
-  top: 50px;
-  margin-top: 30px;
+  top: 0;
+  margin-top: 2em;
 }
 
 /* ==========================================================================
 Gallery
 ========================================================================== */
-
-.gallery .arrow {
-  margin-bottom: 70px;
-}
 
 .gif {
   position: absolute;
@@ -1315,21 +1311,16 @@ Subscribe
 }
 
 .subscribe input[type=email] {
-  background-color: rgba(255, 255, 255, 0.8);
-  border: solid 1px #fff;
+  background-color: #fff;
   padding: 20px;
   width: 30%;
   min-width: 220px;
-  color: #353535;
+  color: #696D76;
   margin-right: 5px;
 }
 
 .subscribe input[type=submit] {
-  zoom: 1;
-  filter: alpha(opacity=80);
-  opacity: 0.8;
-  background: #FF4633;
-  border: solid 1px #fff;
+  background: #00A6AF;
   padding: 20px;
   color: #fff;
   text-transform: uppercase;
@@ -1341,8 +1332,7 @@ Subscribe
 }
 
 .subscribe input[type=submit]:hover {
-  background: #cc1300;
-  border: solid 1px #fff;
+  background: #004549;
   color: #fff;
 }
 
@@ -1360,10 +1350,6 @@ CTA
 /* ==========================================================================
 FAQ
 ========================================================================== */
-
-.faq {
-  background-color: #f3f5f8;
-}
 
 .faq .question h2 {
   margin-top: 4px;
@@ -1408,7 +1394,7 @@ Contact
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   -o-border-radius: 50%;
-  background: rgba(255, 70, 51, 0.5);
+  background: rgba(0, 166, 175, 0.5);
   display: block;
   margin: 0 auto;
   color: #fff;
@@ -1425,7 +1411,7 @@ Contact
 
 .up-btn:hover {
   color: #fff;
-  background: #FF4633;
+  background: #00A6AF;
 }
 
 .contact-details {
@@ -1438,7 +1424,7 @@ Contact
 
 .contact-details h2 span {
   display: block;
-  color: #FF4633;
+  color: #00A6AF;
   text-transform: uppercase;
   letter-spacing: 1px;
   font-size: 14px;
@@ -1459,7 +1445,7 @@ footer a:visited {
 }
 
 footer {
-  background-color: #353535;
+  background-color: #696D76;
   padding: 40px 0 30px;
 }
 
@@ -1489,7 +1475,7 @@ ul.social-buttons li {
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   -o-border-radius: 50%;
-  background: #FF4633;
+  background: #00A6AF;
   display: inline-block;
   color: #fff;
   font-size: 17px;
@@ -1499,7 +1485,7 @@ ul.social-buttons li {
 
 .social-btn:hover {
   color: #fff;
-  background-color: #cc1300;
+  background-color: #004549;
 }
 
 /* ==========================================================================
@@ -1533,8 +1519,7 @@ Waypoints
 }
 
 .wp3 {
-  background: url("../img/toy_clear.gif") no-repeat center center;
-  background-position: 75% 100px;
+  background: url("../img/Toy--4crop.jpg") no-repeat center center/cover;
   height: 100%;
 }
 
@@ -4530,7 +4515,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 .og-grid {
   list-style: none;
-  padding: 90px 0;
+  padding: 2em 0 0 0;
   margin: 0 auto;
   text-align: center;
   width: 100%;
@@ -4612,7 +4597,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 .og-close:hover::before,
 .og-close:hover::after {
-  background: #353535;
+  background: #696D76;
 }
 
 .og-fullimg {

@@ -1,7 +1,5 @@
-/***************** Waypoints ******************/
-
 $(document).ready(function() {
-
+/***************** Waypoints ******************/
   $('.wp1').waypoint(function() {
     $('.wp1').addClass('animated fadeInLeft');
   }, {
@@ -32,8 +30,24 @@ $(document).ready(function() {
   }, {
     offset: '75%'
   });
-
+  resizeHero();
 });
+
+window.onresize = function(event) {
+  resizeHero();
+}
+
+//  Resize hero image
+function resizeHero() {
+  var vHeight = $(window).height(),
+      vWidth = $(window).width(),
+      hero = $('.hero');
+
+  hero.css({"height":vHeight,"width":vWidth});
+}
+
+
+// Modal
 
 /***************** Slide-In Nav ******************/
 
