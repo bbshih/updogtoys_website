@@ -137,6 +137,10 @@ h1 {
   font-size: 2em;
 }
 
+small {
+  font-size: 80%;
+}
+
 img {
   border: 0;
 }
@@ -261,10 +265,20 @@ h2 {
   color: inherit;
 }
 
+h1 small {
+  font-weight: normal;
+  line-height: 1;
+  color: #999;
+}
+
 h1,
 h2 {
   margin-top: 20px;
   margin-bottom: 10px;
+}
+
+h1 small {
+  font-size: 65%;
 }
 
 h1 {
@@ -277,6 +291,10 @@ h2 {
 
 p {
   margin: 0 0 10px;
+}
+
+small {
+  font-size: 85%;
 }
 
 .text-right {
@@ -599,6 +617,10 @@ p {
 
 /* * Addresses `quotes` property not supported in Safari 4. */
 
+small {
+  font-size: 75%;
+}
+
 /* * Prevents `sub` and `sup` affecting `line-height` in all browsers. */
 
 /* ==========================================================================
@@ -779,7 +801,7 @@ h2::after {
 }
 
 .section-padding {
-  padding: 90px 0 100px;
+  padding: 90px 0;
 }
 
 .dark-bg {
@@ -812,7 +834,7 @@ h2::after {
 }
 
 .nopadding {
-  padding: 0;
+  padding: 0 !important;
 }
 
 .inner {
@@ -932,18 +954,30 @@ Hero
   background-size: cover;
   padding: 65px 0;
   height: 800px;
+  text-align: center;
+}
+
+.hero h1,
+.hero p {
+  color: #ffffff;
+}
+
+.hero h1 {
+  letter-spacing: 1px;
+  font-size: 2em;
+  margin-bottom: 0.3em;
 }
 
 .hero p {
-  color: #ffffff;
-  letter-spacing: 1px;
+  font-size: 1.4em;
+  margin: 0;
 }
 
 input[type=email] {
   width: 20em;
 }
 
-.learn-more-btn {
+.order-btn {
   background: #FF4633;
   padding: 20px 40px;
   border: 0;
@@ -956,8 +990,8 @@ input[type=email] {
   font-weight: bold;
 }
 
-.learn-more-btn:hover,
-.learn-more-btn:focus {
+.order-btn:hover,
+.order-btn:focus {
   background: #cc1300;
   color: #fff;
 }
@@ -966,14 +1000,16 @@ input[type=email] {
 Intro
 ========================================================================== */
 
-h1.arrow {
-  font-size: 15px;
-  text-transform: uppercase;
-  color: #353535;
-  letter-spacing: 1px;
-  background: url("../img/h1-bg.png") no-repeat center bottom;
-  padding-bottom: 30px;
-  font-weight: bold;
+/* ==========================================================================
+Testimonials
+========================================================================== */
+
+.testimonials {
+  background-color: #f5f5f5;
+}
+
+.logos {
+  max-width: 100%;
 }
 
 /* ==========================================================================
@@ -984,6 +1020,26 @@ Features
 .team-wrapper,
 .faq-wrapper {
   margin: 70px 0 20px 0;
+}
+
+/* ==========================================================================
+Kickstarter Section
+========================================================================== */
+
+.kickstarter {
+  background-color: #353535;
+}
+
+.kickstarter p {
+  color: #fff;
+}
+
+.kickstarter h2 {
+  color: #00df6f;
+}
+
+.caption {
+  margin-top: 0;
 }
 
 /* ==========================================================================
@@ -1057,6 +1113,14 @@ Swag
   zoom: 1;
   filter: alpha(opacity=60);
   opacity: 0.6;
+}
+
+/* ==========================================================================
+Videos
+========================================================================== */
+
+.videos {
+  padding: 90px 0 0;
 }
 
 /* ==========================================================================
@@ -1198,6 +1262,10 @@ a.expand {
 Gallery
 ========================================================================== */
 
+.gallery .arrow {
+  margin-bottom: 70px;
+}
+
 .gif {
   position: absolute;
   top: 1em;
@@ -1235,6 +1303,11 @@ Subscribe
   font-weight: bold;
   margin-top: 20px;
   letter-spacing: 1px;
+}
+
+.subscribe small {
+  font-size: 16px;
+  color: #fff;
 }
 
 .subscribe form {
@@ -1277,27 +1350,11 @@ Subscribe
 CTA
 ========================================================================== */
 
-.kickstarter-cta {
+.order-cta {
   background-color: #ffffff;
-  padding: 90px 0;
-  margin-top: -290px;
+  padding: 93px 0;
+  margin-top: -280px;
   cursor: pointer;
-}
-
-.kickstarter-btn {
-  display: inline-block;
-  padding: 25px 40px;
-  background-color: #FF4633;
-  color: #fff;
-  text-transform: uppercase;
-  font-weight: bold;
-  letter-spacing: 1px;
-}
-
-.kickstarter-btn:hover,
-.kickstarter-btn:focus {
-  background: #cc1300;
-  color: #fff;
 }
 
 /* ==========================================================================
@@ -1309,7 +1366,7 @@ FAQ
 }
 
 .faq .question h2 {
-  margin-top: 0;
+  margin-top: 4px;
 }
 
 .faq .answer {
@@ -1460,6 +1517,11 @@ Waypoints
   visibility: visible;
 }
 
+.delay-03s {
+  animation-delay: 0.3s;
+  -webkit-animation-delay: 0.3s;
+}
+
 .delay-05s {
   animation-delay: 0.5s;
   -webkit-animation-delay: 0.5s;
@@ -1473,6 +1535,22 @@ Waypoints
 .wp3 {
   background: url("../img/toy_clear.gif") no-repeat center center;
   background-position: 75% 100px;
+  height: 100%;
+}
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
   height: 100%;
 }
 

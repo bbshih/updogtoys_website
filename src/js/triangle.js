@@ -1,7 +1,7 @@
 var canvas = document.createElement('canvas');
 var canvasHeight = canvas.height = 280;
 var ctx = canvas.getContext('2d');
-var heightScale = 0.866;
+var heightScale = 0.867;
 
 
 function rnd(min, max) {

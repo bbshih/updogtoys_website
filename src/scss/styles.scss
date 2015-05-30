@@ -413,7 +413,7 @@ h3 {
   color: $gray;
 }
 .section-padding {
-    padding: 90px 0 100px
+    padding: 90px 0;
 }
 .dark-bg {
     background: #f3f5f8;
@@ -454,7 +454,7 @@ h3 {
     height: 650px;
 }
 .nopadding {
-    padding: 0;
+    padding: 0 !important;
 }
 .inner {
     padding-top: 60px;
@@ -572,15 +572,26 @@ Hero
     background-size: cover;
     padding: 65px 0;
     height: 800px;
-}
-.hero p {
-    color: #ffffff;
-    letter-spacing: 1px;
+    text-align: center;
+
+    h1, p {
+        color: #ffffff;
+    }
+    h1 {
+        letter-spacing: 1px;
+        font-size: 2em;
+        margin-bottom: 0.3em;
+    }
+    p {
+        font-size: 1.4em;
+        margin: 0;
+
+    }
 }
 input[type=email] {
     width: 20em;
 }
-.learn-more-btn {
+.order-btn {
     background: $coral;
     padding: 20px 40px;
     border: 0;
@@ -594,8 +605,22 @@ input[type=email] {
     margin: 20px;
     font-weight: bold;
 }
-.learn-more-btn:hover, .learn-more-btn:focus {
+.order-btn:hover, .order-btn:focus {
     background: $coral-dark;
+    color: #fff;
+}
+.secondary-btn {
+    display: inline-block;
+    padding: 20px 40px;
+    background-color: $grayLight;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border: 0;
+}
+.secondary-btn:hover, .secondary-btn:focus {
+    background: $gray;
     color: #fff;
 }
 /* ==========================================================================
@@ -616,6 +641,15 @@ h1.arrow {
     background: url('../img/h1-bg.png') no-repeat center bottom;
     padding-bottom: 30px;
     font-weight: bold;
+}
+/* ==========================================================================
+Testimonials
+========================================================================== */
+.testimonials {
+    background-color: #f5f5f5;
+}
+.logos {
+    max-width: 100%;
 }
 /* ==========================================================================
 Features
@@ -641,6 +675,21 @@ Features
     vertical-align: middle;
     position: relative;
     margin: 0 auto 50px;
+}
+/* ==========================================================================
+Kickstarter Section
+========================================================================== */
+.kickstarter {
+    background-color: #353535;
+    p {
+        color: #fff;
+    }
+    h2 {
+        color: #00df6f;
+    }
+}
+.caption {
+    margin-top: 0;
 }
 /* ==========================================================================
 Design details Section
@@ -712,6 +761,14 @@ Swag
 .corgi-btn:hover, .corgi-btn:focus {
     @include transparent(.6);
 }
+
+/* ==========================================================================
+Videos
+========================================================================== */
+.videos {
+    padding: 90px 0 0;
+}
+
 /* ==========================================================================
 Portfolio
 ========================================================================== */
@@ -833,6 +890,11 @@ a.expand {
 /* ==========================================================================
 Gallery
 ========================================================================== */
+.gallery {
+    .arrow {
+        margin-bottom: 70px;
+    }
+}
 .gif {
     position: absolute;
     top: 1em;
@@ -870,6 +932,10 @@ Subscribe
     margin-top: 20px;
     letter-spacing: 1px;
 }
+.subscribe  small{
+    font-size: 16px;
+    color: #fff;
+}
 .subscribe form {
     text-align: center;
 }
@@ -904,27 +970,11 @@ Subscribe
 CTA
 ========================================================================== */
 
-.kickstarter-cta {
+.order-cta {
     background-color: #ffffff;
-    padding: 90px 0;
-    margin-top: -290px;
+    padding: 93px 0;
+    margin-top: -280px;
     cursor: pointer;
-}
-.kickstarter-btn {
-    display: inline-block;
-    padding: 25px 40px;
-    background-color: $coral;
-    color: #fff;
-    text-transform: uppercase;
-    font-weight: bold;
-    letter-spacing: 1px;
-}
-.kickstarter-btn:hover, .kickstarter-btn:focus {
-    background: $coral-dark;
-    color: #fff;
-}
-.kickstarter-cta .kickstarter-btn {
-    border: solid 1px #fff;
 }
 /* ==========================================================================
 FAQ
@@ -933,7 +983,7 @@ FAQ
 .faq {
 background-color: #f3f5f8;
     .question h2 {
-        margin-top: 0;
+        margin-top: 4px;
     }
     .answer {
         text-align: left;
@@ -1084,6 +1134,10 @@ Waypoints
 .bounceInLeft, .bounceInRight, .fadeInUp, .fadeInUpDelay, .fadeInDown, .fadeInUpD, .fadeInLeft, .fadeInRight {
     visibility: visible;
 }
+.delay-03s {
+    animation-delay: 0.3s;
+    -webkit-animation-delay: 0.3s;
+}
 .delay-05s {
     animation-delay: 0.5s;
     -webkit-animation-delay: 0.5s;
@@ -1095,5 +1149,21 @@ Waypoints
 .wp3 {
     background: url('../img/toy_clear.gif') no-repeat center center;
     background-position: 75% 100px;
+    height: 100%;
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px; height: 0; overflow: hidden;
+}
+
+.video-container iframe,
+.video-container object,
+.video-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
     height: 100%;
 }

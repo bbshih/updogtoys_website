@@ -13,8 +13,7 @@ gulp.task('html', function() {
 
   gulp.src(htmlSrc)
     .pipe(minifyHTML())
-    .pipe(gulp.dest(htmlDst))
-    .pipe(notify({ message: 'html task complete' }));;;
+    .pipe(gulp.dest(htmlDst));
 });
 
 // Compile sass, remove unused CSS and prep for use
@@ -43,8 +42,7 @@ gulp.task('css', function() {
     .pipe(rename({suffix: '.min'}))
     .pipe(minifycss())
     .pipe(gulp.dest(cssDst))
-    .pipe(reload({ stream:true }))
-    .pipe(notify({ message: 'css task complete' }));
+    .pipe(reload({ stream:true }));
 });
 
 // Uglify, concat scripts together and sourcemap
@@ -61,8 +59,7 @@ gulp.task('js', function() {
     .pipe(sourcemaps.write())
     .pipe(gulp.dest(jsDst))
     .pipe(rename({suffix: '.min'}))
-    .pipe(gulp.dest(jsDst))
-    .pipe(notify({ message: 'js task complete' }));;
+    .pipe(gulp.dest(jsDst));
 });
 
 // Optimize images
@@ -76,8 +73,7 @@ gulp.task('img', function () {
             svgoPlugins: [{removeViewBox: false}],
             use: [pngcrush()]
         }))
-        .pipe(gulp.dest('dist/img'))
-        .pipe(notify({ message: 'img task complete' }));;
+        .pipe(gulp.dest('dist/img'));
 });
 
 // Deploy to server
@@ -88,7 +84,7 @@ gulp.task('deploy', function() {
   rsync({
     ssh: true,
     src: './dist/',
-    dest: 'bstandards@morinehtar.dreamhost.com:~/updogtoys.com/',
+    dest: 'bstandards@hugh-williamson.dreamhost.com:~/updogtoys.com/',
     recursive: true,
     syncDest: true,
     args: ['--verbose']
