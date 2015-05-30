@@ -1,4 +1,15 @@
+//  Resize hero image
+function resizeHero() {
+  var vHeight = $(window).height(),
+      vWidth = $(window).width(),
+      hero = $('.hero');
+
+  hero.css({"height":vHeight,"width":vWidth});
+}
+
 $(document).ready(function() {
+  resizeHero();
+
 /***************** Waypoints ******************/
   $('.wp1').waypoint(function() {
     $('.wp1').addClass('animated fadeInLeft');
@@ -30,22 +41,28 @@ $(document).ready(function() {
   }, {
     offset: '75%'
   });
-  resizeHero();
+
+  $(".fancybox").fancybox({
+    padding : 0,
+  });
+  $('.fancybox-media').fancybox({
+    padding: 0,
+    helpers : {
+      media: {
+          youtube : {
+              params : {
+                  autoplay : 0
+              }
+          }
+      }
+    }
+  })
+
 });
 
 window.onresize = function(event) {
   resizeHero();
 }
-
-//  Resize hero image
-function resizeHero() {
-  var vHeight = $(window).height(),
-      vWidth = $(window).width(),
-      hero = $('.hero');
-
-  hero.css({"height":vHeight,"width":vWidth});
-}
-
 
 // Modal
 
@@ -115,8 +132,4 @@ $(document).ready(function(){
             $(this).removeClass("hover");
         });
     }
-});
-
-$(function() {
-  Grid.init();
 });

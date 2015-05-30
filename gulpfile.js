@@ -35,7 +35,7 @@ gulp.task('css', function() {
     .pipe(gulp.dest(cssDst))
     .pipe(uncss({
       html: [htmlSrc],
-      ignore: [/.overlay.*/, /\.effects.*/, /\.og.*/]
+      ignore: [/.overlay.*/, /\.effects.*/, /\.fancybox*/]
     }
     ))
     .pipe(gulp.dest(cssDst))
@@ -52,11 +52,17 @@ var sourcemaps = require('gulp-sourcemaps');
 
 gulp.task('js', function() {
   var jsDst = './dist/js';
-  gulp.src(['./src/js/waypoints.min.js', './src/js/bootstrap.js', './src/js/modernizr.js', './src/js/grid.js', './src/js/triangle.js', './src/js/app.js'])
+  gulp.src(['./src/js/waypoints.min.js',
+            './src/js/bootstrap.js',
+            './src/js/modernizr.js',
+            './src/js/triangle.js',
+            './src/js/jquery.fancybox.js',
+            './src/js/jquery.fancybox-media.js',
+            './src/js/app.js'])
     .pipe(sourcemaps.init())
       .pipe(concat('app.js'))
       .pipe(uglify())
-    .pipe(sourcemaps.write())
+    .pipe(sourcemaps.write('../maps'))
     .pipe(gulp.dest(jsDst))
     .pipe(rename({suffix: '.min'}))
     .pipe(gulp.dest(jsDst));
@@ -74,6 +80,11 @@ gulp.task('img', function () {
             use: [pngcrush()]
         }))
         .pipe(gulp.dest('dist/img'));
+});
+
+gulp.task('fonts', function() {
+    return gulp.src(['src/fonts/*'])
+        .pipe(gulp.dest('dist/fonts/'));
 });
 
 // Deploy to server
@@ -109,7 +120,7 @@ gulp.task('serve', function() {
   // gulp.watch('src/**/*', ['deploy']);
 });
 
-gulp.task('build', ['html', 'js', 'css', 'img']);
+gulp.task('build', ['html', 'js', 'css', 'img', 'fonts']);
 
 gulp.task('freshdep', ['critical', 'deploy']);
 
