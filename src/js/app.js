@@ -51,7 +51,7 @@ $(document).ready(function() {
       media: {
           youtube : {
               params : {
-                  autoplay : 0
+                  autoplay : 1
               }
           }
       }
@@ -99,6 +99,10 @@ $(function() {
 /***************** Nav Transformicon ******************/
 
 document.querySelector("#nav-toggle").addEventListener("click", function() {
+  this.classList.toggle("active");
+});
+
+document.querySelector("nav").addEventListener("click", function() {
   this.classList.toggle("active");
 });
 

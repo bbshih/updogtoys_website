@@ -133,10 +133,6 @@ h1 {
   font-size: 2em;
 }
 
-small {
-  font-size: 80%;
-}
-
 img {
   border: 0;
 }
@@ -261,20 +257,10 @@ h2 {
   color: inherit;
 }
 
-h1 small {
-  font-weight: normal;
-  line-height: 1;
-  color: #999;
-}
-
 h1,
 h2 {
   margin-top: 20px;
   margin-bottom: 10px;
-}
-
-h1 small {
-  font-size: 65%;
 }
 
 h1 {
@@ -287,10 +273,6 @@ h2 {
 
 p {
   margin: 0 0 10px;
-}
-
-small {
-  font-size: 85%;
 }
 
 .text-center {
@@ -611,10 +593,6 @@ p {
 
 /* * Addresses `quotes` property not supported in Safari 4. */
 
-small {
-  font-size: 75%;
-}
-
 /* * Prevents `sub` and `sup` affecting `line-height` in all browsers. */
 
 /* ==========================================================================
@@ -761,15 +739,15 @@ Global Styles
 ========================================================================== */
 
 a {
-  color: #696D76;
+  color: #00A6AF;
+  text-decoration: none;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
 }
 
 a:hover,
 a:focus {
-  color: #00A6AF;
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 p {
@@ -777,6 +755,11 @@ p {
   word-spacing: 1px;
   line-height: 25px;
   font-size: 1em;
+  margin: 1em 0;
+}
+
+p:last-of-type {
+  margin-bottom: 0;
 }
 
 h1,
@@ -784,6 +767,10 @@ h2 {
   color: #696D76;
   text-transform: uppercase;
   margin: 0;
+}
+
+.second-headline {
+  margin-top: 1em;
 }
 
 h1::after,
@@ -796,7 +783,7 @@ h2::after {
 }
 
 .section-padding {
-  padding: 2em 0;
+  padding: 3em 0;
 }
 
 .dark-bg {
@@ -958,6 +945,7 @@ Hero
   padding: 1em 0;
   height: 800px;
   text-align: center;
+  position: relative;
 }
 
 .hero h1,
@@ -993,7 +981,7 @@ input[type=email] {
 
 .order-btn {
   background: #00A6AF;
-  padding: 20px 40px;
+  padding: 1em 2em;
   border: 0;
   color: #fff;
   text-transform: uppercase;
@@ -1007,6 +995,25 @@ input[type=email] {
 .order-btn:hover,
 .order-btn:focus {
   background: #004549;
+  color: #fff;
+}
+
+.secondary-btn {
+  display: inline-block;
+  padding: 1em 1em;
+  background-color: #6B6F73;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1px;
+  border: 0;
+  margin-top: 0.5em;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+.secondary-btn:hover,
+.secondary-btn:focus {
+  background: #696D76;
   color: #fff;
 }
 
@@ -1035,6 +1042,10 @@ Testimonials
 Features
 ========================================================================== */
 
+.triplet:nth-child(n+2) {
+  margin-top: 2em;
+}
+
 /* ==========================================================================
 Kickstarter Section
 ========================================================================== */
@@ -1048,11 +1059,7 @@ Kickstarter Section
 }
 
 .kickstarter h2 {
-  color: #00df6f;
-}
-
-.caption {
-  margin-top: 0;
+  color: #fff;
 }
 
 /* ==========================================================================
@@ -1084,20 +1091,36 @@ Swag
 
 .swag {
   background: url("../img/Dogs With Toy-2167.jpg") no-repeat center center;
+}
+
+.order-cta {
+  background: url("../img/Reggie with Toy-3803.jpg") no-repeat center center;
+}
+
+.swag,
+.order-cta {
   background-size: cover;
   background-attachment: fixed;
   padding: 50px 0;
 }
 
-.swag h1 {
+.swag h1,
+.order-cta h1 {
   color: #fff;
-  font-size: 40px;
   text-transform: uppercase;
-  letter-spacing: 5px;
 }
 
-.swag h1::after {
+.swag h1::after,
+.order-cta h1::after {
   display: none;
+}
+
+.order-cta p {
+  color: #fff;
+}
+
+.swag h1 {
+  letter-spacing: 5px;
 }
 
 .swag h1 span {
@@ -1107,16 +1130,27 @@ Swag
 }
 
 /* ==========================================================================
-Videos
+Photos
 ========================================================================== */
 
-.videos {
-  padding: 0 1em;
+.gallery ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.gallery ul li {
+  display: inline-block;
+}
+
+.gallery ul li a {
+  margin-bottom: 0.5em;
+  display: inline-block;
 }
 
 @media screen and (min-width: 500px) {
-  .videos {
-    padding: 0;
+  .gallery ul li a {
+    margin-right: 0.5em;
   }
 }
 
@@ -1269,23 +1303,17 @@ Subscribe
   padding: 120px 0 140px;
 }
 
-.subscribe h1 {
+.subscribe .fa-paper-plane {
+  font-size: 1.5em;
   color: #fff;
-  margin-bottom: 40px;
-}
-
-.subscribe h1 span {
   display: block;
-  font-size: 15px;
-  text-transform: uppercase;
-  font-weight: bold;
-  margin-top: 20px;
-  letter-spacing: 1px;
 }
 
-.subscribe small {
-  font-size: 16px;
+.subscribe h2 {
   color: #fff;
+  margin: 1em 0 0 0;
+  display: block;
+  letter-spacing: 1px;
 }
 
 .subscribe form {
@@ -1319,22 +1347,11 @@ Subscribe
 }
 
 /* ==========================================================================
-CTA
-========================================================================== */
-
-.order-cta {
-  background-color: #ffffff;
-  padding: 93px 0;
-  margin-top: -280px;
-  cursor: pointer;
-}
-
-/* ==========================================================================
 FAQ
 ========================================================================== */
 
 .faq .question h2 {
-  margin-top: 4px;
+  margin-top: 1em;
 }
 
 .faq .answer {
@@ -1346,11 +1363,15 @@ FAQ
 }
 
 /* ==========================================================================
-Team
+Stores
 ========================================================================== */
 
-.team img {
-  margin-top: .83em;
+/* ==========================================================================
+About
+========================================================================== */
+
+.about img {
+  margin-bottom: 1em;
   width: 100%;
   max-width: 500px;
 }
@@ -1396,14 +1417,6 @@ Contact
   background: #00A6AF;
 }
 
-.contact-details {
-  margin: 70px 0;
-}
-
-.contact-details h2 {
-  font-size: 20px;
-}
-
 .contact-details h2 span {
   display: block;
   color: #00A6AF;
@@ -1415,6 +1428,10 @@ Contact
 
 .contact-wrap {
   position: relative;
+}
+
+.box-hover {
+  margin-bottom: 1em;
 }
 
 /* ==========================================================================
@@ -1441,7 +1458,7 @@ Social Buttons
 
 ul.social-buttons {
   list-style: none;
-  margin: 0;
+  margin: 1em 0 0 0;
   padding: 0;
 }
 
@@ -1505,38 +1522,11 @@ Waypoints
   height: 100%;
 }
 
-.video-container {
-  position: relative;
-  padding-bottom: 56.25%;
-  padding-top: 30px;
-  height: 0;
-  overflow: hidden;
-}
-
-.video-container iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
 /* 320px (iPhone) */
 
 /* 480px (WVGA - Low End Windows Phone) */
 
 @media screen and (max-width: 480px) {
-  .toy-clear-wrapper {
-    background: #f3f5f8;
-    height: 640px;
-  }
-
-  .wp4,
-  .wp5,
-  .light-box {
-    margin-bottom: 30px;
-  }
-
   .subscribe input[type=email] {
     margin-bottom: 1em;
   }
@@ -1545,7 +1535,8 @@ Waypoints
 /* xGA iPad */
 
 @media screen and (max-width: 1024px) {
-  .swag {
+  .swag,
+  .order-cta {
     background-attachment: scroll;
   }
 

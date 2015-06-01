@@ -4,14 +4,6 @@
 /* 480px (WVGA - Low End Windows Phone) */
 
 @media screen and (max-width: 480px) {
-    .toy-clear-wrapper {
-        background: #f3f5f8;
-        height: 640px;
-    }
-    .wp2, .wp4, .wp5, .light-box {
-        margin-bottom: 30px;
-    }
-
     .credit {
         text-align: center;
     }
@@ -23,7 +15,7 @@
 
 @media screen and (max-width: 1024px) {
     // .wp3 { background-position: 50px 0; }
-    .swag {
+    .swag, .order-cta {
         background-attachment: scroll;
     }
     .subscribe {
