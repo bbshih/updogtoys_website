@@ -514,6 +514,11 @@ html a {
 * elements. */
 
 @font-face {
+  font-family: Sofia;
+  src: url("../fonts/SofiaProLight.otf");
+}
+
+@font-face {
   font-family: Apercu;
   src: url("../fonts/Apercu Regular.otf");
 }
@@ -764,6 +769,7 @@ p:last-of-type {
 
 h1,
 h2 {
+  font-family: 'Sofia';
   color: #696D76;
   text-transform: uppercase;
   margin: 0;
@@ -954,7 +960,7 @@ Hero
 }
 
 .hero h1 {
-  font-size: 4em;
+  font-size: 3em;
   line-height: 1em;
   margin: 0;
 }
@@ -969,6 +975,7 @@ Hero
 }
 
 .hero .hero-text {
+  color: #fff;
   position: absolute;
   top: 50%;
   left: 0;
@@ -1049,18 +1056,6 @@ Features
 /* ==========================================================================
 Kickstarter Section
 ========================================================================== */
-
-.kickstarter {
-  background-color: #353535;
-}
-
-.kickstarter p {
-  color: #fff;
-}
-
-.kickstarter h2 {
-  color: #fff;
-}
 
 /* ==========================================================================
 Design details Section
@@ -1520,6 +1515,40 @@ Waypoints
 .wp3 {
   background: url("../img/Toy--4crop.jpg") no-repeat center center/cover;
   height: 100%;
+}
+
+#wholesale .hero {
+  background: url("../img/Dogs With Toy-2280.jpg") no-repeat center center;
+  background-size: cover;
+  padding: 0;
+}
+
+#wholesale .hero h1 {
+  font-size: 2em;
+  margin-bottom: .5em;
+}
+
+#wholesale .hero ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  font-size: 1.2em;
+}
+
+#wholesale .hero .hero-text {
+  padding: 1em;
+  color: #fff;
+  top: 20%;
+  background-color: rgba(105, 109, 118, 0.8);
+}
+
+#wholesale .hero p {
+  margin-bottom: 1em;
+}
+
+#wholesale .hero a:link {
+  color: #fff;
+  text-decoration: underline;
 }
 
 /* 320px (iPhone) */

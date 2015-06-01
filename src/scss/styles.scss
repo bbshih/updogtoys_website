@@ -52,6 +52,7 @@ html, html a {
 }
 /* * Addresses `font-family` inconsistency between `textarea` and other form
 * elements. */
+ @font-face { font-family: Sofia; src: url('../fonts/SofiaProLight.otf')}
  @font-face { font-family: Apercu; src: url('../fonts/Apercu Regular.otf'); }
 html, button, input, select, textarea {
     font-family: 'Apercu', 'Helvetica', sans-serif;
@@ -402,6 +403,7 @@ p {
     }
 }
 h1, h2 {
+    font-family: 'Sofia';
     color: $gray;
     text-transform: uppercase;
     margin: 0;
@@ -594,7 +596,7 @@ Hero
         color: #ffffff;
     }
     h1 {
-        font-size: 4em;
+        font-size: 3em;
         line-height: 1em;
         margin: 0;
         &::after {
@@ -606,6 +608,7 @@ Hero
         margin: 0;
     }
     .hero-text {
+        color: #fff;
         position: absolute;
         top: 50%;
         left: 0;
@@ -706,15 +709,6 @@ Features
 Kickstarter Section
 ========================================================================== */
 .kickstarter {
-    background-color: #353535;
-    p {
-        color: #fff;
-    }
-    h2 {
-        color: #fff;
-    }
-}
-.caption {
 }
 /* ==========================================================================
 Design details Section
@@ -1174,4 +1168,39 @@ Waypoints
 .wp3 {
     background: url('../img/Toy--4crop.jpg') no-repeat center center/cover;
     height: 100%;
+}
+
+// For wholesale page only:
+#wholesale {
+    .hero {
+        background: url('../img/Dogs With Toy-2280.jpg') no-repeat center center;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        padding: 0;
+        h1 {
+            font-size: 2em;
+            margin-bottom: .5em;
+        }
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            font-size: 1.2em;
+        }
+        .hero-text {
+            padding: 1em;
+            color: #fff;
+            top: 20%;
+            background-color: rgba($gray, 0.8);
+        }
+        p {
+            margin-bottom: 1em;
+        }
+        a:link {
+            color: #fff;
+            text-decoration: underline;
+        }
+    }
 }

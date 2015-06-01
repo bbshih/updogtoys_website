@@ -26,7 +26,7 @@ var minifycss = require( 'gulp-minify-css' );
 gulp.task('css', function() {
   var scssSrc = './src/css/app.scss',
         cssDst = './dist/css',
-        htmlSrc = './src/index.html';
+        htmlSrc = ['./src/index.html', './src/wholesale.html'];
   return gulp.src('./src/scss/app.scss')
     .pipe(sass())
     .on('error', function (err) { console.log(err.message); })
@@ -34,7 +34,7 @@ gulp.task('css', function() {
     .pipe(lint())
     .pipe(gulp.dest(cssDst))
     .pipe(uncss({
-      html: [htmlSrc],
+      html: htmlSrc,
       ignore: [/.overlay.*/, /\.effects.*/, /\.fancybox*/]
     }
     ))
@@ -94,7 +94,7 @@ gulp.task('deploy', function() {
   rsync({
     ssh: true,
     src: './dist/',
-    dest: 'bstandards@hugh-williamson.dreamhost.com:~/updogtoys.com/',
+    dest: 'bstandards@hugh-williamson.dreamhost.com:~/updogtoys.com/test/',
     recursive: true,
     syncDest: true,
     args: ['--verbose']
@@ -115,7 +115,7 @@ gulp.task('serve', function() {
   gulp.watch('src/scss/*.scss', ['css']);
   gulp.watch('src/js/*.js', ['js', reload]);
   gulp.watch('src/img/**/*', ['img', reload]);
-  gulp.watch('src/index.html', ['html', reload]);
+  gulp.watch('src/*.html', ['html', reload]);
   // gulp.watch('src/**/*', ['deploy']);
 });
 
