@@ -582,7 +582,7 @@ Hero
 ========================================================================== */
 
 .hero {
-    background: url('../img/Dogs With Toy-2960.jpg') no-repeat center center;
+    background: url('../img/header.jpg') no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -608,11 +608,11 @@ Hero
         margin: 0;
     }
     .hero-text {
-        color: #fff;
         position: absolute;
         top: 50%;
         left: 0;
         width: 100%;
+        padding: 1em;
     }
 }
 input[type=email] {
@@ -741,7 +741,7 @@ Design details Section
 Swag
 ========================================================================== */
 .swag {
-    background: url('../img/Dogs With Toy-2167.jpg') no-repeat center center;
+    background: url('../img/break.jpg') no-repeat center center;
 }
 .order-cta {
     background: url('../img/Reggie with Toy-3803.jpg') no-repeat center center;
@@ -795,6 +795,31 @@ Photos
                     margin-right: 0.5em;
                 }
                 display: inline-block;
+            }
+        }
+    }
+}
+
+
+.reveal-main {
+    .reveal-overlay {
+        display: none;
+    }
+    &.inactive {
+        height: 400px;
+        position: relative;
+        overflow: hidden;
+        .reveal-overlay {
+            position: absolute;
+            bottom: 0;
+            padding: 1em 0;
+            width: 100%;
+            background-color: rgba(30,30,30,.4);
+            display: table-cell;
+            vertical-align: bottom;
+            cursor: pointer;
+            a:link, a:visited {
+                color: #fff;
             }
         }
     }

@@ -58,6 +58,11 @@ $(document).ready(function() {
     }
   })
 
+  $('.reveal-overlay').click(function(e) {
+    e.preventDefault();
+    $('#' + this.dataset.gallery).removeClass('inactive');
+  })
+
 });
 
 window.onresize = function(event) {
@@ -137,3 +142,4 @@ $(document).ready(function(){
         });
     }
 });
+

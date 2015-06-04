@@ -59,7 +59,7 @@ gulp.task('js', function() {
             './src/js/jquery.fancybox-media.js',
             './src/js/app.js'])
     .pipe(sourcemaps.init())
-      .pipe(concat('app.js'))
+      .pipe(concat('main.js'))
       .pipe(uglify())
     .pipe(sourcemaps.write('../maps'))
     .pipe(gulp.dest(jsDst))

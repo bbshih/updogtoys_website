@@ -56,3 +56,45 @@
         text-align: center;
     }
 }
+
+@media screen and (min-width: 892px) {
+    .triplet:nth-child(n+2) {
+        margin:0;
+    }
+}
+
+@media screen and (min-width: 480px) {
+    body {
+        font-size: 18px;
+    }
+}
+@media screen and (min-width: 1025px) {
+    body {
+        font-size: 17px;
+    }
+    h1 {
+        font-size: 3em;
+    }
+    .hero {
+        h1 {
+            font-size: 4em;
+        }
+        .hero-text {
+            top: 73%;
+            background-color: rgba($gray, 0.3);
+        }
+    }
+    .section-padding {
+        padding: 4em 0;
+    }
+    h1::after, h2::after {
+        margin: 0.5em auto 0.8em auto;
+    }
+    .order-cta {
+        padding: 5em 0;
+        p {
+            font-size: 1.5em;
+            line-height: 1.3em;
+        }
+    }
+}
