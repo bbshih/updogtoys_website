@@ -33,11 +33,11 @@ gulp.task('css', function() {
     .pipe(prefix('last 3 versions'))
     .pipe(lint())
     .pipe(gulp.dest(cssDst))
-    .pipe(uncss({
-      html: htmlSrc,
-      ignore: [/.overlay.*/, /\.effects.*/, /\.fancybox*/]
-    }
-    ))
+    // .pipe(uncss({
+    //   html: htmlSrc,
+    //   ignore: [/.overlay.*/, /\.effects.*/, /\.fancybox*/, /\.question/]
+    // }
+    // ))
     .pipe(gulp.dest(cssDst))
     .pipe(rename({suffix: '.min'}))
     .pipe(minifycss())

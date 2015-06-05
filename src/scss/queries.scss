@@ -67,6 +67,10 @@
     body {
         font-size: 18px;
     }
+    .nav-logo {
+        margin-top: 0;
+        height: 130px;
+    }
 }
 @media screen and (min-width: 1025px) {
     body {
@@ -81,7 +85,6 @@
         }
         .hero-text {
             top: 73%;
-            background-color: rgba($gray, 0.3);
         }
     }
     .section-padding {
@@ -90,7 +93,7 @@
     h1::after, h2::after {
         margin: 0.5em auto 0.8em auto;
     }
-    .order-cta {
+    .order-cta, .swag {
         padding: 5em 0;
         p {
             font-size: 1.5em;
