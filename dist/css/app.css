@@ -7362,7 +7362,7 @@ html, html a {
   src: url("../fonts/SofiaProLight.otf"); }
 @font-face {
   font-family: Apercu;
-  src: url("../fonts/Apercu Regular.otf"); }
+  src: url("../fonts/ApercuRegular.otf"); }
 html, button, input, select, textarea {
   font-family: 'Apercu', 'Helvetica', sans-serif; }
 
@@ -7396,7 +7396,8 @@ h1 {
 
 h2 {
   font-size: 1.5em;
-  margin: 0.83em 0; }
+  margin: 0.83em 0;
+  text-align: center; }
 
 h3 {
   font-size: 1.17em;
@@ -7487,7 +7488,7 @@ dd {
 
 /* * Addresses paddings set differently in IE 6/7. */
 menu, ol, ul {
-  padding: 0 0 0 40px; }
+  padding: 0 0 0 1.2em; }
 
 /* * Corrects list images handled incorrectly in IE 7. */
 nav ul, nav ol {
@@ -7846,7 +7847,7 @@ Hero
     margin: 0; }
   .hero .hero-text {
     position: absolute;
-    top: 50%;
+    bottom: 0;
     left: 0;
     width: 100%;
     padding: 1em; }
@@ -7946,7 +7947,7 @@ Kickstarter Section
 Design details Section
 ========================================================================== */
 .toy-clear-wrapper {
-  height: 490px; }
+  height: 33em; }
 
 .toy-clear {
   width: 50%;
@@ -8148,7 +8149,7 @@ a.expand {
   margin-left: auto;
   margin-right: auto;
   top: 0;
-  margin-top: 2em; }
+  margin-top: 4em; }
 
 /* ==========================================================================
 Gallery
@@ -8221,18 +8222,29 @@ Subscribe
 /* ==========================================================================
 FAQ
 ========================================================================== */
+.faq .question:first-child h2 {
+  margin-top: 0em; }
 .faq .question h2 {
-  margin: 1em 0 0.5em 0; }
+  margin: 2em 0 0.5em 0; }
   .faq .question h2::after {
     display: none; }
 .faq .answer {
   text-align: left; }
+  .faq .answer.purchase {
+    text-align: center; }
   .faq .answer p {
     margin-top: 0; }
 
 /* ==========================================================================
 Stores
 ========================================================================== */
+.stores p {
+  margin: 0; }
+.stores ul {
+  margin-top: 0; }
+.stores .store-ask {
+  margin-top: 1em; }
+
 /* ==========================================================================
 About
 ========================================================================== */
@@ -8459,8 +8471,6 @@ Waypoints
 
   .hero h1 {
     font-size: 4em; }
-  .hero .hero-text {
-    top: 73%; }
 
   .section-padding {
     padding: 4em 0; }
@@ -8469,7 +8479,7 @@ Waypoints
     margin: 0.5em auto 0.8em auto; }
 
   .order-cta, .swag {
-    padding: 5em 0; }
+    padding: 8em 0; }
     .order-cta p, .swag p {
       font-size: 1.5em;
       line-height: 1.3em; } }

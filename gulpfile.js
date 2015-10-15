@@ -94,7 +94,7 @@ gulp.task('deploy', function() {
   rsync({
     ssh: true,
     src: './dist/',
-    dest: 'bstandards@hugh-williamson.dreamhost.com:~/updogtoys.com/test/',
+    dest: 'bstandards@hugh-williamson.dreamhost.com:~/updogtoys.com/',
     recursive: true,
     syncDest: true,
     args: ['--verbose']
@@ -135,7 +135,7 @@ gulp.task('copystyles', function () {
         .pipe(gulp.dest('dist/css'));
 });
 
-gulp.task('critical', ['build', 'copystyles'], function (cb) {
+gulp.task('critical', ['copystyles'], function (cb) {
     critical.generateInline({
         base: 'dist/',
         src: 'index.html',
