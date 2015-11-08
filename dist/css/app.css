@@ -8238,12 +8238,22 @@ FAQ
 /* ==========================================================================
 Stores
 ========================================================================== */
+.stores .buy-image {
+  max-width: 100%; }
 .stores p {
   margin: 0; }
 .stores ul {
   margin-top: 0; }
 .stores .store-ask {
   margin-top: 1em; }
+
+.buy-box {
+  display: inline-block;
+  padding: 1em;
+  margin-bottom: 4em;
+  background-color: #fff; }
+  .buy-box .shopify-box {
+    border: 1px solid #f3f5f8; }
 
 /* ==========================================================================
 About

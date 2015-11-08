@@ -1050,6 +1050,9 @@ FAQ
 Stores
 ========================================================================== */
 .stores {
+    .buy-image {
+        max-width: 100%;
+    }
     p {
         margin: 0;
     }
@@ -1058,6 +1061,15 @@ Stores
     }
     .store-ask {
         margin-top: 1em;
+    }
+}
+.buy-box {
+    display: inline-block;
+    padding: 1em;
+    margin-bottom: 4em;
+    background-color: #fff;
+    .shopify-box {
+        border: 1px solid $grayLightBg;
     }
 }
 
