@@ -8443,6 +8443,18 @@ Waypoints
     color: #fff;
     text-decoration: underline; }
 
+.sale-banner {
+  display: none;
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 99999;
+  font-size: 1.3em; }
+
 /* 320px (iPhone) */
 /* 480px (WVGA - Low End Windows Phone) */
 @media screen and (max-width: 480px) {
