@@ -63,15 +63,15 @@ $(document).ready(function() {
     $('#' + this.dataset.gallery).removeClass('inactive');
   })
 
-  window.setTimeout(function() {
-    $('.sale-banner').slideDown();
-  }, 2000);
+  // window.setTimeout(function() {
+  //   $('.sale-banner').slideDown();
+  // }, 2000);
 });
 
-$('#close-banner').click(function(e) {
-  e.preventDefault();
-  $('.sale-banner').slideUp();
-});
+// $('#close-banner').click(function(e) {
+//   e.preventDefault();
+//   $('.sale-banner').slideUp();
+// });
 
 window.onresize = function(event) {
   resizeHero();
