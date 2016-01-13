@@ -60,8 +60,8 @@ html,body
 }
 /* * Addresses `font-family` inconsistency between `textarea` and other form
 * elements. */
- @font-face { font-family: Sofia; src: url('../fonts/SofiaProLight.otf')}
- @font-face { font-family: Apercu; src: url('../fonts/ApercuRegular.otf'); }
+ @font-face { font-family: Sofia; src: url('SofiaProLight.otf')}
+ @font-face { font-family: Apercu; src: url('ApercuRegular.otf'); }
 html, button, input, select, textarea {
     font-family: 'Apercu', 'Helvetica', sans-serif;
 }
@@ -587,7 +587,7 @@ Hero
 ========================================================================== */
 
 .hero {
-    background: url('../img/header.jpg') no-repeat center center;
+    background: url('header.jpg') no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -757,10 +757,10 @@ Design details Section
 Swag
 ========================================================================== */
 .swag {
-    background: url('../img/break.jpg') no-repeat center center;
+    background: url('break.jpg') no-repeat center center;
 }
 .order-cta {
-    background: url('../img/Reggie with Toy-3803.jpg') no-repeat center center;
+    background: url('Reggie with Toy-3803.jpg') no-repeat center center;
 }
 .swag, .order-cta {
     -webkit-background-size: cover;
@@ -989,7 +989,7 @@ Subscribe
 ========================================================================== */
 
 .subscribe {
-    background: url('../img/macho-savvy.jpg') no-repeat center center;
+    background: url('macho-savvy.jpg') no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -1249,14 +1249,14 @@ Waypoints
     -webkit-animation-delay: 1s;
 }
 .wp3 {
-    background: url('../img/Toy--4crop.jpg') no-repeat center center/cover;
+    background: url('Toy--4crop.jpg') no-repeat center center/cover;
     height: 100%;
 }
 
 // For wholesale page only:
 #wholesale {
     .hero {
-        background: url('../img/Dogs With Toy-2280.jpg') no-repeat center center;
+        background: url('Dogs With Toy-2280.jpg') no-repeat center center;
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;

@@ -1,69 +1,63 @@
 var gulp = require('gulp');
-var browserSync = require('browser-sync');
-var reload = browserSync.reload;
 var notify = require('gulp-notify');
 var rename = require( 'gulp-rename' );
 var changed = require('gulp-changed');
 
 // Minify HTML
-var minifyHTML = require('gulp-minify-html');
+// var minifyHTML = require('gulp-minify-html');
 gulp.task('html', function() {
-  var htmlSrc = './src/*.html',
-      htmlDst = './dist';
+  var htmlSrc = './src/layout/*.liquid',
+      htmlDst = './up-dog-toys-2-83629830/layout';
 
   gulp.src(htmlSrc)
-    .pipe(minifyHTML())
+    // .pipe(minifyHTML())
+    .pipe(changed('up-dog-toys-2-83629830/assets/**/*'))
     .pipe(gulp.dest(htmlDst));
+
+  var htmlSnippetsSrc = './src/snippets/*.liquid',
+      htmlSnippetsDst = './up-dog-toys-2-83629830/snippets';
+
+  gulp.src(htmlSnippetsSrc)
+    // .pipe(minifyHTML())
+    .pipe(gulp.dest(htmlSnippetsDst));
+
+  var htmlTemplatesSrc = './src/templates/*.liquid',
+      htmlTemplatesDst = './up-dog-toys-2-83629830/templates';
+
+  gulp.src(htmlTemplatesSrc)
+    // .pipe(minifyHTML())
+    .pipe(gulp.dest(htmlTemplatesDst));
 });
 
-// Compile sass, remove unused CSS and prep for use
+// Prep CSS
 var sass = require('gulp-ruby-sass');
-var uncss = require('gulp-uncss');
 var prefix = require( 'gulp-autoprefixer' );
 var lint = require('gulp-csslint');
-var minifycss = require( 'gulp-minify-css' );
 
 gulp.task('css', function() {
-  var scssSrc = './src/css/app.scss',
-        cssDst = './dist/css',
-        htmlSrc = ['./src/index.html', './src/wholesale.html'];
+  var cssDst = './up-dog-toys-2-83629830/assets';
   return gulp.src('./src/scss/app.scss')
     .pipe(sass())
     .on('error', function (err) { console.log(err.message); })
     .pipe(prefix('last 3 versions'))
     .pipe(lint())
-    .pipe(gulp.dest(cssDst))
-    // .pipe(uncss({
-    //   html: htmlSrc,
-    //   ignore: [/.overlay.*/, /\.effects.*/, /\.fancybox*/, /\.question/]
-    // }
-    // ))
-    .pipe(gulp.dest(cssDst))
-    .pipe(rename({suffix: '.min'}))
-    .pipe(minifycss())
-    .pipe(gulp.dest(cssDst))
-    .pipe(reload({ stream:true }));
+    .pipe(gulp.dest(cssDst));
 });
 
 // Uglify, concat scripts together and sourcemap
 var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
-var sourcemaps = require('gulp-sourcemaps');
 
 gulp.task('js', function() {
-  var jsDst = './dist/js';
+  var jsDst = './up-dog-toys-2-83629830/assets';
   gulp.src(['./src/js/waypoints.min.js',
             './src/js/bootstrap.js',
             './src/js/modernizr.js',
             './src/js/jquery.fancybox.js',
             './src/js/jquery.fancybox-media.js',
             './src/js/app.js'])
-    .pipe(sourcemaps.init())
-      .pipe(concat('main.js'))
-      .pipe(uglify())
-    .pipe(sourcemaps.write('../maps'))
-    .pipe(gulp.dest(jsDst))
-    .pipe(rename({suffix: '.min'}))
+    .pipe(concat('main.js'))
+    .pipe(uglify())
     .pipe(gulp.dest(jsDst));
 });
 
@@ -72,78 +66,42 @@ var imagemin = require('gulp-imagemin');
 var pngcrush = require('imagemin-pngcrush');
 gulp.task('img', function () {
     return gulp.src('src/img/**/*')
-        .pipe(changed('dist/img/**/*'))
+        .pipe(changed('up-dog-toys-2-83629830/assets/**/*'))
         .pipe(imagemin({
             progressive: true,
             svgoPlugins: [{removeViewBox: false}],
             use: [pngcrush()]
         }))
-        .pipe(gulp.dest('dist/img'));
+        .pipe(gulp.dest('up-dog-toys-2-83629830/assets'));
 });
 
 gulp.task('fonts', function() {
     return gulp.src(['src/fonts/*'])
-        .pipe(gulp.dest('dist/fonts/'));
-});
-
-// Deploy to server
-var rsync = require('rsyncwrapper').rsync;
-var gutil = require('gulp-util');
-
-gulp.task('deploy', function() {
-  rsync({
-    ssh: true,
-    src: './dist/',
-    dest: 'bstandards@hugh-williamson.dreamhost.com:~/updogtoys.com/',
-    recursive: true,
-    syncDest: true,
-    args: ['--verbose']
-  }, function(error, stdout, stderr, cmd) {
-      gutil.log(stdout);
-  });
-  notify({ message: 'deploy complete'});
+        .pipe(gulp.dest('up-dog-toys-2-83629830/assets/'));
 });
 
 // Watch files for changes
-// Compile Sass, Upload and Reload
 gulp.task('serve', function() {
-  browserSync({
-    server: {
-      baseDir: './dist/'
-    }
-  });
   gulp.watch('src/scss/*.scss', ['css']);
-  gulp.watch('src/js/*.js', ['js', reload]);
-  gulp.watch('src/img/**/*', ['img', reload]);
-  gulp.watch('src/*.html', ['html', reload]);
-  // gulp.watch('src/**/*', ['deploy']);
+  gulp.watch('src/js/*.js', ['js']);
+  gulp.watch('src/img/**/*', ['img']);
+  gulp.watch('src/**/*.liquid', ['html']);
 });
 
 gulp.task('build', ['html', 'js', 'css', 'img', 'fonts']);
 
-gulp.task('freshdep', ['critical', 'deploy']);
+gulp.task('default', ['serve']);
 
-gulp.task('default', ['build', 'serve']);
+// Watches single files
+var watch = require('gulp-watch');
+var gulpShopify = require('gulp-shopify-upload');
 
-// Critical CSS
-var critical = require('critical');
-gulp.task('copystyles', function () {
-    return gulp.src(['dist/css/app.min.css'])
-        .pipe(rename({
-            basename: "site" // site.css
-        }))
-        .pipe(gulp.dest('dist/css'));
+gulp.task('shopifywatch', function() {
+  return watch('up-dog-toys-2-83629830/+(assets|layout|config|snippets|templates|locales)/**')
+.pipe(gulpShopify('b16d97ede7575eee88ccc10166262c3b', '7dca3f09363da78c8e6b01ba991abaaf', 'up-dog-toys-2.myshopify.com', ''));
 });
 
-gulp.task('critical', ['copystyles'], function (cb) {
-    critical.generateInline({
-        base: 'dist/',
-        src: 'index.html',
-        styleTarget: 'css/app.min.css',
-        htmlTarget: 'index.html',
-        minify: true,
-        width: 320,
-        height: 480,
-        minify: true
-    },cb);
-});
+// Default gulp action when gulp is run
+gulp.task('swatch', [
+  'shopifywatch'
+]);

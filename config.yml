@@ -1,0 +1,13 @@
+---
+# THEME GEM USAGE - visit https://github.com/Shopify/shopify_theme
+# Get your api_key and password at your-url.myshopify.com/admin/apps/private
+
+# example code
+:api_key: b16d97ede7575eee88ccc10166262c3b
+:password: 7dca3f09363da78c8e6b01ba991abaaf
+:store: up-dog-toys-2.myshopify.com
+:theme_id: up_dog_toys
+:ignore_files:
+:theme_name: "Up Dog Toys"
+  # - settings_data.json
+  # - logo.png
