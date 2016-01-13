@@ -7991,7 +7991,7 @@ Swag
   background: url("break.jpg") no-repeat center center; }
 
 .order-cta {
-  background: url("Reggie with Toy-3803.jpg") no-repeat center center; }
+  background: url("Reggie with Toy-3803.jpg") no-repeat center center #333; }
 
 .swag, .order-cta {
   background-size: cover;
@@ -8259,19 +8259,10 @@ Stores
   margin: 0; }
 .stores ul {
   margin-top: 0; }
+.stores .store-intro {
+  margin-bottom: 1em; }
 .stores .store-ask {
   margin-top: 1em; }
-
-.shopify-box {
-  margin-bottom: 1em;
-  width: 105px;
-  display: inline-block;
-  margin-left: 10px; }
-  .shopify-box.shopify-small-box {
-    margin: 0; }
-  .shopify-box.shopify-box-main {
-    width: 125px;
-    margin-bottom: 0; }
 
 /* ==========================================================================
 About
