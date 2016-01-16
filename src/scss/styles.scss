@@ -624,11 +624,11 @@ Hero
 input[type=email] {
     width: 20em;
 }
+.btn {
+    border-radius: 0;
+}
 .order-btn {
     background: $primaryColor;
-    &.order-btn-main {
-        background: $gray;
-    }
     padding: 1em 2em;
     border: 0;
     color: #fff;
@@ -1286,4 +1286,20 @@ Waypoints
     width: 100%;
     z-index: 99999;
     font-size: 1.3em;
+}
+
+// Non-homepage template
+header {
+    padding: 2em 0;
+}
+
+//  For product page
+.product-photos {
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
+    img {
+        width: 100%;
+    }
 }

@@ -43,7 +43,7 @@ gulp.task('css', function() {
     .pipe(gulp.dest(cssDst));
 });
 
-// Uglify, concat scripts together and sourcemap
+// Uglify, concat scripts together
 var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
 

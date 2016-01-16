@@ -18,9 +18,26 @@
 </head>
 
 <body id="top" class="{{ template | replace: '.', ' ' | truncatewords: 1, '' }}" id="{{ page_title | handle }}">
-  <header class="text-center">
-    <img src="{{ 'logo_grey.png' | asset_url }}">
-  </header>
+  <!-- <div class="sale-banner">Last day! 10% off 1 toy using code <strong>HOLIDAY10</strong> or 15% off 2+ toys using <strong>HOLIDAY15</strong>. Expires 12/26. <a href="#" id="close-banner">Close</a></div> -->
+  <nav>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2">
+          <nav class="pull">
+            <ul class="top-nav">
+              <li><a href="#features">Features <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
+              <li><a href="#gallery">Photos <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
+              <li><a href="#faq">FAQ <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
+              <li><a href="#returns">Return Policy <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
+              <li><a href="#stores">Where to buy <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
+              <li><a href="#about">About <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
+              <li><a href="#contact">Contact <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </nav>
   {{ content_for_layout }}
   <footer>
     <div class="container">
