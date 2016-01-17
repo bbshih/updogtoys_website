@@ -82,15 +82,22 @@ gulp.task('fonts', function() {
         .pipe(gulp.dest('up-dog-toys-2-83629830/assets/'));
 });
 
+gulp.task('locales', function() {
+    return gulp.src(['src/locales/*'])
+        .pipe(changed(imgDst))
+        .pipe(gulp.dest('up-dog-toys-2-83629830/locales/'));
+});
+
 // Watch files for changes
 gulp.task('serve', function() {
   gulp.watch('src/scss/*.scss', ['css']);
   gulp.watch('src/js/*.js', ['js']);
   gulp.watch('src/img/**/*', ['img']);
   gulp.watch('src/**/*.liquid', ['html']);
+  gulp.watch('src/**/*.json', ['locales']);
 });
 
-gulp.task('build', ['html', 'js', 'css', 'img', 'fonts']);
+gulp.task('build', ['html', 'js', 'css', 'img', 'fonts', 'locales']);
 
 gulp.task('default', ['serve']);
 

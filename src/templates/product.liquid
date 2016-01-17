@@ -2,14 +2,14 @@
 {% assign sold_out = 'Sold Out' %}
 {% assign unavailable = 'Unavailable' %}
 
-<div class="product container-fluid" itemscope itemtype="http://schema.org/Product">
+<div class="product container" itemscope itemtype="http://schema.org/Product">
 
   <meta itemprop="url" content="{{ shop.url }}{{ product.url }}" />
   <meta itemprop="image" content="{{ product | img_url: 'grande' }}" />
 
   <form action="/cart/add" method="post" enctype="multipart/form-data">
     <div class="row">
-      <div class="col-md-6">
+      <div class="col-sm-6">
         <div class="product-photos">
 
         {% if product.images.size == 0 %}
@@ -30,7 +30,7 @@
           {% if product.images.size > 1 %}
           <ul class="product-photo-thumbs clearfix row">
             {% for image in product.images %}
-            <li class="product-photo-thumb col-md-3">
+            <li class="product-photo-thumb col-sm-3">
               <a href="{{ image | img_url: '1024x1024' }}">
                 <img src="{{ image | img_url: 'small' }}" alt="{{ image.alt | escape }}" />
               </a>
@@ -44,7 +44,7 @@
         </div><!-- .product-photos -->
       </div>
 
-      <div class="col-md-6">
+      <div class="col-sm-6">
         <div class="product-details">
 
           {% comment %}
@@ -102,7 +102,7 @@
           </div>
 
           <div id="product-add">
-            <input type="submit" name="add" id="add" class="btn order-btn" value="{{ add_to_cart | escape }}">
+            <input type="submit" name="add" id="add" class="btn order-btn add-to-cart-btn" value="{{ add_to_cart | escape }}">
           </div>
 
           {% if collection %}

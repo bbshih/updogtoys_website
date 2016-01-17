@@ -19,7 +19,7 @@
 
 <body id="top" class="{{ template | replace: '.', ' ' | truncatewords: 1, '' }}" id="{{ page_title | handle }}">
   <header class="text-center">
-    <img src="{{ 'logo_grey.png' | asset_url }}">
+    <a href="/"><img src="{{ 'logo_grey.png' | asset_url }}"></a>
   </header>
   {{ content_for_layout }}
   <footer>
