@@ -35,8 +35,7 @@ var lint = require('gulp-csslint');
 
 gulp.task('css', function() {
   var cssDst = './up-dog-toys-2-83629830/assets';
-  return gulp.src('./src/scss/app.scss')
-    .pipe(sass())
+  return sass('./src/scss/app.scss')
     .on('error', function (err) { console.log(err.message); })
     .pipe(prefix('last 3 versions'))
     .pipe(lint())
@@ -97,9 +96,7 @@ gulp.task('serve', function() {
   gulp.watch('src/**/*.json', ['locales']);
 });
 
-gulp.task('build', ['html', 'js', 'css', 'img', 'fonts', 'locales']);
-
-gulp.task('default', ['serve']);
+gulp.task('default', ['html', 'js', 'css', 'img', 'fonts', 'locales']);
 
 // Watches single files
 var watch = require('gulp-watch');

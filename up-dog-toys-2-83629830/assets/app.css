@@ -1756,7 +1756,6 @@ figure {
 
 hr {
   height: 0;
-  -moz-box-sizing: content-box;
   box-sizing: content-box; }
 
 pre {
@@ -1806,8 +1805,7 @@ input {
 
 input[type="checkbox"],
 input[type="radio"] {
-  -moz-box-sizing: border-box;
-       box-sizing: border-box;
+  box-sizing: border-box;
   padding: 0; }
 
 input[type="number"]::-webkit-inner-spin-button,
@@ -1815,7 +1813,6 @@ input[type="number"]::-webkit-outer-spin-button {
   height: auto; }
 
 input[type="search"] {
-  -moz-box-sizing: content-box;
   box-sizing: content-box;
   -webkit-appearance: textfield; }
 
@@ -1916,12 +1913,10 @@ th {
   .table-bordered td {
     border: 1px solid #ddd !important; } }
 * {
-  -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
 *:before,
 *:after {
-  -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
 html {
@@ -1984,7 +1979,6 @@ img {
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 4px;
-  -webkit-transition: all .2s ease-in-out;
   transition: all .2s ease-in-out; }
 
 .img-circle {
@@ -3290,7 +3284,6 @@ label {
   font-weight: bold; }
 
 input[type="search"] {
-  -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
 input[type="radio"],
@@ -3338,7 +3331,6 @@ output {
   border: 1px solid #ccc;
   border-radius: 4px;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-  -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
   transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s; }
 
 .form-control:focus {
@@ -3976,7 +3968,6 @@ input[type="button"].btn-block {
 
 .fade {
   opacity: 0;
-  -webkit-transition: opacity .15s linear;
   transition: opacity .15s linear; }
 
 .fade.in {
@@ -3992,7 +3983,6 @@ input[type="button"].btn-block {
   position: relative;
   height: 0;
   overflow: hidden;
-  -webkit-transition: height .35s ease;
   transition: height .35s ease; }
 
 @font-face {
@@ -5975,7 +5965,6 @@ a.list-group-item.active > .badge,
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 4px;
-  -webkit-transition: all .2s ease-in-out;
   transition: all .2s ease-in-out; }
 
 .thumbnail > img,
@@ -6093,11 +6082,9 @@ a.thumbnail.active {
   text-align: center;
   background-color: #428bca;
   box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
-  -webkit-transition: width .6s ease;
   transition: width .6s ease; }
 
 .progress-striped .progress-bar {
-  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-size: 40px 40px; }
 
@@ -6109,28 +6096,24 @@ a.thumbnail.active {
   background-color: #5cb85c; }
 
 .progress-striped .progress-bar-success {
-  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent); }
 
 .progress-bar-info {
   background-color: #5bc0de; }
 
 .progress-striped .progress-bar-info {
-  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent); }
 
 .progress-bar-warning {
   background-color: #f0ad4e; }
 
 .progress-striped .progress-bar-warning {
-  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent); }
 
 .progress-bar-danger {
   background-color: #d9534f; }
 
 .progress-striped .progress-bar-danger {
-  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent); }
 
 .media,
@@ -6656,8 +6639,9 @@ button.close {
   outline: 0; }
 
 .modal.fade .modal-dialog {
-  -webkit-transition: -webkit-transform .3s ease-out;
+  transition: -webkit-transform .3s ease-out;
   transition: transform .3s ease-out;
+  transition: transform .3s ease-out, -webkit-transform .3s ease-out;
   -webkit-transform: translate(0, -25%);
   -ms-transform: translate(0, -25%);
   transform: translate(0, -25%); }
@@ -6971,7 +6955,6 @@ button.close {
 .carousel-inner > .item {
   position: relative;
   display: none;
-  -webkit-transition: .6s ease-in-out left;
   transition: .6s ease-in-out left; }
 
 .carousel-inner > .item > img,
@@ -7022,8 +7005,6 @@ button.close {
   opacity: .5; }
 
 .carousel-control.left {
-  background-image: -webkit-linear-gradient(left, color-stop(rgba(0, 0, 0, 0.5) 0%), color-stop(rgba(0, 0, 0, 0.0001) 100%));
-  background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.0001) 100%);
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.0001) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#80000000', endColorstr='#00000000', GradientType=1);
   background-repeat: repeat-x; }
@@ -7031,8 +7012,6 @@ button.close {
 .carousel-control.right {
   right: 0;
   left: auto;
-  background-image: -webkit-linear-gradient(left, color-stop(rgba(0, 0, 0, 0.0001) 0%), color-stop(rgba(0, 0, 0, 0.5) 100%));
-  background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.5) 100%);
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.5) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#80000000', GradientType=1);
   background-repeat: repeat-x; }
@@ -7310,7 +7289,6 @@ button.close {
 @media print {
   .hidden-print {
     display: none !important; } }
-/*# sourceMappingURL=bootstrap.css.map */
 /* ! normalize.css v1.0.0 | MIT License | git.io/normalize */
 /* ==========================================================================
 HTML5 display definitions
@@ -7591,8 +7569,7 @@ button[disabled], input[disabled] {
 * 3. Removes excess padding in IE 7.
 *    Known issue:excess padding remains in IE 6. */
 input[type="checkbox"], input[type="radio"] {
-  -moz-box-sizing: border-box;
-       box-sizing: border-box;
+  box-sizing: border-box;
   /* 1 */
   padding: 0;
   /* 2 */
@@ -7607,7 +7584,6 @@ input[type="checkbox"], input[type="radio"] {
 input[type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
-  -moz-box-sizing: content-box;
   /* 2 */
   box-sizing: content-box; }
 
@@ -7650,7 +7626,6 @@ Global Styles
 a {
   color: #00A6AF;
   text-decoration: none;
-  -webkit-transition: all 0.5s;
   transition: all 0.5s; }
 
 a:hover, a:focus {
@@ -8031,7 +8006,6 @@ Photos
 
 .reveal-main {
   max-height: 3000px;
-  -webkit-transition: max-height .2s;
   transition: max-height .2s; }
   .reveal-main .reveal-overlay {
     display: none; }
@@ -8147,8 +8121,11 @@ a.expand {
 
 .img img {
   width: calc(100% + 40px) !important;
-  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+  transition: opacity 0.35s, -webkit-transform 0.35s;
   transition: opacity 0.35s, transform 0.35s;
+  transition: opacity 0.35s, transform 0.35s, -webkit-transform 0.35s;
+  -moz-transition: opacity 0.35s, -moz-transform 0.35s;
+  -o-transition: opacity 0.35s, -o-transform 0.35s;
   -webkit-transform: translate3d(-5px, 0, 0);
   transform: translate3d(-5px, 0, 0);
   -ms-transform: translate3d(-5px, 0, 0); }
@@ -9665,7 +9642,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     animation-timing-function: ease-in; } }
 .animated.flip {
   -webkit-backface-visibility: visible;
-  -ms-backface-visibility: visible;
   backface-visibility: visible;
   -webkit-animation-name: flip;
   animation-name: flip; }
@@ -9706,7 +9682,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     opacity: 1; } }
 .flipInX {
   -webkit-backface-visibility: visible !important;
-  -ms-backface-visibility: visible !important;
   backface-visibility: visible !important;
   -webkit-animation-name: flipInX;
   animation-name: flipInX; }
@@ -9747,7 +9722,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     opacity: 1; } }
 .flipInY {
   -webkit-backface-visibility: visible !important;
-  -ms-backface-visibility: visible !important;
   backface-visibility: visible !important;
   -webkit-animation-name: flipInY;
   animation-name: flipInY; }
@@ -9776,7 +9750,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   -webkit-animation-name: flipOutX;
   animation-name: flipOutX;
   -webkit-backface-visibility: visible !important;
-  -ms-backface-visibility: visible !important;
   backface-visibility: visible !important; }
 
 @-webkit-keyframes flipOutY {
@@ -9801,7 +9774,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     opacity: 0; } }
 .flipOutY {
   -webkit-backface-visibility: visible !important;
-  -ms-backface-visibility: visible !important;
   backface-visibility: visible !important;
   -webkit-animation-name: flipOutY;
   animation-name: flipOutY; }
