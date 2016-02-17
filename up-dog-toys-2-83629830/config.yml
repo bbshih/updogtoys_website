@@ -1,8 +1,8 @@
 ---
-:api_key: 31327d1e9ea92ac2abd9fc3f1f4471a1
-:password: eca6f31b3446ee907e35b4481cb499cc
-:store: up-dog-toys.myshopify.com
-:theme_id: 61960773
+:api_key: 2698f594c7091997d0b52f1e1b9e9f86
+:password: 75361c2a051bb27ff41f3f275da93c44
+:store: up-dog-toys-2.myshopify.com
+:theme_id: 83629830
 :ignore_files:
 :whitelist_files:
 - layout/
