@@ -1,0 +1,13 @@
+---
+:api_key: ADD_KEY_HERE
+:password: ADD_PASSWORD_HERE
+:store: up-dog-toys-2.myshopify.com
+:theme_id: ADD_THEME_ID
+:ignore_files:
+:whitelist_files:
+- layout/
+- assets/
+- config/
+- snippets/
+- templates/
+- locales/
