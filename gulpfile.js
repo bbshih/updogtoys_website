@@ -97,17 +97,3 @@ gulp.task('serve', function() {
 });
 
 gulp.task('default', ['html', 'js', 'css', 'img', 'fonts', 'locales']);
-
-// Watches single files
-var watch = require('gulp-watch');
-var gulpShopify = require('gulp-shopify-upload');
-
-gulp.task('shopifywatch', function() {
-  return watch('up-dog-toys-2-83629830/+(assets|layout|config|snippets|templates|locales)/**')
-.pipe(gulpShopify('b16d97ede7575eee88ccc10166262c3b', '7dca3f09363da78c8e6b01ba991abaaf', 'up-dog-toys-2.myshopify.com', ''));
-});
-
-// Default gulp action when gulp is run
-gulp.task('swatch', [
-  'shopifywatch'
-]);
