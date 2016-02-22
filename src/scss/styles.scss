@@ -370,13 +370,7 @@ textarea {
     vertical-align: top;
     /* 2 */
 }
-input[type=email] {
-    background-color: $gray;
-    border: solid 1px #fff;
-    padding: 20px;
-    width: 30%;
-    color: #fff;
-}
+
 /* ==========================================================================
 Tables
 ========================================================================== */
@@ -432,6 +426,9 @@ h3 {
 }
 .section-padding {
     padding: 3em 0;
+}
+.section-padding-bottom {
+    padding-bottom: 3em;
 }
 .dark-bg {
     background: $grayLightBg;
@@ -585,7 +582,9 @@ nav ul li a:hover, nav ul li a:focus {
 /* ==========================================================================
 Hero
 ========================================================================== */
-
+.home {
+    padding: 0;
+}
 .hero {
     background: url('header.jpg') no-repeat center center;
     -webkit-background-size: cover;
@@ -627,7 +626,7 @@ input[type=email] {
 .btn {
     border-radius: 0;
 }
-.order-btn {
+.primary-btn {
     background: $primaryColor;
     padding: 1em 2em;
     border: 0;
@@ -639,7 +638,7 @@ input[type=email] {
     font-weight: bold;
     margin-top: 1em;
 }
-.order-btn:hover, .order-btn:focus {
+.primary-btn:hover, .primary-btn:focus {
     background: $primaryColorDark;
     color: #fff;
 }
@@ -652,7 +651,7 @@ input[type=email] {
     font-weight: bold;
     letter-spacing: 1px;
     border: 0;
-    margin-top: 0.5em;
+    margin-top: 1em;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 }
 .secondary-btn:hover, .secondary-btn:focus {
@@ -1319,4 +1318,12 @@ header {
 }
 .add-to-cart-btn {
     margin: 2em 0;
+}
+
+// For cart page
+.cart-table {
+    width: 100%;
+}
+.quantity {
+    width: 5em;
 }

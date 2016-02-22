@@ -7605,13 +7605,6 @@ textarea {
   vertical-align: top;
   /* 2 */ }
 
-input[type=email] {
-  background-color: #696D76;
-  border: solid 1px #fff;
-  padding: 20px;
-  width: 30%;
-  color: #fff; }
-
 /* ==========================================================================
 Tables
 ========================================================================== */
@@ -7661,6 +7654,9 @@ h3 {
 
 .section-padding {
   padding: 3em 0; }
+
+.section-padding-bottom {
+  padding-bottom: 3em; }
 
 .dark-bg {
   background: #f3f5f8; }
@@ -7807,6 +7803,9 @@ nav ul li a:hover, nav ul li a:focus {
 /* ==========================================================================
 Hero
 ========================================================================== */
+.home {
+  padding: 0; }
+
 .hero {
   background: url("header.jpg") no-repeat center center;
   background-size: cover;
@@ -7839,7 +7838,7 @@ input[type=email] {
 .btn {
   border-radius: 0; }
 
-.order-btn {
+.primary-btn {
   background: #00A6AF;
   padding: 1em 2em;
   border: 0;
@@ -7851,7 +7850,7 @@ input[type=email] {
   font-weight: bold;
   margin-top: 1em; }
 
-.order-btn:hover, .order-btn:focus {
+.primary-btn:hover, .primary-btn:focus {
   background: #004549;
   color: #fff; }
 
@@ -7864,7 +7863,7 @@ input[type=email] {
   font-weight: bold;
   letter-spacing: 1px;
   border: 0;
-  margin-top: 0.5em;
+  margin-top: 1em;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12); }
 
 .secondary-btn:hover, .secondary-btn:focus {
@@ -8444,6 +8443,12 @@ header {
 
 .add-to-cart-btn {
   margin: 2em 0; }
+
+.cart-table {
+  width: 100%; }
+
+.quantity {
+  width: 5em; }
 
 /* 320px (iPhone) */
 /* 480px (WVGA - Low End Windows Phone) */
@@ -10866,7 +10871,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   max-height: 100%; }
 
 #fancybox-loading, .fancybox-close, .fancybox-prev span, .fancybox-next span {
-  background-image: url(../img/fancybox_sprite.png); }
+  background-image: url(fancybox_sprite.png); }
 
 #fancybox-loading {
   position: fixed;
@@ -10882,7 +10887,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 #fancybox-loading div {
   width: 44px;
   height: 44px;
-  background: url(../img/fancybox_loading.gif) center center no-repeat; }
+  background: url(fancybox_loading.gif) center center no-repeat; }
 
 .fancybox-close {
   position: absolute;
@@ -10900,7 +10905,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   height: 100%;
   cursor: pointer;
   text-decoration: none;
-  background: transparent url(../img/blank.gif);
+  background: transparent url(blank.gif);
   /* helps IE */
   -webkit-tap-highlight-color: transparent;
   z-index: 8040; }
@@ -10958,7 +10963,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   overflow: hidden;
   display: none;
   z-index: 8010;
-  background: url(../img/fancybox_overlay.png); }
+  background: url(fancybox_overlay.png); }
 
 .fancybox-overlay-fixed {
   position: fixed;
@@ -11022,11 +11027,11 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 /*Retina graphics!*/
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
   #fancybox-loading, .fancybox-close, .fancybox-prev span, .fancybox-next span {
-    background-image: url(../img/fancybox_sprite@2x.png);
+    background-image: url(fancybox_sprite@2x.png);
     background-size: 44px 152px;
     /*The size of the normal image, half the size of the hi-res image*/ }
 
   #fancybox-loading div {
-    background-image: url(../img/fancybox_loading@2x.gif);
+    background-image: url(fancybox_loading@2x.gif);
     background-size: 24px 24px;
     /*The size of the normal image, half the size of the hi-res image*/ } }

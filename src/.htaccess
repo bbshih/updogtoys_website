@@ -1,5 +1,0 @@
-<IfModule pagespeed_module>
-    ModPagespeed on
-    AddOutputFilterByType DEFLATE text/html text/plain application/javascript text/css
-</IfModule>
-Redirect 302 /index.html http://www.facebook.com/updogtoys/
