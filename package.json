@@ -4,10 +4,6 @@
   "author": "Billy Shih <billy@updogtoys.com>",
   "contributors": [],
   "dependencies": [],
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/documentcloud/underscore.git"
-  },
   "version": "1.0.0",
   "devDependencies": {
     "gulp": "^3.9.1",
