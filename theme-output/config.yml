@@ -1,0 +1,19 @@
+---
+# Dev settings
+# :api_key: 2698f594c7091997d0b52f1e1b9e9f86
+# :password: 75361c2a051bb27ff41f3f275da93c44
+# :store: up-dog-toys-2.myshopify.com
+# :theme_id: 83629830
+# Live settings
+:api_key: 97eef5bf0f2fea2ff52980073a5dacdb
+:password: 32ae3765b66f417aa34845dc24f8ee92
+:store: up-dog-toys.myshopify.com
+:theme_id: 61960773
+:ignore_files:
+:whitelist_files:
+- layout/
+- assets/
+- config/
+- snippets/
+- templates/
+- locales/

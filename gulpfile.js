@@ -7,21 +7,21 @@ var changed = require('gulp-changed');
 // var minifyHTML = require('gulp-minify-html');
 gulp.task('html', function() {
   var htmlSrc = './src/layout/*.liquid',
-      htmlDst = './up-dog-toys-2-83629830/layout';
+      htmlDst = './theme-output/layout';
 
   gulp.src(htmlSrc)
     .pipe(changed(htmlDst))
     .pipe(gulp.dest(htmlDst));
 
   var htmlTemplatesSrc = './src/templates/*.liquid',
-      htmlTemplatesDst = './up-dog-toys-2-83629830/templates';
+      htmlTemplatesDst = './theme-output/templates';
 
   gulp.src(htmlTemplatesSrc)
     .pipe(changed(htmlTemplatesDst))
     .pipe(gulp.dest(htmlTemplatesDst));
 
   var htmlSnippetsSrc = './src/snippets/*.liquid',
-      htmlSnippetsDst = './up-dog-toys-2-83629830/snippets';
+      htmlSnippetsDst = './theme-output/snippets';
 
   gulp.src(htmlSnippetsSrc)
     .pipe(changed(htmlSnippetsDst))
@@ -34,7 +34,7 @@ var prefix = require( 'gulp-autoprefixer' );
 var lint = require('gulp-csslint');
 
 gulp.task('css', function() {
-  var cssDst = './up-dog-toys-2-83629830/assets';
+  var cssDst = './theme-output/assets';
   return sass('./src/scss/app.scss')
     .on('error', function (err) { console.log(err.message); })
     .pipe(prefix('last 3 versions'))
@@ -47,7 +47,7 @@ var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
 
 gulp.task('js', function() {
-  var jsDst = './up-dog-toys-2-83629830/assets';
+  var jsDst = './theme-output/assets';
   gulp.src(['./src/js/waypoints.min.js',
             './src/js/bootstrap.js',
             './src/js/modernizr.js',
@@ -64,7 +64,7 @@ var imagemin = require('gulp-imagemin');
 var pngcrush = require('imagemin-pngcrush');
 
 var imgSrc = 'src/img/**/*',
-    imgDst = 'up-dog-toys-2-83629830/assets';
+    imgDst = 'theme-output/assets';
 gulp.task('img', function () {
     return gulp.src(imgSrc)
         .pipe(changed(imgDst))
@@ -78,13 +78,13 @@ gulp.task('img', function () {
 
 gulp.task('fonts', function() {
     return gulp.src(['src/fonts/*'])
-        .pipe(gulp.dest('up-dog-toys-2-83629830/assets/'));
+        .pipe(gulp.dest('theme-output/assets/'));
 });
 
 gulp.task('locales', function() {
     return gulp.src(['src/locales/*'])
         .pipe(changed(imgDst))
-        .pipe(gulp.dest('up-dog-toys-2-83629830/locales/'));
+        .pipe(gulp.dest('theme-output/locales/'));
 });
 
 // Watch files for changes
