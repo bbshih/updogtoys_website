@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Up Dog Toys - Toys for a Modern Dog</title>
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+  {{ 'app.css' | asset_url | stylesheet_tag }}
+  {{ content_for_header }}
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+</head>
+
+<body id="top" class="{{ template | replace: '.', ' ' | truncatewords: 1, '' }}" id="{{ page_title | handle }}">
+  <!-- <div class="sale-banner">Last day! 10% off 1 toy using code <strong>HOLIDAY10</strong> or 15% off 2+ toys using <strong>HOLIDAY15</strong>. Expires 12/26. <a href="#" id="close-banner">Close</a></div> -->
+  <nav>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2">
+          <nav class="pull">
+            <ul class="top-nav">
+              <li><a href="#features">Features <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
+              <li><a href="#gallery">Photos <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
+              <li><a href="#faq">FAQ <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
+              <li><a href="#returns">Return Policy <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
+              <li><a href="#stores">Where to buy <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
+              <li><a href="#about">About <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
+              <li><a href="#contact">Contact <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </nav>
+  {{ content_for_layout }}
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="#returns">Return Policy</a></li>
+            <li><a href="pages/wholesale">Wholesale Inquiries</a></li>
+            <li><a href="#stores">Where to Buy</a></li>
+            <li><a href="mailto:info@updogtoys.com">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <p>Up Dog Toys &copy; 2014 &mdash; Created by Odin, the Pembroke Welsh Corgi. Please excuse typos from <a href="http://www.youtube.com/watch?v=pCyzqRvmrVE" class="fancybox-media">my large paws typing on small keys.</a></p>
+        </div>
+      </div>
+    </div>
+
+  </footer>
+
+  {{ 'main.js' | asset_url | script_tag }}
+</body>
+
+</html>
