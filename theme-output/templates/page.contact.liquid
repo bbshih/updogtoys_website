@@ -38,6 +38,7 @@
           {{ form.errors | default_errors }}
 
           {% assign name_attr = 'contact.form.name' | t | handle %}
+          <br>
           <div class="form-group">
             <label for="ContactFormName" class="hidden-label">{{ 'contact.form.name' | t }}</label>
             <input type="text" id="ContactFormName" class="form-control" name="contact[{{ name_attr }}]" placeholder="Odin the Corgi" autocapitalize="words" value="{% if form[name_attr] %}{{ form[name_attr] }}{% elsif customer %}{{ customer.name }}{% endif %}">
@@ -50,6 +51,14 @@
           <div class="form-group">
             <label for="ContactFormPhone" class="hidden-label">{{ 'contact.form.phone' | t }}</label>
             <input type="tel" id="ContactFormPhone" class="form-control" name="contact[{{ name_attr }}]" placeholder="555-555-5555" pattern="[0-9\-]*" value="{% if form[name_attr] %}{{ form[name_attr] }}{% elsif customer %}{{ customer.phone }}{% endif %}">
+          </div>
+          <div class="form-group">
+            <label for="ContactFormWebsite" class="hidden-label">{{ 'contact.form.website' | t }}</label>
+            <input type="text" id="ContactFormWebsite" class="form-control" name="contact[website]" placeholder="http://mypawesomesite.com" value="{% if form[name_attr] %}{{ form[website] }}{% elsif customer %}{{ customer.website }}{% endif %}">
+          </div>
+          <div class="form-group">
+            <label for="ContactFormWebsite" class="hidden-label">{{ 'contact.form.reseller_permit' | t }}</label>
+            <input type="text" id="ContactFormWebsite" class="form-control" name="contact[reseller_permit]" placeholder="1234567890" value="{% if form[name_attr] %}{{ form[reseller_permit] }}{% elsif customer %}{{ customer.reseller_permit }}{% endif %}">
           </div>
           <div class="form-group">
             <label for="ContactFormMessage" class="hidden-label">{{ 'contact.form.message' | t }}</label>
