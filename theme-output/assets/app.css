@@ -8450,6 +8450,9 @@ header {
 .quantity {
   width: 5em; }
 
+.rte {
+  margin-bottom: 1em; }
+
 /* 320px (iPhone) */
 /* 480px (WVGA - Low End Windows Phone) */
 @media screen and (max-width: 480px) {
