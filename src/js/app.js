@@ -1,13 +1,19 @@
 //  Resize hero image
 function resizeHero() {
+  "use strict";
+
   var vHeight = $(window).height(),
       vWidth = $(window).width(),
-      hero = $('.hero');
+      header = $('#header'),
+      navHeight = $('.nav-container').height(),
+      heroText = $('.hero-text');
 
-  hero.css({"height":vHeight,"width":vWidth});
+  heroText.css({ top: navHeight});
+  header.css({ height: vHeight, width: vWidth});
 }
 
 $(document).ready(function() {
+  "use strict";
   resizeHero();
 
 /***************** Waypoints ******************/
@@ -43,8 +49,9 @@ $(document).ready(function() {
   });
 
   $(".fancybox").fancybox({
-    padding : 0,
+    padding : 0
   });
+
   $('.fancybox-media').fancybox({
     padding: 0,
     helpers : {

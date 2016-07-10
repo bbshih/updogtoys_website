@@ -11,6 +11,7 @@ $brown: #936F45;
 $orange: #E98854;
 $blue: #00A6AF;
 
-$primaryColor: $blue;
-$primaryColorDark: darken($primaryColor, 20%);
+
+$primaryColor: #333;
+$primaryColorAlt: lighten($primaryColor, 20%);
 
