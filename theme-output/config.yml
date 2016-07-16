@@ -8,8 +8,8 @@
 :api_key: 4eada98331c7eee600a6b5c01b17e44c
 :password: 19619a910f5e4843b6b30e28f52fe99c
 :store: up-dog-toys.myshopify.com
-:theme_id: 65779589  # copy
-# :theme_id: 65752901 # live
+:theme_id: 65864325  # copy
+# :theme_id: 65779589 # live
 :ignore_files:
 :whitelist_files:
 - layout/

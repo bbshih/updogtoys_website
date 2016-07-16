@@ -7799,7 +7799,7 @@ nav ul li a:hover, nav ul li a:focus {
 header
 ========================================================================== */
 .header {
-  background: url("rose_quartz2.jpg") no-repeat center center;
+  background: url("rose_quartz.jpg") no-repeat center center;
   background-size: cover;
   height: 800px;
   padding: 0;
@@ -7961,7 +7961,7 @@ Swag
   background: url("break.jpg") no-repeat center center; }
 
 .order-cta {
-  background: url("Reggie with Toy-3803.jpg") no-repeat center center #333; }
+  background: url("reggie.jpg") no-repeat center center #333; }
 
 .swag, .order-cta {
   background-size: cover;
@@ -8168,7 +8168,9 @@ Subscribe
   width: 30%;
   min-width: 220px;
   color: #696D76;
-  margin-right: 5px; }
+  margin-right: 5px;
+  border-radius: .5em;
+  border: 1px solid #fff; }
 
 .subscribe input[type=submit] {
   background: #333;
@@ -8265,6 +8267,8 @@ Contact
   letter-spacing: 1px;
   font-size: 14px;
   margin-top: 15px; }
+.contact-details p {
+  margin-bottom: 1em; }
 
 .contact-wrap {
   position: relative; }

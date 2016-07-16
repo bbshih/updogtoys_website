@@ -580,7 +580,7 @@ nav ul li a:hover, nav ul li a:focus {
 header
 ========================================================================== */
 .header {
-    background: url('rose_quartz2.jpg') no-repeat center center;
+    background: url('rose_quartz.jpg') no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -764,7 +764,7 @@ Swag
     background: url('break.jpg') no-repeat center center;
 }
 .order-cta {
-    background: url('Reggie with Toy-3803.jpg') no-repeat center center #333;
+    background: url('reggie.jpg') no-repeat center center #333;
 }
 .swag, .order-cta {
     -webkit-background-size: cover;
@@ -994,6 +994,8 @@ Subscribe
     min-width: 220px;
     color: $gray;
     margin-right: 5px;
+    border-radius: .5em;
+    border: 1px solid #fff;
 }
 .subscribe input[type=submit] {
     background: $primaryColor;
@@ -1105,14 +1107,20 @@ Contact
     background: $primaryColor;
 }
 
-.contact-details h2 span {
-    display: block;
-    color: $primaryColor;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-size: 14px;
-    margin-top: 15px;
+.contact-details {
+    h2 span {
+        display: block;
+        color: $primaryColor;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 14px;
+        margin-top: 15px;
+    }
+    p {
+        margin-bottom: 1em;
+    }
 }
+
 .contact-wrap {
     position: relative;
 }
