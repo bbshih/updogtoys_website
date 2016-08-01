@@ -3,7 +3,7 @@
   "homepage": "http://www.updogtoys.com/",
   "author": "Billy Shih <billy@updogtoys.com>",
   "contributors": [],
-  "dependencies": [],
+  "dependencies": {},
   "version": "1.0.0",
   "devDependencies": {
     "gulp": "^3.9.1",

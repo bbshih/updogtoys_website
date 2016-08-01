@@ -20,7 +20,9 @@
 </head>
 
 <body id="top" class="{{ template | replace: '.', ' ' | truncatewords: 1, '' }}" id="{{ page_title | handle }}">
-  <div class="sale-banner">Taking pre-orders for Rose Quartz! Order 2+ toys of any color and get free shipping using code <strong>ROSEQUARTZ</strong>. Expires 7/31. <a href="#" id="close-banner" class="close-banner">Close</a></div>
+  {% comment %}
+    <div class="sale-banner">Free shipping in US or $5 off international. Just order 2+ toys of any color using code <strong>ROSEQUARTZ</strong>. Expires 7/31. <a href="#" id="close-banner" class="close-banner">Close</a></div>
+  {% endcomment %}
   <nav>
     <div class="container-fluid">
       <div class="row">
