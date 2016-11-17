@@ -23,24 +23,54 @@
   {% comment %}
     <div class="sale-banner">Free shipping in US or $5 off international. Just order 2+ toys of any color using code <strong>ROSEQUARTZ</strong>. Expires 7/31. <a href="#" id="close-banner" class="close-banner">Close</a></div>
   {% endcomment %}
-  <nav>
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2">
-          <nav class="pull">
-            <ul class="top-nav">
-              <li><a href="#features">Features <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
-              <li><a href="#gallery">Photos <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
-              <li><a href="#faq">FAQ <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
-              <li><a href="#returns">Return Policy <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
-              <li><a href="#stores">Where to buy <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
-              <li><a href="#about">About <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
-              <li><a href="#contact">Contact <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
-              <li><a href="/pages/wholesale">Wholesale <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
-            </ul>
-          </nav>
-        </div>
+  <nav class="navbar navbar-default navbar">
+    <div class="container">
+      <ul class="nav navbar-nav">
+        <li>Home</li>
+      </ul>
+    </div>
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#"><img src="{{ 'corgi.png' | asset_url}}" class="navbar-brand-image"></a>
       </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li><a href="http://www.updogtoys.com">Home</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#">Separated link</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#">One more separated link</a></li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#">Link</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#">Separated link</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
     </div>
   </nav>
   {{ content_for_layout }}

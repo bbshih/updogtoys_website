@@ -476,42 +476,48 @@ h3 {
 Navigation
 ========================================================================== */
 
-nav {
-    background-color: $gray;
-    margin-top: -1px;
+.navbar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 9999;
+    background-color: #fff;
+    border-radius: 0;
+    border: 0;
+
+    .navbar-brand-image {
+        height: 100%;
+    }
 }
-nav ul {
-    list-style: none;
-    padding: 0;
-}
-nav ul li {
-    color: rgba(255, 255, 255, 0.8);
-    display: block;
-    border-bottom: 1px dotted rgba(255, 255, 255, 0.9);
-    transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -webkit-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    position: relative;
-}
-nav ul li:last-child {
-    border: none;
-}
-nav ul li a {
-    color: rgba(255, 255, 255, 0.8);
-    display: block;
-    padding: 20px;
-    transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -webkit-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    position: relative;
-}
-nav ul li a:hover, nav ul li a:focus {
-  background-color: $primaryColorAlt;
-    text-decoration: none;
-    color: rgba(255, 255, 255, 1);
-}
+// nav ul li {
+//     color: rgba(255, 255, 255, 0.8);
+//     display: block;
+//     border-bottom: 1px dotted rgba(255, 255, 255, 0.9);
+//     transition: all 0.5s ease;
+//     -moz-transition: all 0.5s ease;
+//     -webkit-transition: all 0.5s ease;
+//     -o-transition: all 0.5s ease;
+//     position: relative;
+// }
+// nav ul li:last-child {
+//     border: none;
+// }
+// nav ul li a {
+//     color: rgba(255, 255, 255, 0.8);
+//     display: block;
+//     padding: 20px;
+//     transition: all 0.5s ease;
+//     -moz-transition: all 0.5s ease;
+//     -webkit-transition: all 0.5s ease;
+//     -o-transition: all 0.5s ease;
+//     position: relative;
+// }
+// nav ul li a:hover, nav ul li a:focus {
+//   background-color: $primaryColorAlt;
+//     text-decoration: none;
+//     color: rgba(255, 255, 255, 1);
+// }
 #nav-toggle {
     position: absolute;
     right: 2em;
@@ -563,30 +569,20 @@ nav ul li a:hover, nav ul li a:focus {
     -ms-transform: translateY(-10px) rotate(-45deg);
     top: 10px;
 }
-.nav {
-    padding: 2em;
-}
-.nav-logo {
-    height: 50px;
-    margin-top: -10px;
-}
 .indicator {
     float: right;
-}
-.pull {
-    display: none;
 }
 /* ==========================================================================
 header
 ========================================================================== */
 .header {
-    background: url('rose_quartz.jpg') no-repeat center center;
+    background: url('Kena-68.jpg') no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    height: 800px;
-    padding: 0;
+    height: calc(100vh - 200px);
+    padding-top: 50px;
     text-align: center;
     position: relative;
 
@@ -604,7 +600,7 @@ header
             }
         }
         .headline, .tagline {
-            color: $primaryColor;
+            color: #fff;
         }
         .tagline {
             font-size: 1.2em;
@@ -614,7 +610,7 @@ header
 
     .detail {
         font-size: 1.2em;
-        color: $grayLight;
+        color: #fff
         // text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
     }
 

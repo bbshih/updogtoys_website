@@ -14,7 +14,7 @@ function resizeHero() {
 
 $(document).ready(function() {
   "use strict";
-  resizeHero();
+  // resizeHero();
 
 /***************** Waypoints ******************/
   $('.wp1').waypoint(function() {
@@ -80,9 +80,9 @@ $('#close-banner').click(function(e) {
   $('.sale-banner').slideUp();
 });
 
-window.onresize = function(event) {
-  resizeHero();
-}
+// window.onresize = function(event) {
+//   resizeHero();
+// }
 
 // Modal
 

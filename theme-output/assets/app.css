@@ -7695,41 +7695,17 @@ h3 {
 /* ==========================================================================
 Navigation
 ========================================================================== */
-nav {
-  background-color: #696D76;
-  margin-top: -1px; }
-
-nav ul {
-  list-style: none;
-  padding: 0; }
-
-nav ul li {
-  color: rgba(255, 255, 255, 0.8);
-  display: block;
-  border-bottom: 1px dotted rgba(255, 255, 255, 0.9);
-  transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  -webkit-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-  position: relative; }
-
-nav ul li:last-child {
-  border: none; }
-
-nav ul li a {
-  color: rgba(255, 255, 255, 0.8);
-  display: block;
-  padding: 20px;
-  transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  -webkit-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-  position: relative; }
-
-nav ul li a:hover, nav ul li a:focus {
-  background-color: #666666;
-  text-decoration: none;
-  color: white; }
+.navbar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 9999;
+  background-color: #fff;
+  border-radius: 0;
+  border: 0; }
+  .navbar .navbar-brand-image {
+    height: 100%; }
 
 #nav-toggle {
   position: absolute;
@@ -7782,27 +7758,17 @@ nav ul li a:hover, nav ul li a:focus {
   -ms-transform: translateY(-10px) rotate(-45deg);
   top: 10px; }
 
-.nav {
-  padding: 2em; }
-
-.nav-logo {
-  height: 50px;
-  margin-top: -10px; }
-
 .indicator {
   float: right; }
-
-.pull {
-  display: none; }
 
 /* ==========================================================================
 header
 ========================================================================== */
 .header {
-  background: url("rose_quartz.jpg") no-repeat center center;
+  background: url("Kena-68.jpg") no-repeat center center;
   background-size: cover;
-  height: 800px;
-  padding: 0;
+  height: calc(100vh - 200px);
+  padding-top: 50px;
   text-align: center;
   position: relative; }
   .header .headline-container {
@@ -7815,13 +7781,13 @@ header
       .header .headline-container .headline::after {
         display: none; }
     .header .headline-container .headline, .header .headline-container .tagline {
-      color: #333; }
+      color: #fff; }
     .header .headline-container .tagline {
       font-size: 1.2em;
       margin: 0; }
   .header .detail {
     font-size: 1.2em;
-    color: #6B6F73; }
+    color: #fff; }
   .header .hero-text {
     position: absolute;
     top: 80px;
