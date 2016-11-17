@@ -1,20 +1,5 @@
-//  Resize hero image
-function resizeHero() {
-  "use strict";
-
-  var vHeight = $(window).height(),
-      vWidth = $(window).width(),
-      header = $('#header'),
-      navHeight = $('.nav-container').height(),
-      heroText = $('.hero-text');
-
-  heroText.css({ top: navHeight});
-  header.css({ height: vHeight, width: vWidth});
-}
-
 $(document).ready(function() {
   "use strict";
-  // resizeHero();
 
 /***************** Waypoints ******************/
   $('.wp1').waypoint(function() {
@@ -65,65 +50,62 @@ $(document).ready(function() {
     }
   })
 
-  $('.reveal-overlay').click(function(e) {
-    e.preventDefault();
-    $('#' + this.dataset.gallery).removeClass('inactive');
-  })
+  // For Sale banner
+  // window.setTimeout(function() {
+  //   $('.sale-banner').slideDown();
+  // }, 2000);
 
-  window.setTimeout(function() {
-    $('.sale-banner').slideDown();
-  }, 2000);
-});
+  // $('#close-banner').click(function(e) {
+  //   e.preventDefault();
+  //   $('.sale-banner').slideUp();
+  // });
 
-$('#close-banner').click(function(e) {
-  e.preventDefault();
-  $('.sale-banner').slideUp();
-});
-
-// window.onresize = function(event) {
-//   resizeHero();
-// }
-
-// Modal
-
-/***************** Slide-In Nav ******************/
-
-$(window).load(function() {
-
-  $('.nav_slide_button').click(function() {
-    $('.pull').slideToggle();
+  var feed = new Instafeed({
+      get: 'user',
+      userId: 'self',
+      clientId: '06c9aae210124ed481ba3efa975340fd',
+      accessToken: '1386977881.06c9aae.f11d2212e69444fb8c0e45161c8625d1',
+      resolution: 'low_resolution',
+      links: true
   });
+  feed.run();
 
-});
+  var $instagramPhotos = $('#instafeed'),
+      $leftCarousel = $('.carousel-button-left'),
+      $rightCarousel = $('.carousel-button-right'),
+      wrapperWidth = $('.instagram-carousel').width();
 
-/***************** Smooth Scrolling ******************/
+  $instagramPhotos.scroll(function() {
+    if (this.scrollLeft > 0) {
+      $leftCarousel.removeClass('hidden');
+    } else {
+      $leftCarousel.addClass('hidden');
+    }
 
-$(function() {
-
-  $('a[href*=#]:not([href=#])').click(function() {
-    if (location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') && location.hostname === this.hostname) {
-
-      var target = $(this.hash);
-      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-      if (target.length) {
-        $('html,body').animate({
-          scrollTop: target.offset().top
-        }, 500);
-        return false;
-      }
+    if (($instagramPhotos[0].scrollWidth - this.scrollLeft) > wrapperWidth) {
+      $rightCarousel.removeClass('hidden');
+    } else {
+      $rightCarousel.addClass('hidden');
     }
   });
 
-});
 
-/***************** Nav Transformicon ******************/
+  $leftCarousel.click( function(e) {
+    var position = $instagramPhotos.scrollLeft(),
+        width = $instagramPhotos.width(),
+        newPosition = position - width;
 
-document.querySelector("#nav-toggle").addEventListener("click", function() {
-  this.classList.toggle("active");
-});
+    $instagramPhotos.animate({scrollLeft: newPosition}, wrapperWidth/2);
+  });
 
-document.querySelector("nav").addEventListener("click", function() {
-  this.classList.toggle("active");
+  $rightCarousel.click( function(e) {
+    var position = $instagramPhotos.scrollLeft(),
+        width = $instagramPhotos.width(),
+        newPosition = position + width;
+
+    $instagramPhotos.animate({scrollLeft: newPosition}, wrapperWidth/2);
+  });
+
 });
 
 /***************** Overlays ******************/

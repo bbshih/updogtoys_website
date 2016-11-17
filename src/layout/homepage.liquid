@@ -23,11 +23,10 @@
   {% comment %}
     <div class="sale-banner">Free shipping in US or $5 off international. Just order 2+ toys of any color using code <strong>ROSEQUARTZ</strong>. Expires 7/31. <a href="#" id="close-banner" class="close-banner">Close</a></div>
   {% endcomment %}
-  <nav class="navbar navbar-default navbar">
-    <div class="container">
-      <ul class="nav navbar-nav">
-        <li>Home</li>
-      </ul>
+
+  <nav class="navbar navbar-default">
+    <div class="container container-logo">
+        <img src="{{ 'logo_grey.png' | asset_url}}" class="logo">
     </div>
     <div class="container">
       <div class="navbar-header">
@@ -37,38 +36,16 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#"><img src="{{ 'corgi.png' | asset_url}}" class="navbar-brand-image"></a>
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
           <li><a href="http://www.updogtoys.com">Home</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href="#">Action</a></li>
-              <li><a href="#">Another action</a></li>
-              <li><a href="#">Something else here</a></li>
-              <li role="separator" class="divider"></li>
-              <li><a href="#">Separated link</a></li>
-              <li role="separator" class="divider"></li>
-              <li><a href="#">One more separated link</a></li>
-            </ul>
-          </li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="#">Link</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href="#">Action</a></li>
-              <li><a href="#">Another action</a></li>
-              <li><a href="#">Something else here</a></li>
-              <li role="separator" class="divider"></li>
-              <li><a href="#">Separated link</a></li>
-            </ul>
-          </li>
+          <li><a href="http://www.updogtoys.com">The Odin: Treat Toy</a></li>
+          <li><a href="http://www.updogtoys.com">The Kena: Squeaker Toy</a></li>
+          <li><a href="http://www.updogtoys.com">About Us</a></li>
+          <li><a href="#"><i class="fa fa-shopping-cart"></i> Cart ({{ cart.item_count }})</a></li>
         </ul>
       </div><!-- /.navbar-collapse -->
     </div>
@@ -77,13 +54,20 @@
   <footer>
     <div class="container">
       <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-6">
           <ul>
             <li><a href="/">Home</a></li>
             <li><a href="#returns">Return Policy</a></li>
             <li><a href="/pages/wholesale">Wholesale Inquiries</a></li>
-            <li><a href="#stores">Where to Buy</a></li>
             <li><a href="mailto:info@updogtoys.com">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <ul class="social-buttons">
+            <li><a href="http://www.facebook.com/updogtoys" class="social-btn"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="http://www.instagram.com/updogtoys" class="social-btn"><i class="fa fa-instagram"></i></a></li>
+            <li><a href="http://www.twitter.com/updogtoys" class="social-btn"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="mailto:info@updogtoys.com" class="social-btn"><i class="fa fa-envelope"></i></a></li>
           </ul>
         </div>
       </div>

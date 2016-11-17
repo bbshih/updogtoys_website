@@ -476,6 +476,12 @@ h3 {
 Navigation
 ========================================================================== */
 
+.container-logo {
+    text-align: center;
+    .logo {
+        height: 100px;
+    }
+}
 .navbar {
     position: absolute;
     top: 0;
@@ -486,6 +492,14 @@ Navigation
     border-radius: 0;
     border: 0;
 
+    .navbar-nav {
+        text-align: center;
+        width: 100%;
+        li {
+            float: none;
+             display: inline-block;
+        }
+    }
     .navbar-brand-image {
         height: 100%;
     }
@@ -581,7 +595,7 @@ header
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    height: calc(100vh - 200px);
+    height: calc(100vh - 50px);
     padding-top: 50px;
     text-align: center;
     position: relative;
@@ -616,7 +630,7 @@ header
 
     .hero-text {
         position: absolute;
-        top: 80px;
+        bottom: 80px;
         left: 0;
         width: 100%;
         padding: 0 1em;
@@ -756,12 +770,7 @@ Design details Section
 /* ==========================================================================
 Swag
 ========================================================================== */
-.swag {
-    background: url('break.jpg') no-repeat center center;
-}
-.order-cta {
-    background: url('reggie.jpg') no-repeat center center #333;
-}
+
 .swag, .order-cta {
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -958,27 +967,22 @@ Subscribe
 ========================================================================== */
 
 .subscribe {
-    background: url('macho-savvy.jpg') no-repeat center center;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    background-attachment: fixed;
+
     padding: 120px 0 140px;
 }
 .subscribe .fa-paper-plane {
     font-size: 1.5em;
-    color: #fff;
+    color: $gray;
     display: block;
 }
 .subscribe h2 {
-    color: #fff;
+    color: $gray;
     margin: 1em 0 0 0;
     display: block;
     letter-spacing: 1px;
 }
 .subscribe  p{
-    color: #fff;
+    color: $gray;
 }
 .subscribe form {
     text-align: center;
@@ -996,7 +1000,7 @@ Subscribe
 .subscribe input[type=submit] {
     background: $primaryColor;
     padding: 20px;
-    color: #fff;
+    color: $gray;
     text-transform: uppercase;
     letter-spacing: 1px;
     transition: all 0.5s ease;
@@ -1006,7 +1010,7 @@ Subscribe
 }
 .subscribe input[type=submit]:hover {
     background: $primaryColorAlt;
-    color: #fff;
+    color: $gray;
 }
 
 /* ==========================================================================
@@ -1321,4 +1325,45 @@ header {
 
 .product-price {
     font-size: 2em;
+}
+
+.instagram-carousel {
+    white-space: nowrap;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    .instagram-photos {
+        margin: 0;
+        z-index: 1;
+        overflow: hidden;
+        overflow-x: auto;
+    }
+    .carousel-button {
+        cursor: pointer;
+        min-width: 60px;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        z-index: 10000;
+        background-color: rgba(255, 255, 255, 0.85);
+        user-select: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        display: -webkit-flex;
+        -webkit-flex-direction: column;
+        -webkit-align-items: center;
+        -webkit-justify-content: center;
+        display: -ms-flexbox;
+        -ms-flex-direction: column;
+        -ms-flex-align: center;
+        -ms-flex-pack: center;
+    }
+    .carousel-button-left {
+        left: 0;
+    }
+    .carousel-button-right {
+        right: 0;
+    }
 }
