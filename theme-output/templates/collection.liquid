@@ -8,53 +8,27 @@
 
 {% paginate collection.products by 12 %}
 
-{% include 'breadcrumb' %}
-
 {% comment %}
   Use .grid--rev so that the collection tags appear below the products on mobile
 {% endcomment %}
-<div class="grid--rev">
-  <div class="grid__item large--three-quarters">
 
-    {% comment %}
-      Different markup if a collection description exists
-    {% endcomment %}
-    {% if collection.description != blank %}
-      <header class="section-header">
-        <h1 class="section-header__title">{{ collection.title }}</h1>
-        <div class="rte rte--header">
-          {{ collection.description }}
-        </div>
-      </header>
-      <hr>
-      <div class="section-header">
-        <div class="section-header__right">
-          {% include 'collection-sorting' %}
-        </div>
-      </div>
-    {% else %}
-      <header class="section-header">
-        <h1 class="section-header__title section-header__left">{{ collection.title }}</h1>
-        <div class="section-header__right">
-          {% include 'collection-sorting' %}
-        </div>
-      </header>
-    {% endif %}
-
-    {% comment %}
-      Use class grid-uniform to have evenly sized columns clear
-      each other properly at each breakpoint.
-    {% endcomment %}
-    <div class="grid-uniform">
-
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>{{ collection.title }}</h1>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
       {% comment %}
         Loop through our products in the current collection.
         See the snippet 'product-grid-item' for the layout.
       {% endcomment %}
       {% for product in collection.products %}
-
-        {% include 'product-grid-item' %}
-
+        <div class="col-sm-6">
+          {% include 'product-grid-item' %}
+        </div>
       {% else %}
 
         {% if collection.handle == 'all' and current_tags == '' %}
@@ -82,6 +56,9 @@
       {% endfor %}
 
     </div>
+  </div>
+</div>
+
 
     {% if paginate.pages > 1 %}
       <hr>

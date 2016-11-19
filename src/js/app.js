@@ -60,51 +60,56 @@ $(document).ready(function() {
   //   $('.sale-banner').slideUp();
   // });
 
-  var feed = new Instafeed({
-      get: 'user',
-      userId: 'self',
-      clientId: '06c9aae210124ed481ba3efa975340fd',
-      accessToken: '1386977881.06c9aae.f11d2212e69444fb8c0e45161c8625d1',
-      resolution: 'low_resolution',
-      links: true
-  });
-  feed.run();
 
   var $instagramPhotos = $('#instafeed'),
       $leftCarousel = $('.carousel-button-left'),
       $rightCarousel = $('.carousel-button-right'),
       wrapperWidth = $('.instagram-carousel').width();
 
-  $instagramPhotos.scroll(function() {
-    if (this.scrollLeft > 0) {
-      $leftCarousel.removeClass('hidden');
-    } else {
-      $leftCarousel.addClass('hidden');
-    }
+  if($instagramPhotos[0]) {
+    var feed = new Instafeed({
+        get: 'user',
+        userId: 'self',
+        clientId: '06c9aae210124ed481ba3efa975340fd',
+        accessToken: '1386977881.06c9aae.f11d2212e69444fb8c0e45161c8625d1',
+        resolution: 'low_resolution',
+        links: true
+    });
+    feed.run();
 
-    if (($instagramPhotos[0].scrollWidth - this.scrollLeft) > wrapperWidth) {
-      $rightCarousel.removeClass('hidden');
-    } else {
-      $rightCarousel.addClass('hidden');
-    }
-  });
+    $instagramPhotos.scroll(function() {
+      if (this.scrollLeft > 0) {
+        $leftCarousel.removeClass('hidden');
+      } else {
+        $leftCarousel.addClass('hidden');
+      }
+
+      if (($instagramPhotos[0].scrollWidth - this.scrollLeft) > wrapperWidth) {
+        $rightCarousel.removeClass('hidden');
+      } else {
+        $rightCarousel.addClass('hidden');
+      }
+    });
 
 
-  $leftCarousel.click( function(e) {
-    var position = $instagramPhotos.scrollLeft(),
-        width = $instagramPhotos.width(),
-        newPosition = position - width;
+    $leftCarousel.click( function(e) {
+      var position = $instagramPhotos.scrollLeft(),
+          width = $instagramPhotos.width(),
+          newPosition = position - width;
 
-    $instagramPhotos.animate({scrollLeft: newPosition}, wrapperWidth/2);
-  });
+      $instagramPhotos.animate({scrollLeft: newPosition}, wrapperWidth/2);
+    });
 
-  $rightCarousel.click( function(e) {
-    var position = $instagramPhotos.scrollLeft(),
-        width = $instagramPhotos.width(),
-        newPosition = position + width;
+    $rightCarousel.click( function(e) {
+      var position = $instagramPhotos.scrollLeft(),
+          width = $instagramPhotos.width(),
+          newPosition = position + width;
 
-    $instagramPhotos.animate({scrollLeft: newPosition}, wrapperWidth/2);
-  });
+      $instagramPhotos.animate({scrollLeft: newPosition}, wrapperWidth/2);
+    });
+  }
+
+  $('.product-details-container').stick_in_parent();
 
 });
 
