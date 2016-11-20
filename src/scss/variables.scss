@@ -2,19 +2,18 @@ $coral: #FF4633;
 $coral-dark: darken($coral, 20%);
 
 $grayLight: #6B6F73;
+$grayLightBorder: #e4e4e4;
 $grayLightBg: #f3f5f8;
 
 $gray: #696D76;
 $brownLight:#AEA89D;
 $brown: #936F45;
 
-$orange: #E98854;
+$pink: #dea3a3;
 
-$blue: #4f90d4;
+$primaryColor: $pink;
+$primaryColorAlt: darken($primaryColor, 10%);
 
-
-$primaryColor: #333;
-$primaryColorAlt: lighten($primaryColor, 20%);
-
-$nav-bot-margin: 60px;
-$box-shadow: 0 0 6px 0 $grayLight;
+$green: #4f6364;
+$secondaryColor: $green;
+$secondaryColorAlt: darken($secondaryColor, 10%);

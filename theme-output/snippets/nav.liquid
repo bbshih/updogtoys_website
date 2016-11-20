@@ -1,26 +1,38 @@
-<nav class="navbar navbar-default">
-  <div class="container container-logo">
-      <img src="{{ 'logo_grey.png' | asset_url}}" class="logo">
+<nav class="nav-main">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
   </div>
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-    </div>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li><a href="/">Home</a></li>
-        <li><a href="/products/the-odin">The Odin: Treat Toy</a></li>
-        <li><a href="/products/the-kena">The Kena: Squeaker Toy</a></li>
-        <li><a href="http://www.updogtoys.com">About Us</a></li>
-        <li><a href="#"><i class="fa fa-shopping-cart"></i> Cart ({{ cart.item_count }})</a></li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div>
+  <!-- Collect the nav links, forms, and other content for toggling -->
+  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <div class="navigation">
+      <div class="navigation-left">
+        <div class="navigation-block">
+          <a class="navigation-link hvr-bubble-bottom" href="/">Home</a>
+        </div>
+        <div class="navigation-block">
+          <a class="navigation-link" href="http://www.updogtoys.com">About Us</a>
+        </div>
+      </div>
+      <div class="navigation-middle">
+        <img src="{{ 'logo_black.png' | asset_url}}" class="logo">
+      </div>
+      <div class="navigation-right">
+        <div class="navigation-block">
+          <a class="navigation-link" href="/products/the-odin">Odin<br>Treat Toy</a>
+        </div>
+        <div class="navigation-block">
+          <a class="navigation-link" href="/products/the-kena">Kena<br>Squeaker Toy</a>
+        </div>
+        <div class="navigation-block">
+          <a class="navigation-link" href="#"><i class="fa fa-shopping-cart"></i> Cart ({{ cart.item_count }})</a>
+        </div>
+      </div>
+    </div>
+  </div><!-- /.navbar-collapse -->
 </nav>

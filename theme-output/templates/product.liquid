@@ -22,7 +22,7 @@
 
           <ul>
             {% for image in product.images %}
-            <li>
+            <li class="wp{{ forloop.index }}">
                 <img src="{{ image | img_url: '1024x1024' }}" alt="{{ image.alt | escape }}" />
             </li>
             {% endfor %}
@@ -31,6 +31,19 @@
         {% endif %}
 
         </div><!-- .product-photos -->
+        {% if product.handle == 'the-odin' %}
+          <div id="details">
+            <ul>
+              <li><span>3.6in x 3.3in x 3.8in</span></li>
+              <li><span>Made in China</span></li>
+              <li><span>1% of all purchases go toward saving animals at Emerald City Pet Rescue</span></li>
+            </ul>
+          </div>
+        {% elsif product.handle == 'the-kena' %}
+          <div id="details">
+            test
+          </div>
+        {% endif %}
       </div>
 
       <div class="col-sm-4 product-details-container">
@@ -114,6 +127,7 @@
   </form>
 
 </div>
+{% include 'instagram' %}
 
 {% comment %}
   Adding support for product options. See here for details:

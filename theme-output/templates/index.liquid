@@ -1,16 +1,14 @@
-{% include 'nav-index' %}
-<header id="header" class="header hero">
-    <img src="{{ 'Kena-68.jpg' | asset_url}}" alt="Corgi with toys" class="hero-img">
+<header id="header" class="header hero wp1">
+    <!-- <img src="{{ 'Kena-68.jpg' | asset_url}}" alt="Corgi with toys" class="hero-img"> -->
+    <!-- <img src="{{ 'Kena-17.jpg' | asset_url}}" alt="Dog toys" class="hero-img"> -->
 </header>
-<section class="features text-center section-padding">
-  <h1>Dog toys just got an upgrade:<br>New Kena Squeaker toy out now</h1>
-</section>
 <section class="features text-center section-padding" id="features">
   <div class="container">
     <div class="row">
       <div class="col-md-12">
+        <h1 class="wp2">We make better dog toys</h1>
         <div class="row">
-          <div class="col-md-6 triplet wp4">
+          <div class="col-md-6 triplet wp2 delay-03s">
             <div class="overlay-effect effects clearfix">
               <div class="img">
                 <img src="{{ 'Dogs With Toy-2325.jpg' | asset_url}}" alt="Odin Puzzle Toy">
@@ -24,7 +22,7 @@
             <a href="/products/the-odin"><h2>Treat Dispensing Puzzle Toy</h2></a>
             <p>Put treats in it and your dog tries to get them out, providing mental stimulation and physical activity. If your dog enjoys food, they will love The Odin.</p>
           </div>
-          <div class="col-md-6 triplet wp4 delay-03s">
+          <div class="col-md-6 triplet wp2 delay-05s">
             <div class="overlay-effect effects clearfix">
               <div class="img">
                 <img src="{{ 'Kena-10thumb.jpg' | asset_url }}" alt="Kena Squeaker Toy">
@@ -42,41 +40,25 @@
     </div>
   </div>
 </section>
-<section class="testimonials text-center section-padding dark-bg" id="testimonials">
+<section class="testimonials text-center section-padding light-bg" id="testimonials">
   <div class="container">
     <div class="row">
       <div class="col-md-12 text-center">
-        <h1>Featured in</h1>
-        <img src="{{ 'logos.png' | asset_url }}" class="logos">
+        <h1 class="wp3">Featured in</h1>
+        <img src="{{ 'logos.png' | asset_url }}" class="logos wp3 delay-03s">
       </div>
     </div>
   </div>
 </section>
-<section class="text-center section-padding">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-md-12">
-        <h2>Follow us <a href="http://www.instagram.com/updogtoys">@updogtoys</a></h2>
-        <div class="instagram-carousel">
-          <div class="carousel-button carousel-button-left hidden">
-            <svg width="30" height="30" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg"><g><path class="fs-arrow" fill="none" stroke-width="1px" d="m22.5,0l-15,15l15,15" id="fs-left-path" stroke="#222"></path></g></svg>
-          </div>
-          <div class="carousel-button carousel-button-right">
-            <svg width="30" height="30" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg"><g><path class="fs-arrow" stroke="#222" id="fs-left-path" d="m7.5,0l15,15l-15,15" fill="none"></path></g></svg>
-          </div>
 
-          <div id="instafeed" class="instagram-photos"></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<section class="order-cta dark-bg text-center" id="cta">
+{% include 'instagram' %}
+
+<section class="dark-bg text-center section-padding" id="cta">
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <h1>1% of all purchases go to help animals</h1>
-        <p>We donate toys and a portion of all sales to our local animal shelter, Emerald City Pet Rescue.</p>
+        <h1 class="wp5">1% of all purchases go to help animals</h1>
+        <p class="wp5 delay-03s">We donate toys and a portion of all sales to our local animal shelter, Emerald City Pet Rescue.</p>
       </div>
     </div>
   </div>
@@ -89,10 +71,10 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-md-6 wp5">
+      <div class="col-md-6 wp6">
         <img src="{{ 'family.jpg' | asset_url }}" alt="Company Photo">
       </div>
-      <div class="col-md-6 wp5 delay-03s">
+      <div class="col-md-6 wp6 delay-03s">
         <h2>Big ears and big heart</h2>
         <p>Ever since our dog, Odin, came into our lives, he’s shared his innate happiness with everyone who encounters him. The joy he so easily spreads inspired us to start Up Dog Toys with a mission to make happy dogs and happy dog owners.</p>
         <p>In the same way that Odin makes everyone's day better, we hope our products will make you and your dog's day better too.</p>
