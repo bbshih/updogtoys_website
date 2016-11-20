@@ -475,7 +475,84 @@ h3 {
 /* ==========================================================================
 Navigation
 ========================================================================== */
+.navigation {
+    height: 100px;
+    background: #FFFFFF;
+    text-align: center;
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-bottom: 1px solid $gray;
 
+    .navigation-left, .navigation-middle, .navigation-right{
+        display: inline-block;
+        vertical-align: middle;
+        align-items: center;
+    }
+    .navigation-left, .navigation-right {
+        position: absolute;
+        top: 0;
+        width: 400px;
+        font-size: 0;
+        z-index: 300;
+        .navigation-block {
+            vertical-align: middle;
+            display: inline-block;
+            .navigation-link {
+                font-size: 1rem;
+                display: block;
+                height: 100px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                -webkit-transition: background-color 500ms ease-in-out;
+                        transition: background-color 500ms ease-in-out;
+                &:hover {
+                    background-color: $blue;
+                }
+            }
+        }
+    }
+    .navigation-left {
+        left: 0;
+        .navigation-block {
+            width: 50%;
+            border-right: 1px solid $gray;
+        }
+    }
+    .navigation-right {
+        right: 0;
+        .navigation-block {
+            width: 33%;
+            border-left: 1px solid $gray;
+        }
+    }
+    .navigation-middle {
+        position: relative;
+        z-index: 200;
+        width: 100%;
+        .logo {
+            margin: 0 auto;
+            height: 100px;
+        }
+    }
+}
+.navbar-index{
+    &.navbar {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: 9999;
+    }
+    .navbar-header {
+        background: none;
+    }
+    a:link, a:visited {
+        color: $gray;
+    }
+}
 .container-logo {
     text-align: center;
     .logo {
@@ -486,15 +563,16 @@ Navigation
     background-color: #fff;
     border-radius: 0;
     border: 0;
-    border-bottom: 1px solid $gray;
+    // border-bottom: 1px solid $gray;
+    -webkit-box-shadow: $box-shadow;
+       -moz-box-shadow: $box-shadow;
+            box-shadow: $box-shadow;
     margin-bottom: $nav-bot-margin;
 
     .navbar-nav {
-        text-align: center;
-        width: 100%;
         li {
             float: none;
-             display: inline-block;
+            display: inline-block;
         }
     }
     .navbar-brand-image {
@@ -587,16 +665,16 @@ Navigation
 header
 ========================================================================== */
 .header {
-    background: url('Kena-68.jpg') no-repeat center center;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    height: calc(100vh - 200px);
-    padding-top: 50px;
     text-align: center;
     position: relative;
-    margin-top:-$nav-bot-margin;
+    padding-top: 0;
+    .hero {
+        margin-top: 50px;
+    }
+    .hero-img {
+        max-width: 100%;
+
+    }
 
     .headline-container {
         // background-color: $primaryColor;
@@ -1293,6 +1371,7 @@ header {
     ul {
         list-style-type: none;
         padding: 0;
+        margin: 0;
     }
 
     img {
@@ -1371,7 +1450,4 @@ header {
 
 .product-details-container{
     position: static;
-    .product-details {
-        padding: 15px 0;
-    }
 }

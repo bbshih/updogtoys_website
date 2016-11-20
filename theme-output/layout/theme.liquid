@@ -20,92 +20,11 @@
 </head>
 
 <body id="top" class="{{ template | replace: '.', ' ' | truncatewords: 1, '' }}" id="{{ page_title | handle }}">
-  {% comment %}
-    <div class="sale-banner">Free shipping in US or $5 off international. Just order 2+ toys of any color using code <strong>ROSEQUARTZ</strong>. Expires 7/31. <a href="#" id="close-banner" class="close-banner">Close</a></div>
-  {% endcomment %}
-
-  <nav class="navbar navbar-default">
-    <div class="container container-logo">
-        <img src="{{ 'logo_grey.png' | asset_url}}" class="logo">
-    </div>
-    <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-      </div>
-
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav">
-          <li><a href="/">Home</a></li>
-          <li><a href="/products/the-odin">The Odin: Treat Toy</a></li>
-          <li><a href="/products/the-kena">The Kena: Squeaker Toy</a></li>
-          <li><a href="http://www.updogtoys.com">About Us</a></li>
-          <li><a href="#"><i class="fa fa-shopping-cart"></i> Cart ({{ cart.item_count }})</a></li>
-        </ul>
-      </div><!-- /.navbar-collapse -->
-    </div>
-  </nav>
+  {% if template != 'index' %}
+    {% include 'nav' %}
+  {% endif %}
   {{ content_for_layout }}
-  <footer class="footer">
-    <div class="subscribe">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12">
-            <i class="fa fa-paper-plane"></i>
-            <h2>Get Offers and New Product Updates</h2>
-            <!-- Begin MailChimp Signup Form -->
-            <form action="//updogtoys.us8.list-manage.com/subscribe/post?u=b41b5cefcd7a5736ee4c52664&amp;id=a5726273e7" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-              <input type="email" value="" placeholder="example@email.com" name="EMAIL" class="required email" id="mce-EMAIL" required>
-              <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-              <div style="position: absolute; left: -5000px;">
-                <input name="b_b41b5cefcd7a5736ee4c52664_a5726273e7" tabindex="-1" value="">
-              </div>
-              <input type="submit" value="Sign Up" name="subscribe" id="mc-embedded-subscribe" class="primary-btn btn">
-            </form>
-            <!--End mc_embed_signup-->
-          </div>
-        </div>
-      </div>
-    </div>
-    <nav class="footer-nav">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6">
-            <ul>
-              <li><a href="/">Home</a></li>
-              <li><a href="/products/the-odin">The Odin: Treat Toy</a></li>
-              <li><a href="/products/the-kena">The Kena: Squeaker Toy</a></li>
-              <li><a href="http://www.updogtoys.com">About Us</a></li>
-              <li><a href="/pages/wholesale">Wholesale Inquiries</a></li>
-              <li><a href="mailto:info@updogtoys.com">Contact Us</a></li>
-            </ul>
-          </div>
-
-          <div class="col-md-6">
-            <ul class="social-buttons">
-              <li><a href="http://www.instagram.com/updogtoys" class="social-btn"><i class="fa fa-instagram"></i></a></li>
-              <li><a href="http://www.facebook.com/updogtoys" class="social-btn"><i class="fa fa-facebook"></i></a></li>
-              <li><a href="http://www.twitter.com/updogtoys" class="social-btn"><i class="fa fa-twitter"></i></a></li>
-              <li><a href="mailto:info@updogtoys.com" class="social-btn"><i class="fa fa-envelope"></i></a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-12">
-            <p>Up Dog Toys &copy; 2016 &mdash; Created by Odin, the Pembroke Welsh Corgi. Please excuse typos from <a href="http://www.youtube.com/watch?v=pCyzqRvmrVE" class="fancybox-media">my large paws typing on small keys.</a></p>
-          </div>
-        </div>
-      </div>
-    </nav>
-  </div>
-
-  </footer>
-
+  {% include 'footer' %}
   {{ 'main.js' | asset_url | script_tag }}
 </body>
 

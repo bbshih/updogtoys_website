@@ -7695,6 +7695,76 @@ h3 {
 /* ==========================================================================
 Navigation
 ========================================================================== */
+.navigation {
+  height: 100px;
+  background: #FFFFFF;
+  text-align: center;
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  width: 100%;
+  border-bottom: 1px solid #696D76; }
+  .navigation .navigation-left, .navigation .navigation-middle, .navigation .navigation-right {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+                -ms-grid-row-align: center;
+            align-items: center; }
+  .navigation .navigation-left, .navigation .navigation-right {
+    position: absolute;
+    top: 0;
+    width: 400px;
+    font-size: 0;
+    z-index: 300; }
+    .navigation .navigation-left .navigation-block, .navigation .navigation-right .navigation-block {
+      vertical-align: middle;
+      display: inline-block; }
+      .navigation .navigation-left .navigation-block .navigation-link, .navigation .navigation-right .navigation-block .navigation-link {
+        font-size: 1rem;
+        display: block;
+        height: 100px;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-align-items: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-justify-content: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        transition: background-color 500ms ease-in-out; }
+        .navigation .navigation-left .navigation-block .navigation-link:hover, .navigation .navigation-right .navigation-block .navigation-link:hover {
+          background-color: #4f90d4; }
+  .navigation .navigation-left {
+    left: 0; }
+    .navigation .navigation-left .navigation-block {
+      width: 50%;
+      border-right: 1px solid #696D76; }
+  .navigation .navigation-right {
+    right: 0; }
+    .navigation .navigation-right .navigation-block {
+      width: 33%;
+      border-left: 1px solid #696D76; }
+  .navigation .navigation-middle {
+    position: relative;
+    z-index: 200;
+    width: 100%; }
+    .navigation .navigation-middle .logo {
+      margin: 0 auto;
+      height: 100px; }
+
+.navbar-index.navbar {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 9999; }
+.navbar-index .navbar-header {
+  background: none; }
+.navbar-index a:link, .navbar-index a:visited {
+  color: #696D76; }
+
 .container-logo {
   text-align: center; }
   .container-logo .logo {
@@ -7704,14 +7774,11 @@ Navigation
   background-color: #fff;
   border-radius: 0;
   border: 0;
-  border-bottom: 1px solid #696D76;
+  box-shadow: 0 0 6px 0 #6B6F73;
   margin-bottom: 60px; }
-  .navbar .navbar-nav {
-    text-align: center;
-    width: 100%; }
-    .navbar .navbar-nav li {
-      float: none;
-      display: inline-block; }
+  .navbar .navbar-nav li {
+    float: none;
+    display: inline-block; }
   .navbar .navbar-brand-image {
     height: 100%; }
 
@@ -7773,13 +7840,13 @@ Navigation
 header
 ========================================================================== */
 .header {
-  background: url("Kena-68.jpg") no-repeat center center;
-  background-size: cover;
-  height: calc(100vh - 200px);
-  padding-top: 50px;
   text-align: center;
   position: relative;
-  margin-top: -60px; }
+  padding-top: 0; }
+  .header .hero {
+    margin-top: 50px; }
+  .header .hero-img {
+    max-width: 100%; }
   .header .headline-container {
     display: inline-block;
     padding: .8em; }
@@ -8380,7 +8447,8 @@ header {
 
 .product-photos ul {
   list-style-type: none;
-  padding: 0; }
+  padding: 0;
+  margin: 0; }
 .product-photos img {
   width: 100%; }
 
@@ -8450,8 +8518,6 @@ header {
 
 .product-details-container {
   position: static; }
-  .product-details-container .product-details {
-    padding: 15px 0; }
 
 /* 320px (iPhone) */
 /* 480px (WVGA - Low End Windows Phone) */
