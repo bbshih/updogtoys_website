@@ -97,7 +97,7 @@ $(document).ready(function() {
   //   $('.sale-banner').slideUp();
   // });
 
-
+  // Main Instagram Feed
   var $instagramPhotos = $('#instafeed'),
       $leftCarousel = $('.carousel-button-left'),
       $rightCarousel = $('.carousel-button-right'),
@@ -146,7 +146,26 @@ $(document).ready(function() {
     });
   }
 
+  // Product page
   $('.product-details-container').stick_in_parent();
+
+  var instafeedOdin = '#instafeed-odin',
+      odinHashtag = 'odindogtoy';
+  if($(instafeedOdin)[0]) {
+    var feedOdin = new Instafeed({
+        target: 'instafeed-odin',
+        get: 'user',
+        userId: 'self',
+        clientId: '06c9aae210124ed481ba3efa975340fd',
+        accessToken: '1386977881.06c9aae.f11d2212e69444fb8c0e45161c8625d1',
+        resolution: 'thumbnail',
+        links: true,
+        filter: function(img) {
+          return img.tags.indexOf(odinHashtag) >= 0;
+        }
+    });
+    feedOdin.run();
+  }
 
 });
 

@@ -15,7 +15,7 @@
 
           {% if product.images.size == 0 %}
 
-            <div class="product-photo-container">
+            <div class="product-info-container">
               <img src="{{ '' | img_url: 'grande' }}" alt="" />
             </div>
 
@@ -26,18 +26,18 @@
                 <div class="btn-play-video">
                   <a class="btn secondary-btn fancybox-media animated fadeInDown delay-03s" href="http://www.youtube.com/watch?v=8l5Ehwm2g6g"><span class="fa fa-play" aria-hidden="true"></span> Watch the Video</a>
                 </div>
-                <video playsinline autoplay muted loop class="product-video">
-                  <source src="{{ 'odin_clip.mov' | asset_url }}" type="video/mp4">
+                <video playsinline autoplay muted loop poster="{{ 'odin_white_movie.jpg' | asset_url }}" class="product-video">
+                  <source src="{{ 'odin_clip.mp4' | asset_url }}" type="video/mp4">
                 </video>
               </li>
               {% for image in product.images %}
-              <li class="product-photo-container wp{{ forloop.index }} clearfix">
-                <div class="product-photo-caption">
+              <li class="product-info-container wp{{ forloop.index }} clearfix">
+                <div class="product-info-title product-info-caption">
                 {% if image.alt != product.title %}
                   {{ image.alt | escape }}
                 {% endif %}
                 </div>
-                <div class="product-photo">
+                <div class="product-info">
                   <img src="{{ image | img_url: '1024x1024' }}" alt="{{ image.alt | escape }}"/>
                 </div>
               </li>
@@ -47,23 +47,54 @@
           {% endif %}
 
           </div><!-- .product-photos -->
-          {% if product.handle == 'the-odin' %}
-            <div id="details" class="product-more-details">
-              <ul>
-                <li><span>3.6in x 3.3in x 3.8in</span></li>
-                <li><span>Made in China</span></li>
-                <li><span>1% of all purchases go toward saving animals at Emerald City Pet Rescue</span></li>
-              </ul>
+          <div id="details">
+            {% if product.handle == 'the-odin' %}
+              <div class="product-info-container bordered">
+                <div class="product-info-title">
+                  Specs
+                </div>
+                <div class="product-info">
+                  <ul>
+                    <li>3.6in x 3.3in x 3.8in</li>
+                    <li>Made of TPE (non-toxic, pthalate free, latex free)</li>
+                    <li>Made in China</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="product-info-container bordered">
+                <div class="product-info-title">
+                  Care
+                </div>
+                <div class="product-info">
+                  <p>Rinse with soapy water or use top rack of dish washer</p>
+                </div>
+              </div>
+            {% elsif product.handle == 'the-kena' %}
+              <div id="details" class="product-more-details">
+                <ul>
+                  <li><span>7.5in x 5in x 5in</span></li>
+                  <li><span>Made in China</span></li>
+                  <li><span>1% of all purchases go toward saving animals at Emerald City Pet Rescue</span></li>
+                </ul>
+              </div>
+            {% endif %}
+            <div class="product-info-container bordered">
+              <div class="product-info-title">
+                Cause
+              </div>
+              <div class="product-info">
+                <p>1% of all purchases go toward saving animals at Emerald City Pet Rescue</p>
+              </div>
             </div>
-          {% elsif product.handle == 'the-kena' %}
-            <div id="details" class="product-more-details">
-              <ul>
-                <li><span>7.5in x 5in x 5in</span></li>
-                <li><span>Made in China</span></li>
-                <li><span>1% of all purchases go toward saving animals at Emerald City Pet Rescue</span></li>
-              </ul>
+            <div class="product-info-container bordered">
+              <div class="product-info-title">
+                Return Policy
+              </div>
+              <div class="product-info">
+                <p>Try it out: Get a refund or replacement no questions asked</p>
+              </div>
             </div>
-          {% endif %}
+          </div>
         </div>
 
         <div class="col-sm-3 product-details-container">
@@ -72,12 +103,6 @@
             <div id="product-description" class="rte" itemprop="description">
               {{ product.description }}
             </div>
-
-            {% comment %}
-              All themes by Shopify should support the Product Reviews app out of the box.
-              https://apps.shopify.com/product-reviews
-            {% endcomment %}
-            <div id="shopify-product-reviews" data-id="{{ product.id }}">{{ product.metafields.spr.reviews }}</div>
 
             <div id="product-price" itemprop="offers" itemscope itemtype="http://schema.org/Offer" class="delta rte">
               <meta itemprop="priceCurrency" content="{{ shop.currency }}" />
@@ -120,24 +145,21 @@
               <input type="submit" name="add" id="add" class="btn primary-btn add-to-cart-btn" value="{{ 'Pre-order' | escape }}">
             </div>
 
-            {% if collection %}
-              {% if collection.previous_product or collection.next_product %}
-              <div>
-              {% if collection.previous_product %}
-                {% capture prev_url %}{{ collection.previous_product}}#content{% endcapture %}
-                <span class="left">{{ '&larr; Previous Product' | link_to: prev_url }}</span>
-              {% endif %}
-              {% if collection.next_product %}
-                {% capture next_url %}{{ collection.next_product}}#content{% endcapture %}
-                <span class="right">{{ 'Next Product &rarr;' | link_to: next_url }}</span>
-              {% endif %}
-              </div>
-              {% endif %}
-            {% endif %}
-
           </div><!-- .product-details -->
         </div>
       </div>
+      {% if product.handle == 'the-odin' %}
+        <section class="product-instagram section-padding">
+          <div class="row">
+            <div class="col-sm-12">
+              <h2 class="wpinstagram">Customer Photos <a href="http://www.instagram.com/updogtoys">@updogtoys</a></h2>
+              <div class="instagram-carousel wpinstagram delay-03s">
+                <div id="instafeed-odin" class="product-instagram-photos instagram-photos"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+      {% endif %}
     </div>
   </form>
 </div>
@@ -172,9 +194,6 @@
     </div>
   </div>
 </section>
-
-{% include 'instagram' %}
-
 
 {% comment %}
   Adding support for product options. See here for details:

@@ -13,15 +13,6 @@
 @media screen and (max-width: 1024px) {
 
 }
-/* 1200px (Small Desktop, Netbook) */
-
-@media screen and (max-width: 1280px) {
-    .navigation {
-        .navigation-right, .navigation-left {
-            width: 430px;
-        }
-    }
-}
 
 
 /* Bootstrap 990px Breakpoint to 480px */
@@ -72,8 +63,11 @@
     }
 }
 
+
 @media (min-width: 1600px) {
     .container {
         width: 1400px;
     }
 }
+
+
