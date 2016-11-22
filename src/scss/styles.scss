@@ -613,6 +613,9 @@ $navBorder: 1px solid $grayLightBorder;
                 margin: 10px auto;
                 height: 100px;
             }
+            .navigation-link:hover {
+                background-color: #fff;
+            }
         }
     }
     .navbar-index{
@@ -959,17 +962,7 @@ Stores
 /* ==========================================================================
 About
 ========================================================================== */
-
-.about {
-    background: url('family_picture.jpg') no-repeat center center;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    height: calc(100vh - 270px);
-}
 .about img {
-    margin-bottom: 1em;
     max-width: 100%;
 }
 ul.principles {
@@ -1269,7 +1262,7 @@ header {
     width: calc(100% - 200px);
     float: right;
     p {
-        margin-bottom: 1em;
+        margin: 1em 1em 1em 0;
     }
 }
 

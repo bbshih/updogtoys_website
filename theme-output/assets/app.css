@@ -8710,6 +8710,8 @@ Navigation
       .navigation .navigation-middle .logo {
         margin: 10px auto;
         height: 100px; }
+      .navigation .navigation-middle .navigation-link:hover {
+        background-color: #fff; }
 
   .navbar-index.navbar {
     position: absolute;
@@ -8984,13 +8986,7 @@ Stores
 /* ==========================================================================
 About
 ========================================================================== */
-.about {
-  background: url("family_picture.jpg") no-repeat center center;
-  background-size: cover;
-  height: calc(100vh - 270px); }
-
 .about img {
-  margin-bottom: 1em;
   max-width: 100%; }
 
 ul.principles {
@@ -9247,7 +9243,7 @@ header {
   width: calc(100% - 200px);
   float: right; }
   .product-info p {
-    margin-bottom: 1em; }
+    margin: 1em 1em 1em 0; }
 
 .product-more-details {
   float: right; }
