@@ -8,126 +8,173 @@
   <meta itemprop="image" content="{{ product | img_url: 'grande' }}" />
 
   <form action="/cart/add" method="post" enctype="multipart/form-data">
-    <div class="row">
-      <div class="col-sm-8">
-        <div class="product-photos">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-9">
+          <div class="product-photos">
 
-        {% if product.images.size == 0 %}
+          {% if product.images.size == 0 %}
 
-          <div class="product-photo-container">
-            <img src="{{ '' | img_url: 'grande' }}" alt="" />
-          </div>
-
-        {% else %}
-
-          <ul>
-            {% for image in product.images %}
-            <li class="wp{{ forloop.index }}">
-                <img src="{{ image | img_url: '1024x1024' }}" alt="{{ image.alt | escape }}" />
-            </li>
-            {% endfor %}
-          </ul>
-
-        {% endif %}
-
-        </div><!-- .product-photos -->
-        {% if product.handle == 'the-odin' %}
-          <div id="details">
-            <ul>
-              <li><span>3.6in x 3.3in x 3.8in</span></li>
-              <li><span>Made in China</span></li>
-              <li><span>1% of all purchases go toward saving animals at Emerald City Pet Rescue</span></li>
-            </ul>
-          </div>
-        {% elsif product.handle == 'the-kena' %}
-          <div id="details">
-            test
-          </div>
-        {% endif %}
-      </div>
-
-      <div class="col-sm-4 product-details-container">
-        <div class="product-details">
-          {% comment %}
-          Do we have a collection that has the same name as our product vendor name?
-          If we do, let's have the vendor link point to it.
-          If not, we will point to the automatic vendor collection.
-          {% endcomment %}
-
-          <h1 itemprop="name">{{ product.title }}</h1>
-          <div id="product-description" class="rte" itemprop="description">
-            {{ product.description }}
-          </div>
-
-          {% comment %}
-            All themes by Shopify should support the Product Reviews app out of the box.
-            https://apps.shopify.com/product-reviews
-          {% endcomment %}
-          <div id="shopify-product-reviews" data-id="{{ product.id }}">{{ product.metafields.spr.reviews }}</div>
-
-          <div id="product-price" itemprop="offers" itemscope itemtype="http://schema.org/Offer" class="delta rte">
-            <meta itemprop="priceCurrency" content="{{ shop.currency }}" />
-            {% if product.available %}
-            <link itemprop="availability" href="http://schema.org/InStock" />
-            {% else %}
-            <link itemprop="availability" href="http://schema.org/OutOfStock" />
-            {% endif %}
-            <p>
-              {% assign variant = product.selected_or_first_available_variant %}
-              {% if product.compare_at_price > product.price %}
-              <span class="product-price on-sale" itemprop="price">{{ variant.price | money }}</span>
-              <s class="product-compare-price">{{ variant.compare_at_price | money }}</s>
-              {% else %}
-              <span class="product-price" itemprop="price">{{ variant.price | money }}</span>
-              {% endif %}
-            </p>
-          </div>
-
-          {% assign hide_default_title = false %}
-          {% if product.variants.size == 1 and product.variants.first.title contains 'Default' %}
-            {% assign hide_default_title = true %}
-          {% endif %}
-
-          <div id="product-variants" class="{% if hide_default_title %} hidden{% endif %}">
-            <select id="product-select" name="id" class="">
-            {% for variant in product.variants %}
-              <option{% if variant == product.selected_or_first_available_variant %} selected{% endif %} value="{{ variant.id }}">
-              {{ variant.title }} - {{ variant.price | money }}
-              </option>
-            {% endfor %}
-            </select>
-          </div>
-
-          <div id="backorder" class="hidden">
-            <p class="text-info">Back-ordered: You will be charged now for your purchase and be shipped the item once it is in stock.</p>
-          </div>
-
-          <div id="product-add">
-            <input type="submit" name="add" id="add" class="btn primary-btn add-to-cart-btn" value="{{ 'Pre-order' | escape }}">
-          </div>
-
-          {% if collection %}
-            {% if collection.previous_product or collection.next_product %}
-            <div>
-            {% if collection.previous_product %}
-              {% capture prev_url %}{{ collection.previous_product}}#content{% endcapture %}
-              <span class="left">{{ '&larr; Previous Product' | link_to: prev_url }}</span>
-            {% endif %}
-            {% if collection.next_product %}
-              {% capture next_url %}{{ collection.next_product}}#content{% endcapture %}
-              <span class="right">{{ 'Next Product &rarr;' | link_to: next_url }}</span>
-            {% endif %}
+            <div class="product-photo-container">
+              <img src="{{ '' | img_url: 'grande' }}" alt="" />
             </div>
-            {% endif %}
+
+          {% else %}
+
+            <ul>
+              <li class="video">
+                <div class="btn-play-video">
+                  <a class="btn secondary-btn fancybox-media animated fadeInDown delay-03s" href="http://www.youtube.com/watch?v=8l5Ehwm2g6g"><span class="fa fa-play" aria-hidden="true"></span> Watch the Video</a>
+                </div>
+                <video playsinline autoplay muted loop class="product-video">
+                  <source src="{{ 'odin_clip.mov' | asset_url }}" type="video/mp4">
+                </video>
+              </li>
+              {% for image in product.images %}
+              <li class="product-photo-container wp{{ forloop.index }} clearfix">
+                <div class="product-photo-caption">
+                {% if image.alt != product.title %}
+                  {{ image.alt | escape }}
+                {% endif %}
+                </div>
+                <div class="product-photo">
+                  <img src="{{ image | img_url: '1024x1024' }}" alt="{{ image.alt | escape }}"/>
+                </div>
+              </li>
+              {% endfor %}
+            </ul>
+
           {% endif %}
 
-        </div><!-- .product-details -->
+          </div><!-- .product-photos -->
+          {% if product.handle == 'the-odin' %}
+            <div id="details" class="product-more-details">
+              <ul>
+                <li><span>3.6in x 3.3in x 3.8in</span></li>
+                <li><span>Made in China</span></li>
+                <li><span>1% of all purchases go toward saving animals at Emerald City Pet Rescue</span></li>
+              </ul>
+            </div>
+          {% elsif product.handle == 'the-kena' %}
+            <div id="details" class="product-more-details">
+              <ul>
+                <li><span>7.5in x 5in x 5in</span></li>
+                <li><span>Made in China</span></li>
+                <li><span>1% of all purchases go toward saving animals at Emerald City Pet Rescue</span></li>
+              </ul>
+            </div>
+          {% endif %}
+        </div>
+
+        <div class="col-sm-3 product-details-container">
+          <div class="product-details">
+            <h1 itemprop="name">{{ product.title }}</h1>
+            <div id="product-description" class="rte" itemprop="description">
+              {{ product.description }}
+            </div>
+
+            {% comment %}
+              All themes by Shopify should support the Product Reviews app out of the box.
+              https://apps.shopify.com/product-reviews
+            {% endcomment %}
+            <div id="shopify-product-reviews" data-id="{{ product.id }}">{{ product.metafields.spr.reviews }}</div>
+
+            <div id="product-price" itemprop="offers" itemscope itemtype="http://schema.org/Offer" class="delta rte">
+              <meta itemprop="priceCurrency" content="{{ shop.currency }}" />
+              {% if product.available %}
+              <link itemprop="availability" href="http://schema.org/InStock" />
+              {% else %}
+              <link itemprop="availability" href="http://schema.org/OutOfStock" />
+              {% endif %}
+              <p>
+                {% assign variant = product.selected_or_first_available_variant %}
+                {% if product.compare_at_price > product.price %}
+                <span class="product-price on-sale" itemprop="price">{{ variant.price | money }}</span>
+                <s class="product-compare-price">{{ variant.compare_at_price | money }}</s>
+                {% else %}
+                <span class="product-price" itemprop="price">{{ variant.price | money }}</span>
+                {% endif %}
+              </p>
+            </div>
+
+            {% assign hide_default_title = false %}
+            {% if product.variants.size == 1 and product.variants.first.title contains 'Default' %}
+              {% assign hide_default_title = true %}
+            {% endif %}
+
+            <div id="product-variants" class="{% if hide_default_title %} hidden{% endif %}">
+              <select id="product-select" name="id" class="">
+              {% for variant in product.variants %}
+                <option{% if variant == product.selected_or_first_available_variant %} selected{% endif %} value="{{ variant.id }}">
+                {{ variant.title }} - {{ variant.price | money }}
+                </option>
+              {% endfor %}
+              </select>
+            </div>
+
+            <div id="backorder" class="hidden">
+              <p class="text-info">Back-ordered: You will be charged now for your purchase and be shipped the item once it is in stock.</p>
+            </div>
+
+            <div id="product-add">
+              <input type="submit" name="add" id="add" class="btn primary-btn add-to-cart-btn" value="{{ 'Pre-order' | escape }}">
+            </div>
+
+            {% if collection %}
+              {% if collection.previous_product or collection.next_product %}
+              <div>
+              {% if collection.previous_product %}
+                {% capture prev_url %}{{ collection.previous_product}}#content{% endcapture %}
+                <span class="left">{{ '&larr; Previous Product' | link_to: prev_url }}</span>
+              {% endif %}
+              {% if collection.next_product %}
+                {% capture next_url %}{{ collection.next_product}}#content{% endcapture %}
+                <span class="right">{{ 'Next Product &rarr;' | link_to: next_url }}</span>
+              {% endif %}
+              </div>
+              {% endif %}
+            {% endif %}
+
+          </div><!-- .product-details -->
+        </div>
       </div>
     </div>
   </form>
-
 </div>
+
+<section class="other-product text-center section-padding light-bg" id="cta">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <h1>Check out our other toy</h1>
+        {% if product.handle == 'the-odin' %}
+          <div class="row">
+            <div class="col-md-6 col-md-offset-3 featured-product">
+              <a href="/products/the-kena">
+                <img src="{{ all_products['the-kena'].featured_image | img_url: 'large' }}" alt="Kena Squeaker Toy" class="featured-image push-hover">
+                <div class="product-title">The Kena</div>
+                <div class="product-subtitle">Squeaker Toy</div>
+              </a>
+            </div>
+          </div>
+        {% elsif product.handle == 'the-kena' %}
+          <div class="row">
+            <div class="col-md-6 col-md-offset-3 featured-product">
+              <a href="/products/the-odin">
+                <img src="{{ 'Dogs With Toy-2325.jpg' | asset_url}}" alt="Odin Puzzle Toy" class="push-hover featured-image">
+              </a>
+              <div class="product-title">The Odin</div>
+              <div class="product-subtitle">Treat Dispensing Puzzle Toy</div>
+            </div>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
 {% include 'instagram' %}
+
 
 {% comment %}
   Adding support for product options. See here for details:

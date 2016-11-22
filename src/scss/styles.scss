@@ -715,12 +715,13 @@ input[type=email] {
 }
 .primary-btn:hover, .primary-btn:focus {
     background: $primaryColorAlt;
+    color: #fff;
 }
 .secondary-btn {
     display: inline-block;
     padding: 1em 1em;
-    background: none;
-    color: $secondaryColor;
+    background: $secondaryColor;
+    color: #fff;
     text-transform: uppercase;
     font-weight: bold;
     letter-spacing: 1px;
@@ -753,7 +754,19 @@ Testimonials
 /* ==========================================================================
 Features
 ========================================================================== */
-.triplet:nth-child(n+2) {
+.featured-product {
+    .featured-image {
+        width: 100%;
+        max-width: 100%;
+    }
+    .product-title {
+        font-size: 3em;
+    }
+    .product-subtitle {
+        font-size: 1em;
+    }
+}
+.featured-product:nth-child(n+2) {
     margin-top: 2em;
 }
 .icon {
@@ -840,165 +853,20 @@ Swag
     }
 }
 
-
-
-/* ==========================================================================
-Photos
-========================================================================== */
-
-.gallery {
-    ul {
-        margin: 0;
-        padding: 0;
-        list-style-type: none;
-        li {
-            display: inline-block;
-            a {
-                margin-bottom: 0.5em;
-                @media screen and (min-width:500px) {
-                    margin-right: 0.5em;
-                }
-                display: inline-block;
-            }
-        }
-    }
+.push-hover:hover {
+    transform: scale(1) translate3d(0, 0, 0);
 }
+.push-hover {
+    transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+    transform: translate3d(0, 0, 0) scale(1.025);
+}
+
 
 /* ==========================================================================
-Portfolio
+Donation
 ========================================================================== */
+.donation {
 
-.effects {
-    padding-left: 15px;
-}
-.effects .img {
-    position: relative;
-    z-index: 1;
-    overflow: hidden;
-    margin-bottom: 2em;
-}
-.effects .img:nth-child(n) {
-    margin-right: 5px;
-}
-.effects .img:first-child {
-    margin-left: -15px;
-}
-.effects .img:last-child {
-    margin-right: 0;
-}
-.effects .img img {
-    display: block;
-    margin: 0;
-    padding: 0;
-    height: auto;
-    background-color: $gray;
-}
-.overlay {
-    display: block;
-    position: absolute;
-    z-index: 20;
-    background: rgba($primaryColor, .7);
-    overflow: hidden;
-    transition: all 0.5s;
-    -webkit-transition: all 0.5s;
-    -moz-transition: all 0.5s;
-    -o-transition: all 0.5s;
-}
-a.close-overlay {
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 100;
-    width: 45px;
-    height: 45px;
-    font-size: 20px;
-    font-weight: 700;
-    color: #fff;
-    line-height: 45px;
-    text-align: center;
-    background-color: #000;
-    cursor: pointer;
-}
-a.close-overlay.hidden {
-    display: none;
-}
-a.expand {
-    display: block;
-    position: absolute;
-    z-index: 100;
-    text-align: center;
-    color: #fff;
-    font-weight: 600;
-    font-size: 14px;
-    text-transform: uppercase;
-    line-height: 30px;
-}
-.overlay-effect .img i {
-    font-size: 30px;
-}
-.overlay-effect .overlay {
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    @include transparent(0);
-}
-.overlay-effect .overlay a.expand {
-    left: 0;
-    right: 0;
-    bottom: 47%;
-    margin: 0 auto -30px auto;
-}
-.overlay-effect .img.hover .overlay {
-    height: 100%;
-    @include transparent(1);
-}
-.img img {
-    width: -webkit-calc(100% + 40px) !important;
-    width: calc(100% + 40px) !important;
-    -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
-    transition: opacity 0.35s, transform 0.35s;
-    -moz-transition: opacity 0.35s, -moz-transform 0.35s;
-    -o-transition: opacity 0.35s, -o-transform 0.35s;
-    -webkit-transform: translate3d(-5px, 0, 0);
-    transform: translate3d(-5px, 0, 0);
-    -ms-transform: translate3d(-5px, 0, 0);
-}
-.img:hover img {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-    -ms-transform: translate3d(-5px, 0, 0);
-}
-.designs {
-    position: absolute;
-    left: 0;
-    right: 0;
-    margin-left: auto;
-    margin-right: auto;
-    top: 0;
-    margin-top: 4em;
-
-}
-/* ==========================================================================
-Gallery
-========================================================================== */
-.gallery {
-    .arrow {
-        margin-bottom: 70px;
-    }
-}
-.gif {
-    position: absolute;
-    top: 1em;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    z-index: 20;
-    color: #fff;
-    font-size: 4em;
-    @include transparent(.6);
 }
 
 /* ==========================================================================
@@ -1410,8 +1278,57 @@ header {
 
 .product-details-container{
     position: static;
+    &.is_stuck {
+        margin-top: 15px;
+    }
 }
 
 .features h1{
     margin-bottom: .5em;
+}
+
+.product-video {
+    width: 100%;
+}
+
+.video {
+    position: relative;
+}
+.btn-play-video {
+    position: absolute;
+    z-index: 100;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.product-photo-container {
+    position: relative;
+}
+.product-photo-caption {
+    position:absolute;
+    top: 50%;
+    text-align: right;
+    width: 175px;
+}
+.product-photo {
+    width: calc(100% - 200px);
+    float: right;
+}
+
+.product-more-details {
+    float: right;
+}
+.shopify-large-img  {
+    width: 480px;
+}
+
+.other-product {
+    .overlay-effect {
+        margin: 0 auto;
+    }
+    h2 {
+        margin: 0;
+    }
+
 }

@@ -4,9 +4,6 @@
 /* 480px (WVGA - Low End Windows Phone) */
 
 @media screen and (max-width: 480px) {
-    .credit {
-        text-align: center;
-    }
     .subscribe input[type=email] {
         margin-bottom: 1em;
     }
@@ -14,51 +11,29 @@
 /* xGA iPad */
 
 @media screen and (max-width: 1024px) {
-    // .wp3 { background-position: 50px 0; }
-    .swag, .order-cta {
-        background-attachment: scroll;
-    }
-    .subscribe {
-        background-attachment: scroll;
-    }
+
 }
 /* 1200px (Small Desktop, Netbook) */
 
 @media screen and (max-width: 1280px) {
-    // .wp3 { background-position: 50px 0; }
+    .navigation {
+        .navigation-right, .navigation-left {
+            width: 430px;
+        }
+    }
 }
 
-@media screen and (max-width: 991px) {
-    .toy-clear {
-        position: relative;
-        z-index: 0;
-        -webkit-box-shadow: none;
-        -moz-box-shadow: none;
-        box-shadow: none;
-        width: 100%;
-        opacity: .2;
-    }
-    .wp3 {
-        background-position: 50%;
-    }
-    .toy-clear-wrapper {
-        background: #f3f5f8;
-        height: 540px;
-    }
-}
+
 /* Bootstrap 990px Breakpoint to 480px */
 
 @media screen and (min-width: 480px) and (max-width: 991px) {
     .wp2, .wp4, .wp5, .light-box {
         margin-bottom: 30px;
     }
-    .credit {
-        text-align: center;
-    }
 }
 
 @media screen and (min-width: 892px) {
-    .triplet:nth-child(n+2) {
+    .featured-product:nth-child(n+2) {
         margin:0;
     }
 }
@@ -66,10 +41,6 @@
 @media screen and (min-width: 480px) {
     body {
         font-size: 18px;
-    }
-    .nav-logo {
-        margin-top: 0;
-        height: 80px;
     }
 }
 @media screen and (min-width: 1025px) {
@@ -98,5 +69,11 @@
             font-size: 1.5em;
             line-height: 1.3em;
         }
+    }
+}
+
+@media (min-width: 1600px) {
+    .container {
+        width: 1400px;
     }
 }
