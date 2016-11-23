@@ -15,30 +15,32 @@
 
           {% if product.images.size == 0 %}
 
-            <div class="product-info-container clearfix">
+            <div class="product-info-container">
               <img src="{{ '' | img_url: 'grande' }}" alt="" />
             </div>
 
           {% else %}
 
+            <div class="video">
+              <div class="btn-play-video">
+                <a class="btn secondary-btn fancybox-media animated fadeInDown delay-03s" href="http://www.youtube.com/watch?v=8l5Ehwm2g6g"><span class="fa fa-play" aria-hidden="true"></span> Watch the Video</a>
+              </div>
+              <video playsinline autoplay muted loop poster="{{ 'odin_white_movie.jpg' | asset_url }}" class="product-video">
+                <source src="{{ 'odin_clip.mp4' | asset_url }}" type="video/mp4">
+              </video>
+            </div>
             <ul>
-              <li class="video">
-                <div class="btn-play-video">
-                  <a class="btn secondary-btn fancybox-media animated fadeInDown delay-03s" href="http://www.youtube.com/watch?v=8l5Ehwm2g6g"><span class="fa fa-play" aria-hidden="true"></span> Watch the Video</a>
-                </div>
-                <video playsinline autoplay muted loop poster="{{ 'odin_white_movie.jpg' | asset_url }}" class="product-video">
-                  <source src="{{ 'odin_clip.mp4' | asset_url }}" type="video/mp4">
-                </video>
-              </li>
               {% for image in product.images %}
-              <li class="product-info-container wp{{ forloop.index }} clearfix">
+              <li class="product-info-container wp{{ forloop.index }}">
                 <div class="product-info-title product-info-caption">
                 {% if image.alt != product.title %}
                   {{ image.alt | escape }}
                 {% endif %}
                 </div>
                 <div class="product-info">
-                  <img src="{{ image | img_url: '1024x1024' }}" alt="{{ image.alt | escape }}"/>
+                  <a href="{{ image | img_url: 'master' }}" class="fancybox">
+                    <img src="{{ image | img_url: 'grande' }}" alt="{{ image.alt | escape }}"/>
+                  </a>
                 </div>
               </li>
               {% endfor %}
@@ -49,17 +51,18 @@
           </div><!-- .product-photos -->
           <div id="more-details">
             {% if product.handle == 'the-odin' %}
-              <div class="product-info-container clearfix bordered">
+              <div class="product-info-container bordered">
                 <div class="product-info-title">
                   How It Works
                 </div>
                 <div class="product-info">
-                  <p>Flaps on the top and bottom make it easy to place in treats, while holes on the sides allow the treats to fall out while your dog plays. </p>
-                  <p>Rubber-like material means hard wood floors and fragile furniture won't get banged up, while staying durable</p>
-                  <p>Do not allow your dog to chew on the toy. Take it away and show them how to roll the treats out. Start with small treats and work your way up to larger treats as your dog learns how to play.</p>
+                  <p>Place in treats easily from the top and bottom flaps, and then as your dog plays, the holes on the sides allow the treats to fall out.</p>
+                  <p>Rubber-like material means hard wood floors and fragile furniture won't get banged up, while staying durable to doggy jaws.</p>
+                  <p>Teach rolling or pick up and dropping instead of gnawing or ripping. This is not a chew toy. Please supervise your dog while playing.</p>
+                  <p>Attach 2 or more toys together to change the way it rolls and bounces.</p>
                 </div>
               </div>
-              <div class="product-info-container clearfix bordered">
+              <div class="product-info-container bordered">
                 <div class="product-info-title">
                   Specs
                 </div>
@@ -71,7 +74,7 @@
                   </ul>
                 </div>
               </div>
-              <div class="product-info-container clearfix bordered">
+              <div class="product-info-container bordered">
                 <div class="product-info-title">
                   Care
                 </div>
@@ -80,15 +83,16 @@
                 </div>
               </div>
             {% elsif product.handle == 'the-kena' %}
-              <div class="product-info-container clearfix bordered">
+              <div class="product-info-container bordered">
                 <div class="product-info-title">
                   How It Works
                 </div>
                 <div class="product-info">
-                  <p>Squeaker placed in the center encourages your dog to squeak and carry around the toy, while tough canvas keeps the toy from breaking down. High quality squeaker keeps working even when punctured.</p>
+                  <p>Squeaker placed in the center encourages your dog to squeak and carry around the toy, while tough canvas keeps the toy from breaking down.</p>
+                  <p>High quality squeaker keeps working even when punctured.</p>
                 </div>
               </div>
-              <div class="product-info-container clearfix bordered">
+              <div class="product-info-container bordered">
                 <div class="product-info-title">
                   Specs
                 </div>
@@ -102,7 +106,7 @@
                 </div>
               </div>
             {% endif %}
-            <div class="product-info-container clearfix bordered">
+            <div class="product-info-container bordered">
               <div class="product-info-title">
                 Cause
               </div>
@@ -110,12 +114,12 @@
                 <p>1% of all purchases go toward saving animals at Emerald City Pet Rescue</p>
               </div>
             </div>
-            <div class="product-info-container clearfix bordered">
+            <div class="product-info-container bordered">
               <div class="product-info-title">
                 Return Policy
               </div>
               <div class="product-info">
-                <p>Try it out: Get a refund or replacement no questions asked</p>
+                <p>Get a refund or replacement no questions asked. <a href="mailto:info@updogtoys.com">Email us info@updogtoys.com</a></p>
               </div>
             </div>
           </div>

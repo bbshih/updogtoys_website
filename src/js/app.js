@@ -1,6 +1,5 @@
+"use strict";
 $(document).ready(function() {
-  "use strict";
-
   // General
   setupWaypoints();
   setupFancybox();
@@ -11,9 +10,19 @@ $(document).ready(function() {
   setupHomeIG();
 
   // Product page
-  affixProductDetails();
-  setupProductIG();
+  var windowWidth = $(window).width();
 
+  affixProductDetails(windowWidth);
+  adjustDetailsPosition(windowWidth);
+
+  $(window).resize(function() {
+    windowWidth = $(window).width();
+
+    affixProductDetails(windowWidth);
+    adjustDetailsPosition(windowWidth);
+  });
+
+  setupProductIG();
 });
 
 function setupWaypoints() {
@@ -91,7 +100,6 @@ function setupFancybox() {
     maxWidth: 10000,
     maxHeight: 10000,
     minWidth: '70%',
-    minWidth: '70%',
     aspectRatio: true,
     helpers : {
       media: {
@@ -104,7 +112,7 @@ function setupFancybox() {
     }
   });
 }
-function displaySaleBanner() {
+// function displaySaleBanner() {
   // For Sale banner
   // window.setTimeout(function() {
   //   $('.sale-banner').slideDown();
@@ -114,7 +122,7 @@ function displaySaleBanner() {
   //   e.preventDefault();
   //   $('.sale-banner').slideUp();
   // });
-}
+// }
 
 function setupHomeIG() {
   var $instagramPhotos = $('#instafeed'),
@@ -166,19 +174,25 @@ function setupHomeIG() {
   }
 }
 
-function affixProductDetails() {
-  make_sticky();
-  $( window ).resize(function() {
-    make_sticky();
-  });
-}
+function affixProductDetails(windowWidth) {
+  var height = $('.product-details-container').height() + 15;
 
-function make_sticky() {
-  var window_width = $( window ).width();
-  if (window_width < 768) { // 768px is tied to breakpoint in css
+  if (windowWidth < 768) { // 768px is tied to breakpoint in css
     $(".product-photos").trigger("sticky_kit:detach");
+    $('footer').css('margin-bottom', height);
   } else {
     $('.product-details-container').stick_in_parent();
+    $('footer').css('margin-bottom', '');
+  }
+}
+
+function adjustDetailsPosition(windowWidth) {
+  var height = $('.product-photos').height() + 15;
+
+  if (windowWidth < 768) { // 768px is tied to breakpoint in css
+    $('#more-details').css('margin-top', height);
+  } else {
+    $('#more-details').css('margin-top', '');
   }
 }
 
