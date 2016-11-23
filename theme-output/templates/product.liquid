@@ -2,7 +2,7 @@
 {% assign sold_out = 'Sold Out' %}
 {% assign unavailable = 'Unavailable' %}
 
-<div class="product container-fluid" itemscope itemtype="http://schema.org/Product">
+<div class="product-page container-fluid" itemscope itemtype="http://schema.org/Product">
 
   <meta itemprop="url" content="{{ shop.url }}{{ product.url }}" />
   <meta itemprop="image" content="{{ product | img_url: 'grande' }}" />
@@ -10,12 +10,12 @@
   <form action="/cart/add" method="post" enctype="multipart/form-data">
     <div class="container">
       <div class="row">
-        <div class="col-sm-9">
+        <div class="col-sm-8 col-lg-9">
           <div class="product-photos">
 
           {% if product.images.size == 0 %}
 
-            <div class="product-info-container">
+            <div class="product-info-container clearfix">
               <img src="{{ '' | img_url: 'grande' }}" alt="" />
             </div>
 
@@ -47,9 +47,9 @@
           {% endif %}
 
           </div><!-- .product-photos -->
-          <div id="details">
+          <div id="more-details">
             {% if product.handle == 'the-odin' %}
-              <div class="product-info-container bordered">
+              <div class="product-info-container clearfix bordered">
                 <div class="product-info-title">
                   How It Works
                 </div>
@@ -59,7 +59,7 @@
                   <p>Do not allow your dog to chew on the toy. Take it away and show them how to roll the treats out. Start with small treats and work your way up to larger treats as your dog learns how to play.</p>
                 </div>
               </div>
-              <div class="product-info-container bordered">
+              <div class="product-info-container clearfix bordered">
                 <div class="product-info-title">
                   Specs
                 </div>
@@ -71,7 +71,7 @@
                   </ul>
                 </div>
               </div>
-              <div class="product-info-container bordered">
+              <div class="product-info-container clearfix bordered">
                 <div class="product-info-title">
                   Care
                 </div>
@@ -80,7 +80,7 @@
                 </div>
               </div>
             {% elsif product.handle == 'the-kena' %}
-              <div class="product-info-container bordered">
+              <div class="product-info-container clearfix bordered">
                 <div class="product-info-title">
                   How It Works
                 </div>
@@ -88,7 +88,7 @@
                   <p>Squeaker placed in the center encourages your dog to squeak and carry around the toy, while tough canvas keeps the toy from breaking down. High quality squeaker keeps working even when punctured.</p>
                 </div>
               </div>
-              <div class="product-info-container bordered">
+              <div class="product-info-container clearfix bordered">
                 <div class="product-info-title">
                   Specs
                 </div>
@@ -102,7 +102,7 @@
                 </div>
               </div>
             {% endif %}
-            <div class="product-info-container bordered">
+            <div class="product-info-container clearfix bordered">
               <div class="product-info-title">
                 Cause
               </div>
@@ -110,7 +110,7 @@
                 <p>1% of all purchases go toward saving animals at Emerald City Pet Rescue</p>
               </div>
             </div>
-            <div class="product-info-container bordered">
+            <div class="product-info-container clearfix bordered">
               <div class="product-info-title">
                 Return Policy
               </div>
@@ -121,12 +121,13 @@
           </div>
         </div>
 
-        <div class="col-sm-3 product-details-container">
+        <div class="col-sm-4 col-lg-3 product-details-container">
           <div class="product-details">
             <h1 itemprop="name">{{ product.title }}</h1>
-            <div id="product-description" class="rte" itemprop="description">
+            <div id="product-description" class="product-description" itemprop="description">
               {{ product.description }}
             </div>
+            <a href="#more-details" class="more-details-link">More details</a>
 
             <div id="product-price" itemprop="offers" itemscope itemtype="http://schema.org/Offer" class="delta rte">
               <meta itemprop="priceCurrency" content="{{ shop.currency }}" />

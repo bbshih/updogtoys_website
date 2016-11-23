@@ -389,6 +389,12 @@ table {
 Global Styles
 ========================================================================== */
 
+@media screen and (min-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+}
+
 a {
     color: $primaryColor;
     text-decoration: none;
@@ -404,7 +410,7 @@ a:hover, a:focus {
 p {
     color: $grayLight;
     word-spacing: 1px;
-    line-height: 25px;
+    line-height: 1.6em;
     font-size: 1em;
     margin: 1em 0;
     &:last-of-type {
@@ -421,6 +427,12 @@ h1, h2 {
 }
 h3 {
   color: $gray;
+}
+
+@media screen and (min-width: 768px) {
+    .container {
+        width: 100%;
+    }
 }
 .section-padding {
     padding: 3em 0;
@@ -485,6 +497,14 @@ $navBorder: 1px solid $grayLightBorder;
 
 .navbar-header {
     text-align: center;
+    box-shadow: 0px 0px 3px 0px $primaryColor;
+    -webkit-box-shadow: 0px 0px 3px 0px $primaryColor;
+    -moz-box-shadow: 0px 0px 3px 0px $primaryColor;
+    margin-bottom: 30px;
+    @media screen and (min-width: 1100px) {
+        box-shadow: none;
+        margin-bottom: 0;
+    }
 }
 
 .navbar-toggle {
@@ -493,8 +513,9 @@ $navBorder: 1px solid $grayLightBorder;
     float: none;
     margin: 8px 15px;
     z-index: 100;
-    background-color: $primaryColor;
+    background-color: #fff;
     color: #fff;
+    border: 1px solid $primaryColor;
     .icon-bar {
         background-color: $gray;
     }
@@ -516,6 +537,8 @@ $navBorder: 1px solid $grayLightBorder;
     margin: 0 15px;
     z-index: 100;
 }
+
+
 .navigation {
     background: #FFFFFF;
     width: 100%;
@@ -537,7 +560,7 @@ $navBorder: 1px solid $grayLightBorder;
     }
 }
 
-@media (min-width: 1100px) {
+@media screen and (min-width: 1100px) {
     .mobile-logo, .mobile-cart {
         display: none;
     }
@@ -552,7 +575,6 @@ $navBorder: 1px solid $grayLightBorder;
         top: 0;
         left: 0;
         border-bottom: $navBorder;
-        box-shadow: 0px 0px 3px 0px $primaryColor;
 
         .navigation-title {
             display: none;
@@ -660,9 +682,10 @@ header
     -o-background-size: cover;
     background-size: cover;
     height: calc(100vh - 270px);
-    @media (min-width: 1100px) {
+    @media screen and (min-width: 1100px) {
         margin-top: -30px;
     }
+
     .hero {
         margin-top: 50px;
     }
@@ -841,7 +864,7 @@ Swag
         letter-spacing: 5px;
         span {
             display: block;
-            font-size: 25px;
+            font-size: 1.6em;
             margin-top: 20px;
         }
     }
@@ -970,7 +993,7 @@ ul.principles {
     li {
         list-style-type: none;
         margin: 0;
-        line-height: 25px;
+        line-height: 1.6em;
     }
 }
 /* ==========================================================================
@@ -1071,98 +1094,6 @@ ul.social-buttons li {
         background-color: $primaryColorAlt;
     }
 }
-/* ==========================================================================
-Waypoints
-========================================================================== */
-
-.wp1, .wp2, .wp3, .wp4, .wp5, .wp6, .wp7, .wp8, .wp9, .wp10, .wpinstagram, .wpfooter {
-    visibility: hidden;
-}
-.fadeInUp, .fadeInUpDelay, .fadeInDown, .fadeInUp, .fadeInLeft, .fadeInRight {
-    visibility: visible;
-}
-.delay-03s {
-    animation-delay: 0.3s;
-    -webkit-animation-delay: 0.3s;
-}
-.delay-05s {
-    animation-delay: 0.5s;
-    -webkit-animation-delay: 0.5s;
-}
-.delay-1s {
-    animation-delay: 1s;
-    -webkit-animation-delay: 1s;
-}
-
-.sale-banner {
-    display: none;
-    background-color: #000;
-    color: #ebe0e8;
-    text-align: center;
-    padding: 1rem 0;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 99999;
-    font-size: 1.3em;
-    a.close-banner {
-        &:link {
-            color: $grayLightBg;
-        }
-        &:hover {
-            color: #fff;
-        }
-    }
-}
-
-// Non-homepage template
-header {
-    padding: 2em 0;
-}
-
-//  For product page
-.product-photos {
-    ul {
-        list-style-type: none;
-        padding: 0;
-        margin: 0;
-    }
-
-    img {
-        width: 100%;
-    }
-}
-.product-details {
-    @media screen and (max-width: 767px) {
-        h1 {
-            margin-top: 1em;
-        }
-
-    }
-}
-.add-to-cart-btn {
-    margin: 15px 0;
-    width: 100%;
-    font-size: 1.5em;
-    background: $pink;
-}
-
-// For cart page
-.cart-table {
-    width: 100%;
-}
-.quantity {
-    width: 5em;
-}
-
-.rte {
-    margin-bottom: 1em;
-}
-
-
-.product-price {
-    font-size: 2em;
-}
 
 .instagram {
     p {
@@ -1214,15 +1145,146 @@ header {
     }
 }
 
-.product-details-container{
-    position: static;
-    &.is_stuck {
-        margin-top: 15px;
+.features h1{
+    margin-bottom: .5em;
+}
+.instagram {
+    p {
+        margin-bottom: 1em;
+    }
+}
+
+.instagram-carousel {
+    white-space: nowrap;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    .instagram-photos {
+        margin: 0;
+        z-index: 1;
+        overflow: hidden;
+        overflow-x: auto;
+    }
+    .carousel-button {
+        cursor: pointer;
+        min-width: 30px;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        z-index: 10000;
+        background-color: rgba(255, 255, 255, 0.85);
+        user-select: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        display: -webkit-flex;
+        -webkit-flex-direction: column;
+        -webkit-align-items: center;
+        -webkit-justify-content: center;
+        display: -ms-flexbox;
+        -ms-flex-direction: column;
+        -ms-flex-align: center;
+        -ms-flex-pack: center;
+        @media screen and (min-width:$navCollapsePoint) {
+            min-width: 60px;
+        }
+    }
+    .carousel-button-left {
+        left: 0;
+    }
+    .carousel-button-right {
+        right: 0;
     }
 }
 
 .features h1{
     margin-bottom: .5em;
+}
+
+/* ==========================================================================
+Waypoints
+========================================================================== */
+
+.wp1, .wp2, .wp3, .wp4, .wp5, .wp6, .wp7, .wp8, .wp9, .wp10, .wpinstagram, .wpfooter {
+    visibility: hidden;
+}
+.fadeInUp, .fadeInUpDelay, .fadeInDown, .fadeInUp, .fadeInLeft, .fadeInRight {
+    visibility: visible;
+}
+.delay-03s {
+    animation-delay: 0.3s;
+    -webkit-animation-delay: 0.3s;
+}
+.delay-05s {
+    animation-delay: 0.5s;
+    -webkit-animation-delay: 0.5s;
+}
+.delay-1s {
+    animation-delay: 1s;
+    -webkit-animation-delay: 1s;
+}
+
+.sale-banner {
+    display: none;
+    background-color: #000;
+    color: #ebe0e8;
+    text-align: center;
+    padding: 1rem 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 99999;
+    font-size: 1.3em;
+    a.close-banner {
+        &:link {
+            color: $grayLightBg;
+        }
+        &:hover {
+            color: #fff;
+        }
+    }
+}
+
+// Non-homepage template
+header {
+    padding: 2em 0;
+}
+
+// For cart page
+.cart-table {
+    width: 100%;
+}
+.quantity {
+    width: 5em;
+}
+
+.rte {
+    margin-bottom: 1em;
+}
+
+// ********************************
+// Product page
+//
+
+.product-photos {
+    ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    img {
+        width: 100%;
+    }
+}
+.product-details {
+    @media screen and (max-width: 767px) {
+        h1 {
+            margin-top: 1em;
+        }
+
+    }
 }
 
 .product-video {
@@ -1240,38 +1302,119 @@ header {
     transform: translate(-50%, -50%);
 }
 
-.product-info-container {
-    position: relative;
-    @extend .clearfix;
-    &.bordered {
-        border-top: 1px solid $grayLightBorder;
-        border-right: 1px solid $grayLightBorder;
+.affix {
+    position: absolute;
+    bottom: 0;
+}
+
+.product-details-container {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    -webkit-box-shadow: 0px 0px 3px 0px $primaryColor;
+       -moz-box-shadow: 0px 0px 3px 0px $primaryColor;
+            box-shadow: 0px 0px 3px 0px $primaryColor;
+
+
+    @media screen and (max-width:767px) { // Hacky b/c using bootstrap columns
+        width: 100%;
+    }
+    z-index: 9999;
+    background-color: #fff;
+
+    .product-description {
+        display: none;
+    }
+
+    h1 {
+        margin: 15px 0 0 0;
+    }
+
+    @media screen and (min-width:768px) {
+        position: static;
+        -webkit-box-shadow: none;
+           -moz-box-shadow: none;
+                box-shadow: none;
+        &.is_stuck {
+            margin-top: 15px;
+        }
+        .product-description {
+            display: block;
+        }
+        h1 {
+            margin: 2em 0;
+        }
     }
 }
-.product-info-title {
-    &.product-info-caption {
-        top: 50%;
-        padding: 0;
-    }
-    padding-top: 1em;
-    position:absolute;
-    text-align: right;
-    width: 175px;
-}
-.product-info {
-    width: calc(100% - 200px);
-    float: right;
-    p {
-        margin: 1em 1em 1em 0;
+.more-details-link {
+    display: none;
+    @media screen and (min-width:768px) {
+        display: block;
+        margin: 1em 0;
     }
 }
 
-.product-more-details {
-    float: right;
+.product-price {
+    font-size: 1em;
+    @media screen and (min-width:768px) {
+        font-size: 2em;
+    }
 }
 
-.product-instagram {
-    h2 {
-        margin-top: 0;
+.selector-wrapper label {
+    display: inline-block;
+    margin-right: 1em;
+}
+
+.selector-wrapper select {
+    display: inline-block;
+}
+
+.add-to-cart-btn {
+    margin: 15px 0;
+    width: 100%;
+    font-size: 1em;
+    padding: .5em 0;
+    background: $pink;
+    @media screen and (min-width:768px) {
+        font-size: 1em;
+    }
+}
+
+// Need to edit product-details-container affix in app.js
+@media screen and (min-width:768px) {
+    .product-info-container {
+        position: relative;
+        &.bordered {
+            border-top: 1px solid $grayLightBorder;
+            border-right: 1px solid $grayLightBorder;
+        }
+    }
+    .product-info-title {
+        &.product-info-caption {
+            top: 50%;
+            padding: 0;
+        }
+        padding-top: 1em;
+        position:absolute;
+        text-align: right;
+        width: 175px;
+    }
+    .product-info {
+        width: calc(100% - 200px);
+        float: right;
+        p {
+            margin: 1em 1em 1em 0;
+        }
+    }
+
+    .product-more-details {
+        float: right;
+    }
+
+    .product-instagram {
+        h2 {
+            margin-top: 0;
+        }
     }
 }

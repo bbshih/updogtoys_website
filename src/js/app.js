@@ -1,7 +1,22 @@
 $(document).ready(function() {
   "use strict";
 
-/***************** Waypoints ******************/
+  // General
+  setupWaypoints();
+  setupFancybox();
+
+  // displaySaleBanner();
+
+  // Home Page
+  setupHomeIG();
+
+  // Product page
+  affixProductDetails();
+  setupProductIG();
+
+});
+
+function setupWaypoints() {
   $('.wp1').waypoint(function() {
     $('.wp1').addClass('animated fadeInUp');
   }, {
@@ -64,7 +79,9 @@ $(document).ready(function() {
   }, {
     offset: '90%'
   });
+}
 
+function setupFancybox() {
   $(".fancybox").fancybox({
     padding : 0
   });
@@ -85,8 +102,9 @@ $(document).ready(function() {
           }
       }
     }
-  })
-
+  });
+}
+function displaySaleBanner() {
   // For Sale banner
   // window.setTimeout(function() {
   //   $('.sale-banner').slideDown();
@@ -96,8 +114,9 @@ $(document).ready(function() {
   //   e.preventDefault();
   //   $('.sale-banner').slideUp();
   // });
+}
 
-  // Main Instagram Feed
+function setupHomeIG() {
   var $instagramPhotos = $('#instafeed'),
       $leftCarousel = $('.carousel-button-left'),
       $rightCarousel = $('.carousel-button-right'),
@@ -145,10 +164,25 @@ $(document).ready(function() {
       $instagramPhotos.animate({scrollLeft: newPosition}, wrapperWidth/2);
     });
   }
+}
 
-  // Product page
-  $('.product-details-container').stick_in_parent();
+function affixProductDetails() {
+  make_sticky();
+  $( window ).resize(function() {
+    make_sticky();
+  });
+}
 
+function make_sticky() {
+  var window_width = $( window ).width();
+  if (window_width < 768) { // 768px is tied to breakpoint in css
+    $(".product-photos").trigger("sticky_kit:detach");
+  } else {
+    $('.product-details-container').stick_in_parent();
+  }
+}
+
+function setupProductIG() {
   var instafeedOdin = '#instafeed-odin',
       odinHashtag = 'odindogtoy';
   if($(instafeedOdin)[0]) {
@@ -166,38 +200,4 @@ $(document).ready(function() {
     });
     feedOdin.run();
   }
-
-});
-
-/***************** Overlays ******************/
-
-$(document).ready(function(){
-    if (Modernizr.touch) {
-        // show the close overlay button
-        $(".close-overlay").removeClass("hidden");
-        // handle the adding of hover class when clicked
-        $(".img").click(function(e){
-            if (!$(this).hasClass("hover")) {
-                $(this).addClass("hover");
-            }
-        });
-        // handle the closing of the overlay
-        $(".close-overlay").click(function(e){
-            e.preventDefault();
-            e.stopPropagation();
-            if ($(this).closest(".img").hasClass("hover")) {
-                $(this).closest(".img").removeClass("hover");
-            }
-        });
-    } else {
-        // handle the mouseenter functionality
-        $(".img").mouseenter(function(){
-            $(this).addClass("hover");
-        })
-        // handle the mouseleave functionality
-        .mouseleave(function(){
-            $(this).removeClass("hover");
-        });
-    }
-});
-
+}
