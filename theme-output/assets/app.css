@@ -8538,7 +8538,6 @@ p {
 
 h1, h2 {
   font-family: 'Sofia';
-  color: #696D76;
   text-transform: uppercase; }
 
 .second-headline {
@@ -8829,7 +8828,8 @@ Features
   width: 100%;
   max-width: 100%; }
 .featured-product .product-title {
-  font-size: 2.5em; }
+  font-size: 2.5em;
+  margin: 15px 0 0 0; }
   @media screen and (min-width: 768px) {
     .featured-product .product-title {
       font-size: 3em; } }
@@ -8861,9 +8861,6 @@ Features
   margin: 0 auto 50px; }
 
 /* ==========================================================================
-Kickstarter Section
-========================================================================== */
-/* ==========================================================================
 Design details Section
 ========================================================================== */
 .toy-clear-wrapper {
@@ -8889,28 +8886,6 @@ Design details Section
 .design-details {
   position: relative; }
 
-/* ==========================================================================
-Swag
-========================================================================== */
-.swag, .order-cta {
-  background-size: cover;
-  background-attachment: fixed;
-  padding: 50px 0; }
-  .swag h1, .order-cta h1 {
-    color: #696D76;
-    text-transform: uppercase; }
-    .swag h1::after, .order-cta h1::after {
-      display: none; }
-  .swag p, .order-cta p {
-    color: #696D76; }
-
-.swag h1 {
-  letter-spacing: 5px; }
-  .swag h1 span {
-    display: block;
-    font-size: 1.6em;
-    margin-top: 20px; }
-
 .push-hover:hover {
   -webkit-transform: scale(1) translate3d(0, 0, 0);
           transform: scale(1) translate3d(0, 0, 0); }
@@ -8921,8 +8896,26 @@ Swag
           transform: translate3d(0, 0, 0) scale(1.025); }
 
 /* ==========================================================================
-Donation
+Corgi Break
 ========================================================================== */
+.corgi-break {
+  background: url("corgi_break.jpg") fixed center center;
+  background-size: cover;
+  height: 600px;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  .corgi-break h2 {
+    font-style: italics;
+    text-transform: uppercase;
+    color: #fff; }
+
 /* ==========================================================================
 Subscribe
 ========================================================================== */
@@ -9301,7 +9294,8 @@ header {
       .product-info-title.product-info-caption {
         top: 50%;
         padding: 0;
-        font-weight: normal; } }
+        font-weight: normal;
+        font-size: 0.8em; } }
 
 .product-info-caption {
   display: none; }
