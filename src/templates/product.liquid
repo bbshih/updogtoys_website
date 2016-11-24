@@ -26,6 +26,7 @@
                 <div class="btn-play-video">
                   <a class="btn secondary-btn fancybox-media animated fadeInDown delay-03s" href="http://www.youtube.com/watch?v=8l5Ehwm2g6g"><span class="fa fa-play" aria-hidden="true"></span> Watch Video</a>
                 </div>
+                <div id="video-container"></div>
                 <video playsinline autoplay muted loop poster="{{ 'odin_movie.jpg' | asset_url }}" class="product-video">
                   <source src="{{ 'odin_clip.mp4' | asset_url }}" type="video/mp4">
                 </video>
@@ -33,7 +34,8 @@
                 <div class="btn-play-video">
                   <a class="btn secondary-btn fancybox-media animated fadeInDown delay-03s" href="https://www.youtube.com/watch?v=EwaacK4lCns"><span class="fa fa-play" aria-hidden="true"></span> Watch the Video</a>
                 </div>
-                <video playsinline autoplay muted loop poster="{{ 'kena_feature.jpg' | asset_url }}" class="product-video">
+                <div id="video-container"></div>
+                <video playsinline autoplay muted loop poster="{{ 'kena_movie.jpg' | asset_url }}" class="product-video">
                   <source src="{{ 'kena_clip.mp4' | asset_url }}" type="video/mp4">
                 </video>
               {% endif %}

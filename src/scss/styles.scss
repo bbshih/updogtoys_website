@@ -15,6 +15,8 @@ audio, canvas, video {
     *display: inline;
     *zoom: 1;
 }
+
+
 /* * Prevents modern browsers from displaying `audio` without controls.
 * Remove excess height in iOS 5 devices. */
 
@@ -519,7 +521,9 @@ $navBorder: 1px solid $grayLightBorder;
         background-color: $gray;
     }
 }
-
+.navbar-collapse.collapse.in {
+    margin-bottom:30px;
+}
 .mobile-logo {
     position: relative;
     font-size: 24px;
@@ -683,7 +687,10 @@ header
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    height: calc(100vh - 270px);
+    @media screen and (min-width:$mobileBreakpoint) {
+        height: calc(100vh - 270px);
+    }
+    height: calc(57vw);
     margin-top: -30px;
 
     .hero {
@@ -1220,17 +1227,21 @@ Waypoints
     color: #ebe0e8;
     text-align: center;
     padding: 1rem 0;
-    position: fixed;
-    top: 0;
+    margin-top: -30px;
+    margin-bottom: 30px;
     width: 100%;
-    z-index: 99999;
     font-size: 1.3em;
     a.close-banner {
         &:link {
-            color: $grayLightBg;
+            color: $primaryColor;
         }
         &:hover {
             color: #fff;
+        }
+    }
+    @media screen and (min-width: $mobileBreakpoint) {
+        .close-banner {
+            display: none;
         }
     }
 }
@@ -1337,12 +1348,26 @@ header {
     }
 }
 
-.product-video {
-    width: 100%;
+#video-container {
+ position: relative;
+ padding-top: 56.25%;
+}
+
+video, object {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
 }
 
 .video {
     position: relative;
+    margin-bottom: 15px;
+    @media screen and (min-width:$mobileBreakpoint) {
+        margin: 0;
+    }
+
 }
 .btn-play-video {
     position: absolute;
@@ -1368,7 +1393,7 @@ header {
     @media screen and (max-width:767px) { // Hacky b/c using bootstrap columns
         width: 100%;
     }
-    z-index: 9999;
+    z-index: 8000;
     background-color: #fff;
 
     .product-description {

@@ -6,7 +6,7 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="{{ page_title }}">
   <meta property="og:description" content="{{ page_description }}">
-  <meta property="og:image" content="{{ product.variants[1].image | product_img_url: 'grande' | replace: '//cdn', 'http://cdn'}}" }}">
+  <meta property="og:image" content="https:{{ 'facebook_share.jpg' | asset_url }}" }}">
 {% elsif template contains 'product' %}
   <meta property="og:type" content="product">
   <meta property="og:title" content="{{ product.title | strip_html | escape }}">

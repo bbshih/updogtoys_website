@@ -71,7 +71,7 @@
               <td class="hidden-xs">{{ item.price | money }}</td>
               <td>
                 <div class="form-group">
-                  <input type="number" name="updates[]" id="updates_{{ item.id }}" class="form-control quantity" value="{{ item.quantity }}" />
+                  <input type="number" pattern="[0-9]*"  name="updates[]" id="updates_{{ item.id }}" class="form-control quantity" value="{{ item.quantity }}" />
                 </div>
               </td>
               <td>{{ item.line_price | money }}</td>
