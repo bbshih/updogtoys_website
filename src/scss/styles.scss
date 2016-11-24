@@ -789,7 +789,7 @@ Features
 .featured-product:nth-child(n+2) {
     margin-top: 2em;
 
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: $mobileBreakpoint) {
         margin:0;
     }
 }
@@ -852,19 +852,25 @@ Design details Section
 Corgi Break
 ========================================================================== */
 .corgi-break {
-    background: url('corgi_break.jpg') fixed center center;
+    background: url('corgi_break.jpg') scroll center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    height: 600px;
+    height: 400px;
+
+    @media screen and (min-width: $mobileBreakpoint) {
+        background-attachment: fixed;
+        height: 600px;
+    }
     display: flex;
     justify-content: center;
     align-items: center;
     h2 {
-        font-style: italics;
+        font-style: italic;
         text-transform: uppercase;
-        color: #fff
+        color: #fff;
+        font-size: 2em;
     }
 }
 

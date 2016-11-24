@@ -8899,9 +8899,9 @@ Design details Section
 Corgi Break
 ========================================================================== */
 .corgi-break {
-  background: url("corgi_break.jpg") fixed center center;
+  background: url("corgi_break.jpg") scroll center center;
   background-size: cover;
-  height: 600px;
+  height: 400px;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -8911,10 +8911,15 @@ Corgi Break
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center; }
+  @media screen and (min-width: 768px) {
+    .corgi-break {
+      background-attachment: fixed;
+      height: 600px; } }
   .corgi-break h2 {
-    font-style: italics;
+    font-style: italic;
     text-transform: uppercase;
-    color: #fff; }
+    color: #fff;
+    font-size: 2em; }
 
 /* ==========================================================================
 Subscribe
