@@ -22,12 +22,21 @@
           {% else %}
 
             <div class="video">
-              <div class="btn-play-video">
-                <a class="btn secondary-btn fancybox-media animated fadeInDown delay-03s" href="http://www.youtube.com/watch?v=8l5Ehwm2g6g"><span class="fa fa-play" aria-hidden="true"></span> Watch the Video</a>
-              </div>
-              <video playsinline autoplay muted loop poster="{{ 'odin_white_movie.jpg' | asset_url }}" class="product-video">
-                <source src="{{ 'odin_clip.mp4' | asset_url }}" type="video/mp4">
-              </video>
+              {% if product.handle == 'the-odin' %}
+                <div class="btn-play-video">
+                  <a class="btn secondary-btn fancybox-media animated fadeInDown delay-03s" href="http://www.youtube.com/watch?v=8l5Ehwm2g6g"><span class="fa fa-play" aria-hidden="true"></span> Watch Video</a>
+                </div>
+                <video playsinline autoplay muted loop poster="{{ 'odin_movie.jpg' | asset_url }}" class="product-video">
+                  <source src="{{ 'odin_clip.mp4' | asset_url }}" type="video/mp4">
+                </video>
+              {% elsif product.handle == 'the-kena' %}
+                <div class="btn-play-video">
+                  <a class="btn secondary-btn fancybox-media animated fadeInDown delay-03s" href="https://www.youtube.com/watch?v=EwaacK4lCns"><span class="fa fa-play" aria-hidden="true"></span> Watch the Video</a>
+                </div>
+                <video playsinline autoplay muted loop poster="{{ 'kena_feature.jpg' | asset_url }}" class="product-video">
+                  <source src="{{ 'kena_clip.mp4' | asset_url }}" type="video/mp4">
+                </video>
+              {% endif %}
             </div>
             <ul>
               {% for image in product.images %}
@@ -39,7 +48,7 @@
                 </div>
                 <div class="product-info">
                   <a href="{{ image | img_url: 'master' }}" class="fancybox">
-                    <img src="{{ image | img_url: 'grande' }}" alt="{{ image.alt | escape }}"/>
+                    <img src="{{ image | img_url: '1024x1024' }}" alt="{{ image.alt | escape }}"/>
                   </a>
                 </div>
               </li>
@@ -53,13 +62,34 @@
             {% if product.handle == 'the-odin' %}
               <div class="product-info-container bordered">
                 <div class="product-info-title">
-                  How It Works
+                  Description
                 </div>
                 <div class="product-info">
-                  <p>Place in treats easily from the top and bottom flaps, and then as your dog plays, the holes on the sides allow the treats to fall out.</p>
-                  <p>Rubber-like material means hard wood floors and fragile furniture won't get banged up, while staying durable to doggy jaws.</p>
-                  <p>Teach rolling or pick up and dropping instead of gnawing or ripping. This is not a chew toy. Please supervise your dog while playing.</p>
-                  <p>Attach 2 or more toys together to change the way it rolls and bounces.</p>
+                  <p>Place in treats or kibble easily from the top and bottom flaps, and then as your dog plays, the holes on the sides allow the treats to fall out.</p>
+                  <p>Rubber-like material keeps hardwood floors and fragile furniture from getting scratched, while staying durable to doggy jaws.</p>
+                  <p>This is not a chew toy. Please supervise your dog while playing.</p>
+                </div>
+              </div>
+              <div class="product-info-container bordered">
+                <div class="product-info-title">
+                  Tips
+                </div>
+                <div class="product-info">
+                  <ul>
+                    <li>Start with small treats or kibble that fall out easily so your dog is quickly rewarded for playing.</li>
+                    <li>Show them how it works by rolling it around and having treats fall out in front of them.</li>
+                    <li>As they get better at it, upgrade to larger treats to increase difficulty.</li>
+                    <li>Take it away if they start gnawing or ripping at the show and show them again to just roll the toy.</li>
+                    <li>Attach 2 or more toys together to change the way it rolls and bounces.</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="product-info-container bordered">
+                <div class="product-info-title">
+                  Name Dedication
+                </div>
+                <div class="product-info">
+                  <p>Odin is our Chief Toy Inspector and the dog-son of the founders of Up Dog Toys.</p>
                 </div>
               </div>
               <div class="product-info-container bordered">
@@ -69,7 +99,7 @@
                 <div class="product-info">
                   <ul>
                     <li>3.6in x 3.3in x 3.8in</li>
-                    <li>Made of TPE (non-toxic, pthalate free, latex free)</li>
+                    <li>Made of TPR (non-toxic, BPA free, pthalate free, latex free)</li>
                     <li>Made in China</li>
                   </ul>
                 </div>
@@ -88,8 +118,16 @@
                   How It Works
                 </div>
                 <div class="product-info">
-                  <p>Squeaker placed in the center encourages your dog to squeak and carry around the toy, while tough canvas keeps the toy from breaking down.</p>
+                  <p>Play fetch! The squeaker placed in the center encourages your dog to squeak and carry around the toy, while tough canvas keeps the toy from breaking down.</p>
                   <p>High quality squeaker keeps working even when punctured.</p>
+                </div>
+              </div>
+              <div class="product-info-container bordered">
+                <div class="product-info-title">
+                  Name Dedication
+                </div>
+                <div class="product-info">
+                  <p>Kena, pronounced Key-na, was Michelle's (founder of Up Dog Toys) first dog. She was a rescue chihuahua dachshund mix and passed away in 2016.</p>
                 </div>
               </div>
               <div class="product-info-container bordered">
@@ -99,7 +137,6 @@
                 <div class="product-info">
                   <ul>
                     <li>7.5in x 5in x 5in</li>
-                    <li>3.6in x 3.3in x 3.8in</li>
                     <li>Made of cotton canvas, polyester and filling</li>
                     <li>Made in China</li>
                   </ul>
@@ -202,7 +239,7 @@
           <div class="row">
             <div class="col-md-6 col-md-offset-3 featured-product">
               <a href="/products/the-kena">
-                <img src="{{ all_products['the-kena'].featured_image | img_url: 'large' }}" alt="Kena Squeaker Toy" class="featured-image push-hover">
+                <img src="{{ 'kena-feature.jpg' | asset_url }}" alt="Kena Squeaker Toy" class="featured-image push-hover">
                 <div class="product-title">The Kena</div>
                 <div class="product-subtitle">Squeaker Toy</div>
               </a>
@@ -212,7 +249,7 @@
           <div class="row">
             <div class="col-md-6 col-md-offset-3 featured-product">
               <a href="/products/the-odin">
-                <img src="{{ 'Dogs With Toy-2325.jpg' | asset_url}}" alt="Odin Puzzle Toy" class="push-hover featured-image">
+                <img src="{{ 'odin-tip.jpg' | asset_url}}" alt="Odin Puzzle Toy" class="push-hover featured-image">
               </a>
               <div class="product-title">The Odin</div>
               <div class="product-subtitle">Treat Dispensing Puzzle Toy</div>

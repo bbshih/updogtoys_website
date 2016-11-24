@@ -8525,7 +8525,7 @@ a {
   transition: all 0.5s; }
 
 a:hover, a:focus {
-  color: #c35858; }
+  color: #ebc9c9; }
 
 p {
   color: #6B6F73;
@@ -8749,7 +8749,7 @@ Navigation
 header
 ========================================================================== */
 .header {
-  background: url("Kena-17.jpg") no-repeat center center;
+  background: url("all-toys-kena-17.jpg") no-repeat center center;
   background-size: cover;
   height: calc(100vh - 270px);
   margin-top: -30px; }
@@ -8792,9 +8792,9 @@ input[type=email] {
   margin-top: 1em; }
 
 .primary-btn:hover, .primary-btn:focus {
-  background-color: #c35858;
+  background-color: #ebc9c9;
   color: #fff;
-  transition: background-color 500ms ease-in-out; }
+  transition: background-color 250ms ease-in-out; }
 
 .secondary-btn {
   display: inline-block;
@@ -8808,7 +8808,9 @@ input[type=email] {
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12); }
 
 .secondary-btn:hover, .secondary-btn:focus {
-  background-color: #384748; }
+  background-color: #667f80;
+  color: #fff;
+  transition: background-color 250ms ease-in-out; }
 
 /* ==========================================================================
 Testimonials
@@ -8836,6 +8838,9 @@ Features
 
 .featured-product:nth-child(n+2) {
   margin-top: 2em; }
+  @media screen and (min-width: 768px) {
+    .featured-product:nth-child(n+2) {
+      margin: 0; } }
 
 .icon {
   height: 175px;
@@ -8959,7 +8964,7 @@ Subscribe
   -o-transition: all 0.5s ease; }
 
 .subscribe input[type=submit]:hover {
-  background: #c35858;
+  background: #ebc9c9;
   color: #696D76; }
 
 /* ==========================================================================
@@ -9088,7 +9093,7 @@ ul.social-buttons li {
   text-align: center; }
   .social-btn:hover {
     color: #fff;
-    background-color: #c35858; }
+    background-color: #ebc9c9; }
 
 .instagram p {
   margin-bottom: 1em; }
@@ -9295,7 +9300,8 @@ header {
       width: 175px; }
       .product-info-title.product-info-caption {
         top: 50%;
-        padding: 0; } }
+        padding: 0;
+        font-weight: normal; } }
 
 .product-info-caption {
   display: none; }
@@ -9316,11 +9322,8 @@ header {
 .btn-play-video {
   position: absolute;
   z-index: 100;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%); }
+  bottom: 15px;
+  right: 15px; }
 
 .affix {
   position: absolute;
@@ -9384,6 +9387,14 @@ header {
     .add-to-cart-btn {
       font-size: 2em; } }
 
+.check-out-btn {
+  width: 100%;
+  font-size: 1em;
+  background: #dea3a3; }
+  @media screen and (min-width: 768px) {
+    .check-out-btn {
+      width: auto; } }
+
 @media screen and (min-width: 768px) {
   .product-info-container {
     position: relative; }
@@ -9413,9 +9424,6 @@ header {
 @media screen and (min-width: 480px) and (max-width: 991px) {
   .wp2, .wp4, .wp5, .light-box {
     margin-bottom: 30px; } }
-@media screen and (min-width: 892px) {
-  .featured-product:nth-child(n+2) {
-    margin: 0; } }
 @media screen and (min-width: 1025px) {
   body {
     font-size: 17px; }

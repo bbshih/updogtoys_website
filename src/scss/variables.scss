@@ -12,11 +12,11 @@ $brown: #936F45;
 $pink: #dea3a3;
 
 $primaryColor: $pink;
-$primaryColorAlt: darken($primaryColor, 20%);
+$primaryColorAlt: lighten($primaryColor, 10%);
 
 $green: #4f6364;
 $secondaryColor: $green;
-$secondaryColorAlt: darken($secondaryColor, 10%);
+$secondaryColorAlt: lighten($secondaryColor, 10%);
 
 $navCollapsePoint: 1100px;
 $mobileBreakpoint: 768px;

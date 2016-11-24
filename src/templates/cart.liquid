@@ -1,4 +1,5 @@
-<div class="container">
+{% layout "cart" %}
+<div class="container section-padding-bottom">
   <div class="row">
     <div class="col-md-10 col-md-offset-1">
       <h1 class="text-center">Shopping Cart</h1>
@@ -83,7 +84,7 @@
           </tbody>
 
         </table>
-
+        <h3 class="text-right">Subtotal <em>{{ cart.total_price | money }}</em></h3>
         {% comment %}
         For the checkout and update buttons to work, they need to use
         a name attribute set to 'checkout' and 'update', respectively. That's case-sensitive.
@@ -94,13 +95,13 @@
           we need to use a name attribute set to 'note'.
           {% endcomment %}
           <div class="col-sm-6">
-            <p>Special instructions for seller</p>
+            <div>Special instructions for seller</div>
             <textarea name="note" class="form-control" rows="3">{{ cart.note }}</textarea>
           </div>
           <div class="col-sm-6 text-right">
-            <h3 class="gamma">Subtotal <em>{{ cart.total_price | money }}</em></h3>
+            <div>You can apply a coupon code on the next screen</div>
             <input type="submit" name="update" value="Update cart" class="btn secondary-btn"/>
-            <input type="submit" name="checkout" value="Check out" class="btn primary-btn"/>
+            <input type="submit" name="checkout" value="Check out" class="btn primary-btn check-out-btn"/>
             {% comment %}Paypal and Google checkout buttons{% endcomment %}
             {% if additional_checkout_buttons %}
             <p class="additional-checkout-buttons">
@@ -114,7 +115,7 @@
       {% else %}
 
       <div>
-        <h2 class="gamma">It appears that your cart is currently empty!</h2>
+        <h2>It appears that your cart is currently empty!</h2>
         <h3 class="delta">You can continue browsing <a href="/">here</a>.</h3>
       </div>
 
