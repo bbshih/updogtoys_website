@@ -134,7 +134,7 @@ function setupHomeIG() {
         get: 'user',
         userId: 'self',
         clientId: '06c9aae210124ed481ba3efa975340fd',
-        accessToken: '1386977881.06c9aae.f11d2212e69444fb8c0e45161c8625d1',
+        accessToken: '1386977881.5efc7c5.862bdff8696545449e9a236e6c76fb08',
         resolution: 'low_resolution',
         links: true
     });
@@ -200,9 +200,9 @@ function setupProductIG() {
     var feedOdin = new Instafeed({
         target: 'instafeed-odin',
         get: 'user',
-        userId: 'self',
+        userId: '1386977881',
         clientId: '06c9aae210124ed481ba3efa975340fd',
-        accessToken: '1386977881.06c9aae.7c9ee405299e43a38cf0b7fc62d8d0b6',
+        accessToken: '1386977881.5efc7c5.862bdff8696545449e9a236e6c76fb08',
         resolution: 'thumbnail',
         links: true,
         filter: function(img) {

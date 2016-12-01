@@ -8755,7 +8755,7 @@ header
   background-size: cover;
   height: calc(57vw);
   margin-top: -30px; }
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 1500px) {
     .header {
       height: calc(100vh - 270px); } }
   .header .hero {
@@ -9234,11 +9234,10 @@ Waypoints
   background-color: #000;
   color: #ebe0e8;
   text-align: center;
-  padding: 1rem 0;
-  margin-top: -30px;
-  margin-bottom: 30px;
+  padding: .5em;
+  margin: -30px 0 30px 0;
   width: 100%;
-  font-size: 1.3em; }
+  font-size: 1.2em; }
   .sale-banner a.close-banner:link {
     color: #dea3a3; }
   .sale-banner a.close-banner:hover {

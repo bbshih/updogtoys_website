@@ -687,7 +687,7 @@ header
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    @media screen and (min-width:$mobileBreakpoint) {
+    @media screen and (min-width:1500px) {
         height: calc(100vh - 270px);
     }
     height: calc(57vw);
@@ -1226,11 +1226,10 @@ Waypoints
     background-color: #000;
     color: #ebe0e8;
     text-align: center;
-    padding: 1rem 0;
-    margin-top: -30px;
-    margin-bottom: 30px;
+    padding: .5em;
+    margin: -30px 0 30px 0;
     width: 100%;
-    font-size: 1.3em;
+    font-size: 1.2em;
     a.close-banner {
         &:link {
             color: $primaryColor;
