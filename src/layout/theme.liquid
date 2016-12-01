@@ -16,35 +16,14 @@
   {{ 'app.css' | asset_url | stylesheet_tag }}
   {{ content_for_header }}
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  {% include 'social-meta-tags' %}
 </head>
 
 <body id="top" class="{{ template | replace: '.', ' ' | truncatewords: 1, '' }}" id="{{ page_title | handle }}">
-  <header class="text-center">
-    <a href="/"><img src="{{ 'logo_grey.png' | asset_url }}"></a>
-  </header>
+  {% include 'nav' %}
+  {% include 'sale-banner' %}
   {{ content_for_layout }}
-  <footer>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="#returns">Return Policy</a></li>
-            <li><a href="/pages/wholesale">Wholesale Inquiries</a></li>
-            <li><a href="#stores">Where to Buy</a></li>
-            <li><a href="mailto:info@updogtoys.com">Contact Us</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-12">
-          <p>Up Dog Toys &copy; 2016 &mdash; Created by Odin, the Pembroke Welsh Corgi. Please excuse typos from <a href="http://www.youtube.com/watch?v=pCyzqRvmrVE" class="fancybox-media">my large paws typing on small keys.</a></p>
-        </div>
-      </div>
-    </div>
-
-  </footer>
-
+  {% include 'footer' %}
   {{ 'main.js' | asset_url | script_tag }}
 </body>
 

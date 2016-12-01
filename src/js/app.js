@@ -1,59 +1,106 @@
-//  Resize hero image
-function resizeHero() {
-  "use strict";
-
-  var vHeight = $(window).height(),
-      vWidth = $(window).width(),
-      header = $('#header'),
-      navHeight = $('.nav-container').height(),
-      heroText = $('.hero-text');
-
-  heroText.css({ top: navHeight});
-  header.css({ height: vHeight, width: vWidth});
-}
-
+"use strict";
 $(document).ready(function() {
-  "use strict";
-  resizeHero();
+  // General
+  setupWaypoints();
+  setupFancybox();
 
-/***************** Waypoints ******************/
+  displaySaleBanner();
+
+  // Home Page
+  setupHomeIG();
+
+  // Product page
+  var windowWidth = $(window).width();
+
+  affixProductDetails(windowWidth);
+  adjustDetailsPosition(windowWidth);
+
+  $(window).resize(function() {
+    windowWidth = $(window).width();
+
+    affixProductDetails(windowWidth);
+    adjustDetailsPosition(windowWidth);
+  });
+
+  setupProductIG();
+});
+
+function setupWaypoints() {
   $('.wp1').waypoint(function() {
-    $('.wp1').addClass('animated fadeInLeft');
+    $('.wp1').addClass('animated fadeInUp');
   }, {
-    offset: '75%'
+    offset: '80%'
   });
   $('.wp2').waypoint(function() {
-    $('.wp2').addClass('animated fadeInUp');
+    $('.wp2').addClass('animated fadeInDown');
   }, {
-    offset: '75%'
+    offset: '80%'
   });
   $('.wp3').waypoint(function() {
     $('.wp3').addClass('animated fadeInDown');
   }, {
-    offset: '55%'
+    offset: '80%'
   });
   $('.wp4').waypoint(function() {
     $('.wp4').addClass('animated fadeInDown');
   }, {
-    offset: '75%'
+    offset: '80%'
   });
   $('.wp5').waypoint(function() {
-    $('.wp5').addClass('animated fadeInUp');
+    $('.wp5').addClass('animated fadeInDown');
   }, {
-    offset: '75%'
+    offset: '80%'
   });
   $('.wp6').waypoint(function() {
     $('.wp6').addClass('animated fadeInDown');
   }, {
-    offset: '75%'
+    offset: '80%'
+  });
+  $('.wp7').waypoint(function() {
+    $('.wp7').addClass('animated fadeInDown');
+  }, {
+    offset: '80%'
+  });
+  $('.wp8').waypoint(function() {
+    $('.wp8').addClass('animated fadeInDown');
+  }, {
+    offset: '80%'
+  });
+  $('.wp9').waypoint(function() {
+    $('.wp9').addClass('animated fadeInDown');
+  }, {
+    offset: '80%'
+  });
+  $('.wp10').waypoint(function() {
+    $('.wp10').addClass('animated fadeInDown');
+  }, {
+    offset: '80%'
   });
 
+  $('.wpinstagram').waypoint(function() {
+    $('.wpinstagram').addClass('animated fadeInDown');
+  }, {
+    offset: '80%'
+  });
+
+  $('.wpfooter').waypoint(function() {
+    $('.wpfooter').addClass('animated fadeInUp');
+  }, {
+    offset: '90%'
+  });
+}
+
+function setupFancybox() {
   $(".fancybox").fancybox({
     padding : 0
   });
 
   $('.fancybox-media').fancybox({
     padding: 0,
+    maxWidth: 10000,
+    maxHeight: 10000,
+    minWidth: '70%',
+    aspectRatio: true,
     helpers : {
       media: {
           youtube : {
@@ -63,98 +110,105 @@ $(document).ready(function() {
           }
       }
     }
-  })
-
-  $('.reveal-overlay').click(function(e) {
-    e.preventDefault();
-    $('#' + this.dataset.gallery).removeClass('inactive');
-  })
-
+  });
+}
+function displaySaleBanner() {
   window.setTimeout(function() {
     $('.sale-banner').slideDown();
-  }, 2000);
-});
+  }, 500);
 
-$('#close-banner').click(function(e) {
-  e.preventDefault();
-  $('.sale-banner').slideUp();
-});
-
-window.onresize = function(event) {
-  resizeHero();
+  $('#close-banner').click(function(e) {
+    e.preventDefault();
+    $('.sale-banner').slideUp();
+  });
 }
 
-// Modal
+function setupHomeIG() {
+  var $instagramPhotos = $('#instafeed'),
+      $leftCarousel = $('.carousel-button-left'),
+      $rightCarousel = $('.carousel-button-right'),
+      wrapperWidth = $('.instagram-carousel').width();
 
-/***************** Slide-In Nav ******************/
+  if($instagramPhotos[0]) {
+    var feed = new Instafeed({
+        get: 'user',
+        userId: 'self',
+        clientId: '06c9aae210124ed481ba3efa975340fd',
+        accessToken: '1386977881.5efc7c5.862bdff8696545449e9a236e6c76fb08',
+        resolution: 'low_resolution',
+        links: true
+    });
+    feed.run();
 
-$(window).load(function() {
-
-  $('.nav_slide_button').click(function() {
-    $('.pull').slideToggle();
-  });
-
-});
-
-/***************** Smooth Scrolling ******************/
-
-$(function() {
-
-  $('a[href*=#]:not([href=#])').click(function() {
-    if (location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') && location.hostname === this.hostname) {
-
-      var target = $(this.hash);
-      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-      if (target.length) {
-        $('html,body').animate({
-          scrollTop: target.offset().top
-        }, 500);
-        return false;
+    $instagramPhotos.scroll(function() {
+      if (this.scrollLeft > 0) {
+        $leftCarousel.removeClass('hidden');
+      } else {
+        $leftCarousel.addClass('hidden');
       }
-    }
-  });
 
-});
+      if (($instagramPhotos[0].scrollWidth - this.scrollLeft) > wrapperWidth) {
+        $rightCarousel.removeClass('hidden');
+      } else {
+        $rightCarousel.addClass('hidden');
+      }
+    });
 
-/***************** Nav Transformicon ******************/
 
-document.querySelector("#nav-toggle").addEventListener("click", function() {
-  this.classList.toggle("active");
-});
+    $leftCarousel.click( function(e) {
+      var position = $instagramPhotos.scrollLeft(),
+          width = $instagramPhotos.width(),
+          newPosition = position - width;
 
-document.querySelector("nav").addEventListener("click", function() {
-  this.classList.toggle("active");
-});
+      $instagramPhotos.animate({scrollLeft: newPosition}, wrapperWidth/2);
+    });
 
-/***************** Overlays ******************/
+    $rightCarousel.click( function(e) {
+      var position = $instagramPhotos.scrollLeft(),
+          width = $instagramPhotos.width(),
+          newPosition = position + width;
 
-$(document).ready(function(){
-    if (Modernizr.touch) {
-        // show the close overlay button
-        $(".close-overlay").removeClass("hidden");
-        // handle the adding of hover class when clicked
-        $(".img").click(function(e){
-            if (!$(this).hasClass("hover")) {
-                $(this).addClass("hover");
-            }
-        });
-        // handle the closing of the overlay
-        $(".close-overlay").click(function(e){
-            e.preventDefault();
-            e.stopPropagation();
-            if ($(this).closest(".img").hasClass("hover")) {
-                $(this).closest(".img").removeClass("hover");
-            }
-        });
-    } else {
-        // handle the mouseenter functionality
-        $(".img").mouseenter(function(){
-            $(this).addClass("hover");
-        })
-        // handle the mouseleave functionality
-        .mouseleave(function(){
-            $(this).removeClass("hover");
-        });
-    }
-});
+      $instagramPhotos.animate({scrollLeft: newPosition}, wrapperWidth/2);
+    });
+  }
+}
 
+function affixProductDetails(windowWidth) {
+  if (windowWidth < 768) { // 768px is tied to breakpoint in css
+    var height = $('.product-details-container').height() + 15;
+    $(".product-photos").trigger("sticky_kit:detach");
+    $('footer').css('margin-bottom', height);
+  } else {
+    $('.product-details-container').stick_in_parent();
+    $('footer').css('margin-bottom', '');
+  }
+}
+
+function adjustDetailsPosition(windowWidth) {
+  if (windowWidth < 768) { // 768px is tied to breakpoint in css
+    var height = $('.product-photos').height() + 30;
+    $('#more-details').css('margin-top', height);
+  } else {
+    $('#more-details').css('margin-top', '');
+  }
+}
+
+function setupProductIG() {
+  var instafeedOdin = '#instafeed-odin',
+      odinHashtag = 'odindogtoy';
+  if($(instafeedOdin)[0]) {
+    var feedOdin = new Instafeed({
+        target: 'instafeed-odin',
+        get: 'user',
+        userId: '1386977881',
+        clientId: '06c9aae210124ed481ba3efa975340fd',
+        accessToken: '1386977881.5efc7c5.862bdff8696545449e9a236e6c76fb08',
+        resolution: 'thumbnail',
+        links: true,
+        filter: function(img) {
+          return img.tags.indexOf(odinHashtag) >= 0;
+        }
+    });
+    feedOdin.run();
+  }
+}

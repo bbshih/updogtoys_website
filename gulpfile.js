@@ -51,8 +51,10 @@ gulp.task('js', function() {
   gulp.src(['./src/js/waypoints.min.js',
             './src/js/bootstrap.js',
             './src/js/modernizr.js',
+            './src/js/instafeed.js',
             './src/js/jquery.fancybox.js',
             './src/js/jquery.fancybox-media.js',
+            './src/js/sticky-kit.min.js',
             './src/js/app.js'])
     .pipe(concat('main.js'))
     .pipe(uglify())

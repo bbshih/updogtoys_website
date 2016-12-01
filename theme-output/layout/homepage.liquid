@@ -23,37 +23,50 @@
   {% comment %}
     <div class="sale-banner">Free shipping in US or $5 off international. Just order 2+ toys of any color using code <strong>ROSEQUARTZ</strong>. Expires 7/31. <a href="#" id="close-banner" class="close-banner">Close</a></div>
   {% endcomment %}
-  <nav>
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2">
-          <nav class="pull">
-            <ul class="top-nav">
-              <li><a href="#features">Features <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
-              <li><a href="#gallery">Photos <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
-              <li><a href="#faq">FAQ <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
-              <li><a href="#returns">Return Policy <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
-              <li><a href="#stores">Where to buy <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
-              <li><a href="#about">About <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
-              <li><a href="#contact">Contact <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
-              <li><a href="/pages/wholesale">Wholesale <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
-            </ul>
-          </nav>
-        </div>
+
+  <nav class="navbar navbar-default">
+    <div class="container container-logo">
+        <img src="{{ 'logo_grey.png' | asset_url}}" class="logo">
+    </div>
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
       </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li><a href="http://www.updogtoys.com">Home</a></li>
+          <li><a href="/products/the-odin">The Odin: Treat Toy</a></li>
+          <li><a href="/products/the-kena">The Kena: Squeaker Toy</a></li>
+          <li><a href="http://www.updogtoys.com">About Us</a></li>
+          <li><a href="#"><i class="fa fa-shopping-cart"></i> Cart ({{ cart.item_count }})</a></li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
     </div>
   </nav>
   {{ content_for_layout }}
-  <footer>
+  <footer class="footer">
     <div class="container">
       <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-6">
           <ul>
             <li><a href="/">Home</a></li>
-            <li><a href="#returns">Return Policy</a></li>
             <li><a href="/pages/wholesale">Wholesale Inquiries</a></li>
-            <li><a href="#stores">Where to Buy</a></li>
             <li><a href="mailto:info@updogtoys.com">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <ul class="social-buttons">
+            <li><a href="http://www.facebook.com/updogtoys" class="social-btn"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="http://www.instagram.com/updogtoys" class="social-btn"><i class="fa fa-instagram"></i></a></li>
+            <li><a href="http://www.twitter.com/updogtoys" class="social-btn"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="mailto:info@updogtoys.com" class="social-btn"><i class="fa fa-envelope"></i></a></li>
           </ul>
         </div>
       </div>
