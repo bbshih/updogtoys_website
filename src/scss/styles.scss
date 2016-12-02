@@ -1334,6 +1334,7 @@ header {
 
 .product-info-caption {
     display: none;
+
     @media screen and (min-width:$mobileBreakpoint) {
         display: block;
     }
@@ -1367,6 +1368,12 @@ video, object {
         margin: 0;
     }
 
+}
+.video-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
 }
 .btn-play-video {
     position: absolute;
@@ -1466,6 +1473,7 @@ video, object {
         width: auto;
     }
 }
+
 
 // Need to edit product-details-container affix in app.js
 @media screen and (min-width:$mobileBreakpoint) {

@@ -23,18 +23,26 @@
 
             <div class="video">
               {% if product.handle == 'the-odin' %}
-                <div class="btn-play-video">
-                  <a class="btn secondary-btn fancybox-media animated fadeInDown delay-03s" href="http://www.youtube.com/watch?v=8l5Ehwm2g6g"><span class="fa fa-play" aria-hidden="true"></span> Watch Video</a>
-                </div>
-                <div id="video-container"></div>
+                <a class="video-overlay fancybox-media animated fadeInDown delay-03s" href="http://www.youtube.com/watch?v=8l5Ehwm2g6g">
+                  <div class="btn-play-video">
+                    <div class="btn secondary-btn">
+                      <span class="fa fa-play" aria-hidden="true"></span> Watch Video
+                    </div>
+                  </div>
+                </a>
+                <div id="video-container" class="animated fadeInDown delay-03s"></div>
                 <video playsinline autoplay muted loop poster="{{ 'odin_movie.jpg' | asset_url }}" class="product-video">
                   <source src="{{ 'odin_clip.mp4' | asset_url }}" type="video/mp4">
                 </video>
               {% elsif product.handle == 'the-kena' %}
-                <div class="btn-play-video">
-                  <a class="btn secondary-btn fancybox-media animated fadeInDown delay-03s" href="https://www.youtube.com/watch?v=EwaacK4lCns"><span class="fa fa-play" aria-hidden="true"></span> Watch the Video</a>
-                </div>
-                <div id="video-container"></div>
+                <a class="video-overlay fancybox-media animated fadeInDown delay-03s" href="https://www.youtube.com/watch?v=EwaacK4lCns">
+                  <div class="btn-play-video">
+                    <div class="btn secondary-btn">
+                      <span class="fa fa-play" aria-hidden="true"></span> Watch the Video
+                    </div>
+                  </div>
+                </a>
+                <div id="video-container" class="animated fadeInDown delay-03s"></div>
                 <video playsinline autoplay muted loop poster="{{ 'kena_movie.jpg' | asset_url }}" class="product-video">
                   <source src="{{ 'kena_clip.mp4' | asset_url }}" type="video/mp4">
                 </video>
@@ -44,9 +52,9 @@
               {% for image in product.images %}
               <li class="product-info-container wp{{ forloop.index }}">
                 <div class="product-info-title product-info-caption">
-                {% if image.alt != product.title %}
-                  {{ image.alt | escape }}
-                {% endif %}
+                  {% if image.alt != product.title %}
+                    {{ image.alt | escape }}
+                  {% endif %}
                 </div>
                 <div class="product-info">
                   <a href="{{ image | img_url: 'master' }}" class="fancybox">

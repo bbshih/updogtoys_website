@@ -9337,6 +9337,12 @@ video, object {
     .video {
       margin: 0; } }
 
+.video-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 100; }
+
 .btn-play-video {
   position: absolute;
   z-index: 100;
