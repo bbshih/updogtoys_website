@@ -22,7 +22,8 @@ $(document).ready(function() {
     adjustDetailsPosition(windowWidth);
   });
 
-  setupProductIG();
+  var hashtag = $('[data-ig-tag]').data('ig-tag');
+  setupProductIG(hashtag);
 });
 
 function setupWaypoints() {
@@ -193,12 +194,12 @@ function adjustDetailsPosition(windowWidth) {
   }
 }
 
-function setupProductIG() {
-  var instafeedOdin = '#instafeed-odin',
-      odinHashtag = 'odindogtoy';
-  if($(instafeedOdin)[0]) {
-    var feedOdin = new Instafeed({
-        target: 'instafeed-odin',
+function setupProductIG(hashtag) {
+  var instafeed = '#instafeed-product';
+
+  if($(instafeed)[0]) {
+    var feed = new Instafeed({
+        target: 'instafeed-product',
         get: 'user',
         userId: '1386977881',
         clientId: '06c9aae210124ed481ba3efa975340fd',
@@ -206,9 +207,9 @@ function setupProductIG() {
         resolution: 'thumbnail',
         links: true,
         filter: function(img) {
-          return img.tags.indexOf(odinHashtag) >= 0;
+          return img.tags.indexOf(hashtag) != -1;
         }
     });
-    feedOdin.run();
+    feed.run();
   }
 }

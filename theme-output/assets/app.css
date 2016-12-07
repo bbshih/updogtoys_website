@@ -9394,6 +9394,9 @@ video, object {
     .product-price {
       font-size: 2em; } }
 
+.product-compare-price {
+  margin-left: 0.5em; }
+
 .selector-wrapper label {
   display: inline-block;
   margin-right: 1em; }
