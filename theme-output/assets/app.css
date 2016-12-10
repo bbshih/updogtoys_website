@@ -9390,6 +9390,12 @@ video, object {
       display: block;
       margin: 1em 0; } }
 
+.product-price-container {
+  margin: 0; }
+  @media screen and (min-width: 768px) {
+    .product-price-container {
+      margin: 1em; } }
+
 .product-price {
   font-size: 1em; }
   @media screen and (min-width: 768px) {
@@ -9415,6 +9421,13 @@ video, object {
   @media screen and (min-width: 768px) {
     .add-to-cart-btn {
       font-size: 2em; } }
+
+.return-policy-cta {
+  margin: -0.5em 0 1em 0;
+  font-size: .8em; }
+  @media screen and (min-width: 768px) {
+    .return-policy-cta {
+      margin-bottom: 0; } }
 
 .check-out-btn {
   width: 100%;

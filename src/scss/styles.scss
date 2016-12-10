@@ -1435,6 +1435,12 @@ video, object {
     }
 }
 
+.product-price-container {
+    margin: 0;
+    @media screen and (min-width:$mobileBreakpoint) {
+        margin: 1em;
+    }
+}
 .product-price {
     font-size: 1em;
     @media screen and (min-width:$mobileBreakpoint) {
@@ -1463,6 +1469,14 @@ video, object {
     background: $pink;
     @media screen and (min-width:$mobileBreakpoint) {
         font-size: 2em;
+    }
+}
+
+.return-policy-cta {
+    margin: -0.5em 0 1em 0;
+    font-size: .8em;
+    @media screen and (min-width:$mobileBreakpoint) {
+        margin-bottom: 0;
     }
 }
 

@@ -199,7 +199,7 @@
               {% else %}
               <link itemprop="availability" href="http://schema.org/OutOfStock" />
               {% endif %}
-              <p id="product-price">
+              <p id="product-price" class="product-price-container">
                 {% assign variant = product.selected_or_first_available_variant %}
                 {% if product.compare_at_price > product.price %}
                 <span class="product-price on-sale" itemprop="price">{{ variant.price | money }}</span>
@@ -231,6 +231,7 @@
 
             <div id="product-add">
               <input type="submit" name="add" id="add" class="btn primary-btn add-to-cart-btn" value="{{ add_to_cart | escape }}">
+              <div class="return-policy-cta text-center">Not happy? Get a hassle free refund or replacement.</div>
             </div>
 
           </div><!-- .product-details -->
