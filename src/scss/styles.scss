@@ -1229,20 +1229,17 @@ Waypoints
     padding: .5em;
     margin: -30px 0 30px 0;
     width: 100%;
-    font-size: 1.2em;
-    a.close-banner {
-        &:link {
-            color: $primaryColor;
-        }
-        &:hover {
-            color: #fff;
-        }
-    }
-    @media screen and (min-width: $mobileBreakpoint) {
-        .close-banner {
-            display: none;
-        }
-    }
+    font-size: 1em;
+}
+
+.holiday-shipping {
+    background-color: $grayLightBg;
+    color: #000;
+    text-align: center;
+    padding: .5em;
+    margin: -30px 0 30px 0;
+    width: 100%;
+    font-size: 1em;
 }
 
 // Non-homepage template
@@ -1493,9 +1490,6 @@ video, object {
         &.bordered {
             border-top: 1px solid $grayLightBorder;
             border-right: 1px solid $grayLightBorder;
-        }
-        &:last-child {
-            padding-bottom: 30px;
         }
     }
 

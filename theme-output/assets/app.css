@@ -9237,14 +9237,16 @@ Waypoints
   padding: .5em;
   margin: -30px 0 30px 0;
   width: 100%;
-  font-size: 1.2em; }
-  .sale-banner a.close-banner:link {
-    color: #dea3a3; }
-  .sale-banner a.close-banner:hover {
-    color: #fff; }
-  @media screen and (min-width: 768px) {
-    .sale-banner .close-banner {
-      display: none; } }
+  font-size: 1em; }
+
+.holiday-shipping {
+  background-color: #f3f5f8;
+  color: #000;
+  text-align: center;
+  padding: .5em;
+  margin: -30px 0 30px 0;
+  width: 100%;
+  font-size: 1em; }
 
 header {
   padding: 2em 0; }
@@ -9433,8 +9435,6 @@ video, object {
     .product-info-container.bordered {
       border-top: 1px solid #e4e4e4;
       border-right: 1px solid #e4e4e4; }
-    .product-info-container:last-child {
-      padding-bottom: 30px; }
 
   .product-more-details {
     float: right; }
