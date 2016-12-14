@@ -1,12 +1,6 @@
-import "./src/js/waypoints.min.js";
-import "./src/js/bootstrap.js";
-import "./src/js/modernizr.js";
-import "./src/js/instafeed.js";
-import "./src/js/jquery.fancybox.js";
-import "./src/js/jquery.fancybox-media.js";
-import "./src/js/sticky-kit.min.js";
+'use strict';
 
-$(document).ready(function() {
+$(document).ready(function () {
   // General
   setupWaypoints();
   setupFancybox();
@@ -17,81 +11,81 @@ $(document).ready(function() {
   setupHomeIG();
 
   // Product page
-  let windowWidth = $(window).width();
+  var windowWidth = $(window).width();
 
   affixProductDetails(windowWidth);
   adjustDetailsPosition(windowWidth);
 
-  $(window).resize(function() {
+  $(window).resize(function () {
     windowWidth = $(window).width();
 
     affixProductDetails(windowWidth);
     adjustDetailsPosition(windowWidth);
   });
 
-  const hashtag = $('[data-ig-tag]').data('ig-tag');
+  var hashtag = $('[data-ig-tag]').data('ig-tag');
   setupProductIG(hashtag);
 });
 
 function setupWaypoints() {
-  $('.wp1').waypoint(function() {
+  $('.wp1').waypoint(function () {
     $('.wp1').addClass('animated fadeInUp');
   }, {
     offset: '80%'
   });
-  $('.wp2').waypoint(function() {
+  $('.wp2').waypoint(function () {
     $('.wp2').addClass('animated fadeInDown');
   }, {
     offset: '80%'
   });
-  $('.wp3').waypoint(function() {
+  $('.wp3').waypoint(function () {
     $('.wp3').addClass('animated fadeInDown');
   }, {
     offset: '80%'
   });
-  $('.wp4').waypoint(function() {
+  $('.wp4').waypoint(function () {
     $('.wp4').addClass('animated fadeInDown');
   }, {
     offset: '80%'
   });
-  $('.wp5').waypoint(function() {
+  $('.wp5').waypoint(function () {
     $('.wp5').addClass('animated fadeInDown');
   }, {
     offset: '80%'
   });
-  $('.wp6').waypoint(function() {
+  $('.wp6').waypoint(function () {
     $('.wp6').addClass('animated fadeInDown');
   }, {
     offset: '80%'
   });
-  $('.wp7').waypoint(function() {
+  $('.wp7').waypoint(function () {
     $('.wp7').addClass('animated fadeInDown');
   }, {
     offset: '80%'
   });
-  $('.wp8').waypoint(function() {
+  $('.wp8').waypoint(function () {
     $('.wp8').addClass('animated fadeInDown');
   }, {
     offset: '80%'
   });
-  $('.wp9').waypoint(function() {
+  $('.wp9').waypoint(function () {
     $('.wp9').addClass('animated fadeInDown');
   }, {
     offset: '80%'
   });
-  $('.wp10').waypoint(function() {
+  $('.wp10').waypoint(function () {
     $('.wp10').addClass('animated fadeInDown');
   }, {
     offset: '80%'
   });
 
-  $('.wpinstagram').waypoint(function() {
+  $('.wpinstagram').waypoint(function () {
     $('.wpinstagram').addClass('animated fadeInDown');
   }, {
     offset: '80%'
   });
 
-  $('.wpfooter').waypoint(function() {
+  $('.wpfooter').waypoint(function () {
     $('.wpfooter').addClass('animated fadeInUp');
   }, {
     offset: '90%'
@@ -100,7 +94,7 @@ function setupWaypoints() {
 
 function setupFancybox() {
   $(".fancybox").fancybox({
-    padding : 0
+    padding: 0
   });
 
   $('.fancybox-media').fancybox({
@@ -109,81 +103,81 @@ function setupFancybox() {
     maxHeight: 10000,
     minWidth: '70%',
     aspectRatio: true,
-    helpers : {
+    helpers: {
       media: {
-          youtube : {
-              params : {
-                  autoplay : 1
-              }
+        youtube: {
+          params: {
+            autoplay: 1
           }
+        }
       }
     }
   });
 }
 function displaySaleBanner() {
-  window.setTimeout(function() {
+  window.setTimeout(function () {
     $('.sale-banner').slideDown();
   }, 500);
 
-  $('#close-banner').click(function(e) {
+  $('#close-banner').click(function (e) {
     e.preventDefault();
     $('.sale-banner').slideUp();
   });
 }
 
 function setupHomeIG() {
-  const $instagramPhotos = $('#instafeed'),
+  var $instagramPhotos = $('#instafeed'),
       $leftCarousel = $('.carousel-button-left'),
       $rightCarousel = $('.carousel-button-right'),
       wrapperWidth = $('.instagram-carousel').width();
 
-  if($instagramPhotos[0]) {
-    const feed = new Instafeed({
-        get: 'user',
-        userId: 'self',
-        clientId: '06c9aae210124ed481ba3efa975340fd',
-        accessToken: '1386977881.5efc7c5.862bdff8696545449e9a236e6c76fb08',
-        resolution: 'low_resolution',
-        links: true
+  if ($instagramPhotos[0]) {
+    var feed = new Instafeed({
+      get: 'user',
+      userId: 'self',
+      clientId: '06c9aae210124ed481ba3efa975340fd',
+      accessToken: '1386977881.5efc7c5.862bdff8696545449e9a236e6c76fb08',
+      resolution: 'low_resolution',
+      links: true
     });
     feed.run();
 
-    $instagramPhotos.scroll(function() {
+    $instagramPhotos.scroll(function () {
       if (this.scrollLeft > 0) {
         $leftCarousel.removeClass('hidden');
       } else {
         $leftCarousel.addClass('hidden');
       }
 
-      if (($instagramPhotos[0].scrollWidth - this.scrollLeft) > wrapperWidth) {
+      if ($instagramPhotos[0].scrollWidth - this.scrollLeft > wrapperWidth) {
         $rightCarousel.removeClass('hidden');
       } else {
         $rightCarousel.addClass('hidden');
       }
     });
 
-
-    $leftCarousel.click( function(e) {
-      let position = $instagramPhotos.scrollLeft(),
+    $leftCarousel.click(function (e) {
+      var position = $instagramPhotos.scrollLeft(),
           width = $instagramPhotos.width(),
           newPosition = position - width;
 
-      $instagramPhotos.animate({scrollLeft: newPosition}, wrapperWidth/2);
+      $instagramPhotos.animate({ scrollLeft: newPosition }, wrapperWidth / 2);
     });
 
-    $rightCarousel.click( function(e) {
-      let position = $instagramPhotos.scrollLeft(),
+    $rightCarousel.click(function (e) {
+      var position = $instagramPhotos.scrollLeft(),
           width = $instagramPhotos.width(),
           newPosition = position + width;
 
-      $instagramPhotos.animate({scrollLeft: newPosition}, wrapperWidth/2);
+      $instagramPhotos.animate({ scrollLeft: newPosition }, wrapperWidth / 2);
     });
   }
 }
 
 function affixProductDetails(windowWidth) {
-  if (windowWidth < 768) { // 768px is tied to breakpoint in css
-    let height = $('.product-details-container').height() + 15;
+  if (windowWidth < 768) {
+    // 768px is tied to breakpoint in css
+    var height = $('.product-details-container').height() + 15;
     $(".product-photos").trigger("sticky_kit:detach");
     $('footer').css('margin-bottom', height);
   } else {
@@ -193,8 +187,9 @@ function affixProductDetails(windowWidth) {
 }
 
 function adjustDetailsPosition(windowWidth) {
-  if (windowWidth < 768) { // 768px is tied to breakpoint in css
-    let height = $('.product-photos').height() + 30;
+  if (windowWidth < 768) {
+    // 768px is tied to breakpoint in css
+    var height = $('.product-photos').height() + 30;
     $('#more-details').css('margin-top', height);
   } else {
     $('#more-details').css('margin-top', '');
@@ -202,20 +197,20 @@ function adjustDetailsPosition(windowWidth) {
 }
 
 function setupProductIG(hashtag) {
-  const instafeed = '#instafeed-product';
+  var instafeed = '#instafeed-product';
 
-  if($(instafeed)[0]) {
-    const feed = new Instafeed({
-        target: 'instafeed-product',
-        get: 'user',
-        userId: '1386977881',
-        clientId: '06c9aae210124ed481ba3efa975340fd',
-        accessToken: '1386977881.5efc7c5.862bdff8696545449e9a236e6c76fb08',
-        resolution: 'thumbnail',
-        links: true,
-        filter: function(img) {
-          return img.tags.indexOf(hashtag) != -1;
-        }
+  if ($(instafeed)[0]) {
+    var feed = new Instafeed({
+      target: 'instafeed-product',
+      get: 'user',
+      userId: '1386977881',
+      clientId: '06c9aae210124ed481ba3efa975340fd',
+      accessToken: '1386977881.5efc7c5.862bdff8696545449e9a236e6c76fb08',
+      resolution: 'thumbnail',
+      links: true,
+      filter: function filter(img) {
+        return img.tags.indexOf(hashtag) != -1;
+      }
     });
     feed.run();
   }

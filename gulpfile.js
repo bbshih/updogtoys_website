@@ -45,18 +45,15 @@ gulp.task('css', function() {
 // Uglify, concat scripts together
 var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
+var babel = require('gulp-babel');
 
 gulp.task('js', function() {
   var jsDst = './theme-output/assets';
-  gulp.src(['./src/js/waypoints.min.js',
-            './src/js/bootstrap.js',
-            './src/js/modernizr.js',
-            './src/js/instafeed.js',
-            './src/js/jquery.fancybox.js',
-            './src/js/jquery.fancybox-media.js',
-            './src/js/sticky-kit.min.js',
-            './src/js/app.js'])
-    .pipe(concat('main.js'))
+  gulp.src('./src/js/app.js')
+    .pipe(babel({
+        presets: ['es2015'],
+        plugins: [['import']]
+    }))
     .pipe(uglify())
     .pipe(gulp.dest(jsDst));
 });
