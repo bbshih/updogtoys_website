@@ -27,6 +27,9 @@ build/Release
 # https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git-
 node_modules
 
+# Remove yarn.lock to prevent upgrading patch versions, otherwise leave it
+yarn.lock
+
 .sass-cache
 .DS_Store
 PSDs
