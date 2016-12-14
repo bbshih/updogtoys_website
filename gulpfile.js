@@ -31,14 +31,14 @@ gulp.task('html', function() {
 // Prep CSS
 var sass = require('gulp-ruby-sass');
 var prefix = require( 'gulp-autoprefixer' );
-var lint = require('gulp-csslint');
+var csslint = require('gulp-csslint');
 
 gulp.task('css', function() {
   var cssDst = './theme-output/assets';
   return sass('./src/scss/app.scss')
     .on('error', function (err) { console.log(err.message); })
     .pipe(prefix('last 3 versions'))
-    .pipe(lint())
+    .pipe(csslint())
     .pipe(gulp.dest(cssDst));
 });
 
