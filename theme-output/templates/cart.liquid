@@ -102,12 +102,6 @@
             <div>You can apply a coupon code on the next screen</div>
             <input type="submit" name="update" value="Update cart" class="btn secondary-btn"/>
             <input type="submit" name="checkout" value="Check out" class="btn primary-btn check-out-btn"/>
-            {% comment %}Paypal and Google checkout buttons{% endcomment %}
-            {% if additional_checkout_buttons %}
-            <p class="additional-checkout-buttons">
-              {{ content_for_additional_checkout_buttons }}
-            </p>
-            {% endif %}
           </div>
         </div>
       </form>
