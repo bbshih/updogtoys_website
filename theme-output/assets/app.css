@@ -9341,6 +9341,11 @@ video, object {
 .product-compare-price {
   margin-left: 0.5em; }
 
+.text-info {
+  font-size: 0.8em;
+  line-height: 1.2em;
+  color: #1a87ff; }
+
 .selector-wrapper label {
   display: inline-block;
   margin-right: 1em; }

@@ -224,9 +224,8 @@
               {% endfor %}
               </select>
             </div>
-
-            <div id="backorder" class="hidden">
-              <p class="text-info">Back-ordered: You will be charged now for your purchase and be shipped the item once it is in stock.</p>
+            <div id="backorder" class="{% if variant.inventory_quantity > 0 %}hidden{% endif %}">
+              <p class="text-info">Back-ordered: Orders with this item ship 12/27.</p>
             </div>
 
             <div id="product-add">
