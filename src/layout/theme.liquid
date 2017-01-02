@@ -21,7 +21,6 @@
 
 <body id="top" class="{{ template | replace: '.', ' ' | truncatewords: 1, '' }}" id="{{ page_title | handle }}">
   {% include 'nav' %}
-  {% include 'sale-banner' %}
   {{ content_for_layout }}
   {% include 'footer' %}
   {{ 'main.js' | asset_url | script_tag }}
