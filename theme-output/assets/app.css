@@ -8157,11 +8157,23 @@ button.close {
 HTML5 display definitions
 ========================================================================== */
 /* * Corrects `block` display not defined in IE 6/7/8/9 and Firefox 3. */
-article, aside, details, figcaption, figure, footer, header, hgroup, nav, section, summary {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section,
+summary {
   display: block; }
 
 /* * Corrects `inline-block` display not defined in IE 6/7/8/9 and Firefox 3. */
-audio, canvas, video {
+audio,
+canvas,
+video {
   display: inline-block;
   *display: inline;
   *zoom: 1; }
@@ -8192,14 +8204,16 @@ html {
   -ms-text-size-adjust: 100%;
   /* 2 */ }
 
-html, html a {
+html,
+html a {
   -webkit-font-smoothing: antialiased;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004); }
 
-html, body {
+body,
+html {
   width: 100%;
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
   overflow-x: hidden; }
 
 /* * Addresses `font-family` inconsistency between `textarea` and other form
@@ -8210,7 +8224,11 @@ html, body {
 @font-face {
   font-family: Apercu;
   src: url("ApercuRegular.otf"); }
-html, button, input, select, textarea {
+button,
+html,
+input,
+select,
+textarea {
   font-family: 'Apercu', 'Helvetica', sans-serif; }
 
 /* * Addresses margins handled incorrectly in IE 6/7. */
@@ -8228,7 +8246,8 @@ a:focus {
   outline: thin dotted; }
 
 /* * Improves readability when focused and also mouse hovered in all browsers. */
-a:active, a:hover {
+a:active,
+a:hover {
   text-decoration: none;
   outline: 0; }
 
@@ -8268,7 +8287,8 @@ abbr[title] {
   border-bottom: 1px dotted; }
 
 /* * Addresses style set to `bolder` in Firefox 3+, Safari 4/5, and Chrome. */
-b, strong {
+b,
+strong {
   font-weight: bold; }
 
 blockquote {
@@ -8284,11 +8304,15 @@ mark {
   color: #000; }
 
 /* * Addresses margins set differently in IE 6/7. */
-p, pre {
+p,
+pre {
   margin: 1em 0; }
 
 /* * Corrects font family set oddly in IE 6, Safari 4/5, and Chrome. */
-code, kbd, pre, samp {
+code,
+kbd,
+pre,
+samp {
   font-family: monospace, serif;
   _font-family: 'courier new', monospace;
   font-size: 1em; }
@@ -8304,7 +8328,8 @@ q {
   quotes: none; }
 
 /* * Addresses `quotes` property not supported in Safari 4. */
-q:before, q:after {
+q:after,
+q:before {
   content: '';
   content: none; }
 
@@ -8312,7 +8337,8 @@ small {
   font-size: 75%; }
 
 /* * Prevents `sub` and `sup` affecting `line-height` in all browsers. */
-sub, sup {
+sub,
+sup {
   font-size: 75%;
   line-height: 0;
   position: relative;
@@ -8328,18 +8354,24 @@ sub {
 Lists
 ========================================================================== */
 /* * Addresses margins set differently in IE 6/7. */
-dl, menu, ol, ul {
+dl,
+menu,
+ol,
+ul {
   margin: 1em 0; }
 
 dd {
   margin: 0 0 0 40px; }
 
 /* * Addresses paddings set differently in IE 6/7. */
-menu, ol, ul {
+menu,
+ol,
+ul {
   padding: 0 0 0 1.2em; }
 
 /* * Corrects list images handled incorrectly in IE 7. */
-nav ul, nav ol {
+nav ol,
+nav ul {
   list-style: none;
   list-style-image: none; }
 
@@ -8396,7 +8428,10 @@ label {
 /* * 1. Corrects font size not being inherited in all browsers.
 * 2. Addresses margins set differently in IE 6/7, Firefox 3+, Safari 5, *    and Chrome.
 * 3. Improves appearance and consistency in all browsers. */
-button, input, select, textarea {
+button,
+input,
+select,
+textarea {
   font-size: 100%;
   /* 1 */
   margin: 0;
@@ -8408,7 +8443,8 @@ button, input, select, textarea {
 
 /* * Addresses Firefox 3+ setting `line-height` on `input` using ` !important` in
 * the UA stylesheet. */
-button, input {
+button,
+input {
   line-height: normal; }
 
 /* * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
@@ -8419,7 +8455,8 @@ button, input {
 * 4. Removes inner spacing in IE 7 without affecting normal text inputs.
 *    Known issue:inner spacing remains in IE 6. */
 button, html input[type="button"],
-input[type="reset"], input[type="submit"] {
+input[type="reset"],
+input[type="submit"] {
   -webkit-appearance: button;
   /* 2 */
   cursor: pointer;
@@ -8428,14 +8465,16 @@ input[type="reset"], input[type="submit"] {
   /* 4 */ }
 
 /* * Re-set default cursor for disabled elements. */
-button[disabled], input[disabled] {
+button[disabled],
+input[disabled] {
   cursor: default; }
 
 /* * 1. Addresses box sizing set to content-box in IE 8/9.
 * 2. Removes excess padding in IE 8/9.
 * 3. Removes excess padding in IE 7.
 *    Known issue:excess padding remains in IE 6. */
-input[type="checkbox"], input[type="radio"] {
+input[type="checkbox"],
+input[type="radio"] {
   box-sizing: border-box;
   /* 1 */
   padding: 0;
@@ -8456,11 +8495,13 @@ input[type="search"] {
 
 /* * Removes inner padding and search cancel button in Safari 5 and Chrome
 * on OS X. */
-input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration {
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none; }
 
 /* * Removes inner padding and border in Firefox 3+. */
-button::-moz-focus-inner, input::-moz-focus-inner {
+button::-moz-focus-inner,
+input::-moz-focus-inner {
   border: 0;
   padding: 0; }
 
@@ -8491,7 +8532,8 @@ a {
   text-decoration: none;
   transition: all 0.5s; }
 
-a:hover, a:focus {
+a:focus,
+a:hover {
   color: #ebc9c9; }
 
 p {
@@ -8503,7 +8545,8 @@ p {
   p:last-of-type {
     margin-bottom: 0; }
 
-h1, h2 {
+h1,
+h2 {
   font-family: 'Sofia';
   text-transform: uppercase; }
 
@@ -8527,20 +8570,22 @@ h3 {
 
 .dark-bg {
   background: #4f6364; }
-  .dark-bg h1, .dark-bg p {
+  .dark-bg h1,
+  .dark-bg p {
     color: #fff; }
 
 .dark-box {
   background: #f3f5f8;
-  box-shadow: 0px 3px 0px 0px #f0f2f4; }
+  box-shadow: 0 3px 0 0 #f0f2f4; }
 
 .light-box {
   background-color: #fff;
-  box-shadow: 0px 3px 0px 0px #f0f2f4;
+  box-shadow: 0 3px 0 0 #f0f2f4;
   padding: 20px 0; }
 
-.light-box:hover, .light-box:focus {
-  box-shadow: 0px 3px 0px 0px #dea3a3; }
+.light-box:focus,
+.light-box:hover {
+  box-shadow: 0 3px 0 0 #dea3a3; }
 
 .box-hover {
   transition: all 500ms ease-in-out;
@@ -8548,7 +8593,8 @@ h3 {
   -moz-transition: all 500ms ease-in-out;
   -o-transition: all 500ms ease-in-out; }
 
-.box-hover:hover, .box-hover:focus {
+.box-hover:focus,
+.box-hover:hover {
   transform: translate(0, -15px);
   -webkit-transform: translate(0, -15px);
   -ms-transform: translate(0, -15px); }
@@ -8567,9 +8613,9 @@ Navigation
 ========================================================================== */
 .navbar-header {
   text-align: center;
-  box-shadow: 0px 0px 3px 0px #dea3a3;
-  -webkit-box-shadow: 0px 0px 3px 0px #dea3a3;
-  -moz-box-shadow: 0px 0px 3px 0px #dea3a3;
+  box-shadow: 0 0 3px 0 #dea3a3;
+  -webkit-box-shadow: 0 0 3px 0 #dea3a3;
+  -moz-box-shadow: 0 0 3px 0 #dea3a3;
   margin-bottom: 30px; }
   @media screen and (min-width: 1100px) {
     .navbar-header {
@@ -8623,7 +8669,8 @@ Navigation
     display: none; }
 
 @media screen and (min-width: 1100px) {
-  .mobile-logo, .mobile-cart {
+  .mobile-cart,
+  .mobile-logo {
     display: none; }
 
   .nav-main {
@@ -8637,15 +8684,19 @@ Navigation
     top: 0;
     left: 0;
     border-bottom: 1px solid #e4e4e4;
-    box-shadow: 0px 0px 3px 0px #dea3a3; }
+    box-shadow: 0 0 3px 0 #dea3a3; }
     .navigation .navigation-title {
       display: none; }
-    .navigation .navigation-left, .navigation .navigation-middle, .navigation .navigation-right {
+    .navigation .navigation-left,
+    .navigation .navigation-middle,
+    .navigation .navigation-right {
       display: inline-block;
       vertical-align: middle;
       -ms-flex-align: center;
           align-items: center; }
-      .navigation .navigation-left .navigation-link, .navigation .navigation-middle .navigation-link, .navigation .navigation-right .navigation-link {
+      .navigation .navigation-left .navigation-link,
+      .navigation .navigation-middle .navigation-link,
+      .navigation .navigation-right .navigation-link {
         color: #696D76;
         text-transform: uppercase;
         font-size: 1rem;
@@ -8659,15 +8710,19 @@ Navigation
         -ms-flex-pack: center;
             justify-content: center;
         transition: background-color 500ms ease-in-out; }
-      .navigation .navigation-left br, .navigation .navigation-middle br, .navigation .navigation-right br {
+      .navigation .navigation-left br,
+      .navigation .navigation-middle br,
+      .navigation .navigation-right br {
         display: block; }
-    .navigation .navigation-left, .navigation .navigation-right {
+    .navigation .navigation-left,
+    .navigation .navigation-right {
       position: absolute;
       top: 0;
       width: 430px;
       font-size: 0;
       z-index: 300; }
-      .navigation .navigation-left .navigation-block, .navigation .navigation-right .navigation-block {
+      .navigation .navigation-left .navigation-block,
+      .navigation .navigation-right .navigation-block {
         vertical-align: middle;
         display: inline-block; }
     .navigation .navigation-left {
@@ -8698,7 +8753,8 @@ Navigation
     z-index: 9999; }
   .navbar-index .navbar-header {
     background: none; }
-  .navbar-index a:link, .navbar-index a:visited {
+  .navbar-index a:link,
+  .navbar-index a:visited {
     color: #696D76; }
 
   .container-logo {
@@ -8707,15 +8763,16 @@ Navigation
       height: 100px;
       display: inline-block; } }
 @media screen and (min-width: 1280px) {
-  .navigation .navigation-right, .navigation .navigation-left {
+  .navigation .navigation-left,
+  .navigation .navigation-right {
     width: 450px; } }
 /* ==========================================================================
 header
 ========================================================================== */
 .header {
-  background: url("all-toys-kena-17.jpg") no-repeat center center;
+  background: url("odin_mint_rose.jpg") no-repeat center center;
   background-size: cover;
-  height: calc(57vw);
+  height: calc(40vw);
   margin-top: -30px; }
   @media screen and (min-width: 1500px) {
     .header {
@@ -8744,7 +8801,7 @@ input[type=email] {
   width: 20em; }
 
 .btn {
-  border-radius: .5em; }
+  border-radius: 0.5em; }
 
 .primary-btn {
   background-color: #dea3a3;
@@ -8758,14 +8815,15 @@ input[type=email] {
   font-weight: bold;
   margin-top: 1em; }
 
-.primary-btn:hover, .primary-btn:focus {
+.primary-btn:focus,
+.primary-btn:hover {
   background-color: #ebc9c9;
   color: #fff;
   transition: background-color 250ms ease-in-out; }
 
 .secondary-btn {
   display: inline-block;
-  padding: 1em 1em;
+  padding: 1em;
   background: #4f6364;
   color: #fff;
   text-transform: uppercase;
@@ -8774,7 +8832,8 @@ input[type=email] {
   margin-top: 1em;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12); }
 
-.secondary-btn:hover, .secondary-btn:focus {
+.secondary-btn:focus,
+.secondary-btn:hover {
   background-color: #667f80;
   color: #fff;
   transition: background-color 250ms ease-in-out; }
@@ -8797,7 +8856,7 @@ Features
   max-width: 100%; }
 .featured-product .product-title {
   font-size: 2.5em;
-  margin: 15px 0 0 0; }
+  margin: 15px 0 0; }
   @media screen and (min-width: 768px) {
     .featured-product .product-title {
       font-size: 3em; } }
@@ -8909,7 +8968,7 @@ Subscribe
   min-width: 220px;
   color: #696D76;
   margin-right: 5px;
-  border-radius: .5em;
+  border-radius: 0.5em;
   border: 1px solid #fff; }
 
 .subscribe input[type=submit] {
@@ -8932,9 +8991,9 @@ Subscribe
 FAQ
 ========================================================================== */
 .faq .question:first-child h2 {
-  margin-top: 0em; }
+  margin-top: 0; }
 .faq .question h2 {
-  margin: 2em 0 0.5em 0; }
+  margin: 2em 0 0.5em; }
   .faq .question h2::after {
     display: none; }
 .faq .answer {
@@ -8995,7 +9054,8 @@ Contact
   margin-left: auto;
   margin-right: auto; }
 
-.up-btn:hover, up-btn:focus {
+.up-btn:hover,
+up-btn:focus {
   color: #fff;
   background: #dea3a3; }
 
@@ -9018,7 +9078,8 @@ Contact
 /* ==========================================================================
 Footer
 ========================================================================== */
-.footer a.social-btn, .footer a:visited.social-btn {
+.footer a.social-btn,
+.footer a:visited.social-btn {
   color: #fff; }
 
 .footer ul {
@@ -9032,7 +9093,7 @@ Social Buttons
 ========================================================================== */
 ul.social-buttons {
   list-style: none;
-  margin: 1em 0 0 0;
+  margin: 1em 0 0;
   padding: 0; }
 
 ul.social-buttons li {
@@ -9103,7 +9164,7 @@ ul.social-buttons li {
     right: 0; }
 
 .features h1 {
-  margin-bottom: .5em; }
+  margin-bottom: 0.5em; }
 
 .instagram p {
   margin-bottom: 1em; }
@@ -9151,15 +9212,31 @@ ul.social-buttons li {
     right: 0; }
 
 .features h1 {
-  margin-bottom: .5em; }
+  margin-bottom: 0.5em; }
 
 /* ==========================================================================
 Waypoints
 ========================================================================== */
-.wp1, .wp2, .wp3, .wp4, .wp5, .wp6, .wp7, .wp8, .wp9, .wp10, .wpinstagram, .wpfooter {
+.wp1,
+.wp10,
+.wp2,
+.wp3,
+.wp4,
+.wp5,
+.wp6,
+.wp7,
+.wp8,
+.wp9,
+.wpfooter,
+.wpinstagram {
   visibility: hidden; }
 
-.fadeInUp, .fadeInUpDelay, .fadeInDown, .fadeInUp, .fadeInLeft, .fadeInRight {
+.fadeInDown,
+.fadeInLeft,
+.fadeInRight,
+.fadeInUp,
+.fadeInUp,
+.fadeInUpDelay {
   visibility: visible; }
 
 .delay-03s {
@@ -9175,14 +9252,17 @@ Waypoints
   -webkit-animation-delay: 1s; }
 
 .sale-banner {
-  display: none;
-  background-color: #000;
+  background-color: #b9cbcb;
   color: #ebe0e8;
   text-align: center;
-  padding: .5em;
-  margin: -30px 0 30px 0;
+  padding: 0.5em;
+  margin: -30px 0 30px;
   width: 100%;
   font-size: 1em; }
+  .sale-banner a:active,
+  .sale-banner a:link,
+  .sale-banner a:visited {
+    color: #fff; }
 
 header {
   padding: 2em 0; }
@@ -9224,7 +9304,7 @@ header {
 .product-info {
   display: inline; }
   .product-info p {
-    margin: 0 0 1em 0; }
+    margin: 0 0 1em; }
   @media screen and (min-width: 768px) {
     .product-info {
       width: calc(100% - 200px);
@@ -9261,7 +9341,8 @@ header {
   position: relative;
   padding-top: 56.25%; }
 
-video, object {
+object,
+video {
   display: block;
   position: absolute;
   width: 100%;
@@ -9295,7 +9376,7 @@ video, object {
   position: fixed;
   left: 0;
   bottom: 0;
-  box-shadow: 0px 0px 3px 0px #dea3a3;
+  box-shadow: 0 0 3px 0 #dea3a3;
   z-index: 8000;
   background-color: #fff; }
   @media screen and (max-width: 767px) {
@@ -9304,7 +9385,7 @@ video, object {
   .product-details-container .product-description {
     display: none; }
   .product-details-container h1 {
-    margin: 15px 0 0 0; }
+    margin: 15px 0 0; }
   @media screen and (min-width: 768px) {
     .product-details-container {
       position: static;
@@ -9357,15 +9438,15 @@ video, object {
   margin: 15px 0;
   width: 100%;
   font-size: 1em;
-  padding: .5em 0;
+  padding: 0.5em 0;
   background: #dea3a3; }
   @media screen and (min-width: 768px) {
     .add-to-cart-btn {
       font-size: 2em; } }
 
 .return-policy-cta {
-  margin: -0.5em 0 1em 0;
-  font-size: .8em; }
+  margin: -0.5em 0 1em;
+  font-size: 0.8em; }
   @media screen and (min-width: 768px) {
     .return-policy-cta {
       margin-bottom: 0; } }
@@ -9381,7 +9462,7 @@ video, object {
 @media screen and (min-width: 768px) {
   .product-info-container {
     position: relative; }
-    .product-info-container:before, .product-info-container:after {
+    .product-info-container:after, .product-info-container:before {
       content: " ";
       display: table; }
     .product-info-container:after {

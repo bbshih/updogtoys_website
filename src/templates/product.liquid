@@ -58,7 +58,7 @@
                 </div>
                 <div class="product-info">
                   <a href="{{ image | img_url: 'master' }}" class="fancybox">
-                    <img src="{{ image | img_url: '1024x1024' }}" alt="{{ image.alt | escape }}"/>
+                    <img id="image-{{ forloop.index }}" src="{{ image | img_url: '1024x1024' }}" alt="{{ image.alt | escape }}"/>
                   </a>
                 </div>
               </li>
@@ -219,7 +219,7 @@
               <select id="product-select" name="id" class="">
               {% for variant in product.variants %}
                 <option{% if variant == product.selected_or_first_available_variant %} selected{% endif %} value="{{ variant.id }}">
-                  {{ variant.title }} - {{ variant.price | money }}
+                  {{ variant.title }}
                 </option>
               {% endfor %}
               </select>
