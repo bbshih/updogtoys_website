@@ -1,17 +1,19 @@
 //
 // Colors
 
-$gray: #696D76;
-$grayLight: #6B6F73;
+$gray: #696d76;
+$grayLight: #6b6f73;
 $grayLightBorder: #e4e4e4;
 $grayLightBg: #f3f5f8;
 
 $pink: #dea3a3;
+$maroon: #52394a;
 $primaryColor: $pink;
 $primaryColorAlt: lighten($primaryColor, 10%);
 
 $grayBlue: #4f6364;
-$secondaryColor: $grayBlue;
+$emeraldBlue: #214349;
+$secondaryColor: $emeraldBlue;
 $secondaryColorAlt: lighten($secondaryColor, 10%);
 
 $blue: #1a87ff;
