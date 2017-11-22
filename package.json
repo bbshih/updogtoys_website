@@ -3,8 +3,14 @@
   "homepage": "http://www.updogtoys.com/",
   "author": "Billy Shih <billy@updogtoys.com>",
   "contributors": [],
-  "dependencies": {},
+  "dependencies": {
+    "concurrently": "^3.5.1"
+  },
   "version": "1.0.0",
+  "scripts": {
+    "start":
+      "concurrently -p \"[{name}]\" -n \"GULP,THEME\" -c \"bgBlue.bold,bgMagenta.bold\" \"gulp serve\" \"cd theme-output && theme watch\" "
+  },
   "devDependencies": {
     "eslint": "^3.12.1",
     "eslint-config-airbnb-base": "^11.0.0",
