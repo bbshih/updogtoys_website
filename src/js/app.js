@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 $(document).ready(function() {
   // General
   setupWaypoints();
@@ -27,48 +27,84 @@ $(document).ready(function() {
 });
 
 function setupWaypoints() {
-  $('.wp1').waypoint(function() {
-    $('.wp1').addClass('animated fadeInUp');
-  }, {offset: '80%'});
-  $('.wp2').waypoint(function() {
-    $('.wp2').addClass('animated fadeInDown');
-  }, {offset: '80%'});
-  $('.wp3').waypoint(function() {
-    $('.wp3').addClass('animated fadeInDown');
-  }, {offset: '80%'});
-  $('.wp4').waypoint(function() {
-    $('.wp4').addClass('animated fadeInDown');
-  }, {offset: '80%'});
-  $('.wp5').waypoint(function() {
-    $('.wp5').addClass('animated fadeInDown');
-  }, {offset: '80%'});
-  $('.wp6').waypoint(function() {
-    $('.wp6').addClass('animated fadeInDown');
-  }, {offset: '80%'});
-  $('.wp7').waypoint(function() {
-    $('.wp7').addClass('animated fadeInDown');
-  }, {offset: '80%'});
-  $('.wp8').waypoint(function() {
-    $('.wp8').addClass('animated fadeInDown');
-  }, {offset: '80%'});
-  $('.wp9').waypoint(function() {
-    $('.wp9').addClass('animated fadeInDown');
-  }, {offset: '80%'});
-  $('.wp10').waypoint(function() {
-    $('.wp10').addClass('animated fadeInDown');
-  }, {offset: '80%'});
+  $('.wp1').waypoint(
+    function() {
+      $('.wp1').addClass('animated fadeInUp');
+    },
+    { offset: '80%' }
+  );
+  $('.wp2').waypoint(
+    function() {
+      $('.wp2').addClass('animated fadeInDown');
+    },
+    { offset: '80%' }
+  );
+  $('.wp3').waypoint(
+    function() {
+      $('.wp3').addClass('animated fadeInDown');
+    },
+    { offset: '80%' }
+  );
+  $('.wp4').waypoint(
+    function() {
+      $('.wp4').addClass('animated fadeInDown');
+    },
+    { offset: '80%' }
+  );
+  $('.wp5').waypoint(
+    function() {
+      $('.wp5').addClass('animated fadeInDown');
+    },
+    { offset: '80%' }
+  );
+  $('.wp6').waypoint(
+    function() {
+      $('.wp6').addClass('animated fadeInDown');
+    },
+    { offset: '80%' }
+  );
+  $('.wp7').waypoint(
+    function() {
+      $('.wp7').addClass('animated fadeInDown');
+    },
+    { offset: '80%' }
+  );
+  $('.wp8').waypoint(
+    function() {
+      $('.wp8').addClass('animated fadeInDown');
+    },
+    { offset: '80%' }
+  );
+  $('.wp9').waypoint(
+    function() {
+      $('.wp9').addClass('animated fadeInDown');
+    },
+    { offset: '80%' }
+  );
+  $('.wp10').waypoint(
+    function() {
+      $('.wp10').addClass('animated fadeInDown');
+    },
+    { offset: '80%' }
+  );
 
-  $('.wpinstagram').waypoint(function() {
-    $('.wpinstagram').addClass('animated fadeInDown');
-  }, {offset: '80%'});
+  $('.wpinstagram').waypoint(
+    function() {
+      $('.wpinstagram').addClass('animated fadeInDown');
+    },
+    { offset: '80%' }
+  );
 
-  $('.wpfooter').waypoint(function() {
-    $('.wpfooter').addClass('animated fadeInUp');
-  }, {offset: '90%'});
+  $('.wpfooter').waypoint(
+    function() {
+      $('.wpfooter').addClass('animated fadeInUp');
+    },
+    { offset: '90%' }
+  );
 }
 
 function setupFancybox() {
-  $(".fancybox").fancybox({padding: 0});
+  $('.fancybox').fancybox({ padding: 0 });
 
   $('.fancybox-media').fancybox({
     padding: 0,
@@ -91,7 +127,7 @@ function setupFancybox() {
 //   window.setTimeout(function() {
 //     $('.sale-banner').slideDown();
 //   }, 500);
-//
+
 //   $('#close-banner').click(function(e) {
 //     e.preventDefault();
 //     $('.sale-banner').slideUp();
@@ -122,7 +158,7 @@ function setupHomeIG() {
         $leftCarousel.addClass('hidden');
       }
 
-      if (($instagramPhotos[0].scrollWidth - this.scrollLeft) > wrapperWidth) {
+      if ($instagramPhotos[0].scrollWidth - this.scrollLeft > wrapperWidth) {
         $rightCarousel.removeClass('hidden');
       } else {
         $rightCarousel.addClass('hidden');
@@ -134,9 +170,12 @@ function setupHomeIG() {
         width = $instagramPhotos.width(),
         newPosition = position - width;
 
-      $instagramPhotos.animate({
-        scrollLeft: newPosition
-      }, wrapperWidth / 2);
+      $instagramPhotos.animate(
+        {
+          scrollLeft: newPosition
+        },
+        wrapperWidth / 2
+      );
     });
 
     $rightCarousel.click(function(e) {
@@ -144,17 +183,21 @@ function setupHomeIG() {
         width = $instagramPhotos.width(),
         newPosition = position + width;
 
-      $instagramPhotos.animate({
-        scrollLeft: newPosition
-      }, wrapperWidth / 2);
+      $instagramPhotos.animate(
+        {
+          scrollLeft: newPosition
+        },
+        wrapperWidth / 2
+      );
     });
   }
 }
 
 function affixProductDetails(windowWidth) {
-  if (windowWidth < 768) { // 768px is tied to breakpoint in css
+  if (windowWidth < 768) {
+    // 768px is tied to breakpoint in css
     var height = $('.product-details-container').height() + 15;
-    $(".product-photos").trigger("sticky_kit:detach");
+    $('.product-photos').trigger('sticky_kit:detach');
     $('footer').css('margin-bottom', height);
   } else {
     $('.product-details-container').stick_in_parent();
@@ -163,7 +206,8 @@ function affixProductDetails(windowWidth) {
 }
 
 function adjustDetailsPosition(windowWidth) {
-  if (windowWidth < 768) { // 768px is tied to breakpoint in css
+  if (windowWidth < 768) {
+    // 768px is tied to breakpoint in css
     var height = $('.product-photos').height() + 30;
     $('#more-details').css('margin-top', height);
   } else {
@@ -172,9 +216,7 @@ function adjustDetailsPosition(windowWidth) {
 }
 
 function setupProductIG(hashtag) {
-  var instafeed = '#instafeed-product';
-
-  if ($(instafeed)[0]) {
+  if ($('#instafeed-product')[0]) {
     var feed = new Instafeed({
       target: 'instafeed-product',
       get: 'user',

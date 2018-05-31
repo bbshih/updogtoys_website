@@ -1,17 +1,17 @@
 <!-- /templates/page.liquid -->
-<div class="grid">
+<section class="section-padding-bottom">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+        <h1 class="text-center">{{ page.title }}</h1>
 
-  <div class="grid__item large--two-thirds push--large--one-sixth">
-
-    <h1>{{ page.title }}</h1>
-
-    {% comment %}
-      Regular page content goes here.
-    {% endcomment %}
-    <div class="rte">
-      {{ page.content }}
+        {% comment %}
+          Regular page content goes here.
+        {% endcomment %}
+        <div class="rte">
+          {{ page.content }}
+        </div>
+      </div>
     </div>
-
   </div>
-
-</div>
+</section>
