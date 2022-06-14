@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-site-verification" content="OmBw-gQtHlTMsUE-9epZWQE8_Q9MeHK6KZ4j29BW3Ck" />
+  <title>Up Dog Toys - Toys for a Modern Dog</title>
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+  {{ 'app.css' | asset_url | stylesheet_tag }}
+  {{ content_for_header }}
+  {% include 'social-meta-tags' %}
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+</head>
+
+<body id="top" class="{{ template | replace: '.', ' ' | truncatewords: 1, '' }}" id="{{ page_title | handle }}">
+
+  <nav class="navbar navbar-default">
+    <div class="container container-logo">
+        <img src="{{ 'logo_grey.png' | asset_url}}" class="logo">
+    </div>
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li><a href="http://www.updogtoys.com">Home</a></li>
+          <li><a href="/products/the-odin">The Odin: Treat Toy</a></li>
+          <li><a href="/products/the-kena">The Kena: Squeaker Toy</a></li>
+          <li><a href="http://www.updogtoys.com">About Us</a></li>
+          <li><a href="#"><i class="fa fa-shopping-cart"></i> Cart ({{ cart.item_count }})</a></li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div>
+  </nav>
+  {% include 'sale-banner' %}
+  {{ content_for_layout }}
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/pages/wholesale">Wholesale Inquiries</a></li>
+            <li><a href="mailto:info@updogtoys.com">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <ul class="social-buttons">
+            <li><a href="http://www.facebook.com/updogtoys" class="social-btn"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="http://www.instagram.com/updogtoys" class="social-btn"><i class="fa fa-instagram"></i></a></li>
+            <li><a href="http://www.twitter.com/updogtoys" class="social-btn"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="mailto:info@updogtoys.com" class="social-btn"><i class="fa fa-envelope"></i></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <p>Up Dog Toys &copy; 2021 &mdash; Created by Odin, the Pembroke Welsh Corgi. Please excuse typos from <a href="http://www.youtube.com/watch?v=pCyzqRvmrVE" class="fancybox-media">my large paws typing on small keys.</a></p>
+        </div>
+      </div>
+    </div>
+
+  </footer>
+
+  {{ 'main.js' | asset_url | script_tag }}
+</body>
+
+</html>
